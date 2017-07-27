@@ -60,31 +60,10 @@ namespace Eidete {
 
     public class EideteApp : Granite.Application {
         construct {
-            program_name = "Eidete";
-            exec_name = "eidete";
-
-            build_data_dir = Constants.DATADIR;
-            build_pkg_data_dir = Constants.PKGDATADIR;
-            build_release_name = Constants.RELEASE_NAME;
-            build_version = Constants.VERSION;
-            build_version_info = Constants.VERSION_INFO;
-
-            app_years = "2011-2015";
-            app_icon = "eidete";
-            app_launcher = "eidete.desktop";
-            application_id = "net.launchpad.eidete";
-
-            main_url = "https://code.launchpad.net/eidete";
-            bug_url = "https://bugs.launchpad.net/eidete";
-            help_url = "https://code.launchpad.net/eidete";
-            translate_url = "https://translations.launchpad.net/eidete";
-
-            about_authors = { "Tom Beckmann <tombeckmann@online.de>" };
-            about_documenters = { "Tom Beckmann <tombeckmann@online.de>" };
-            about_artists = { "Harvey Cabaguio", "Sergey 'shnatsel' Davidoff" };
-            about_comments = "Development release (all features not implemented)";
-            about_translators = "";
-            about_license_type = Gtk.License.GPL_3_0;
+            program_name = "Screencast";
+            exec_name = "com.github.artemanufrij.screencast";
+            application_id = exec_name;
+            app_launcher = application_id + ".desktop";
         }
 
         public dynamic Gst.Pipeline pipeline;
@@ -652,17 +631,11 @@ namespace Eidete {
 
             assert (encoder != null);
 
-#if GSTREAMER_0_10_IS_DEFINED
-            encoder.set ("quality", 8.0);
-            encoder.set ("speed", 6);
-            encoder.set ("max-keyframe-distance", 150);
-#else
             // From these values see https://mail.gnome.org/archives/commits-list/2012-September/msg08183.html
             encoder.set ("min_quantizer", 13);
             encoder.set ("max_quantizer", 13);
             encoder.set ("cpu-used", 5);
             encoder.set ("deadline", 1000000);
-#endif
             encoder.set ("threads", int.parse (cores.substring (2)));
 
             if (pipeline == null || muxer == null || sink == null || videobin == null || audiobin == null) {
@@ -678,30 +651,19 @@ namespace Eidete {
 
             assert (video_pad != null);
 
-#if GSTREAMER_0_10_IS_DEFINED
-            var m = muxer.get_request_pad ("video_%d");
-#else
             var m = muxer.get_request_pad ("video_%u");
-#endif
 
             assert (m != null);
 
             video_pad.link (m);
 
             if (settings.audio) {
-#if GSTREAMER_0_10_IS_DEFINED
-                audiobin.get_static_pad ("src").link (muxer.get_request_pad ("audio_%d"));
-#else
                 audiobin.get_static_pad ("src").link (muxer.get_request_pad ("audio_%u"));
-#endif
             }
 
             muxer.link (sink);
-#if GSTREAMER_0_10_IS_DEFINED
-            pipeline.get_bus ().add_watch (bus_message_cb);
-#else
+
             pipeline.get_bus ().add_watch (Priority.DEFAULT, bus_message_cb);
-#endif
 
             pipeline.set_state (Gst.State.READY);
 
