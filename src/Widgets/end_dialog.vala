@@ -55,14 +55,12 @@ namespace Eidete.Widgets {
             title.halign = Gtk.Align.START;
 
             export = new Gtk.Button.with_label (_("Save"));
-            export.image = new Gtk.Image.from_stock (Gtk.Stock.SAVE, Gtk.IconSize.BUTTON);
             export.get_style_context ().add_class ("suggested-action");
             export.can_default = true;
 
             this.set_default (export);
 
             var cancel = new Gtk.Button.with_label (_("Cancel"));
-            cancel.image = new Gtk.Image.from_stock (Gtk.Stock.DELETE, Gtk.IconSize.BUTTON);
             cancel.margin_end = 6;
 
             var bbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
@@ -144,7 +142,7 @@ namespace Eidete.Widgets {
         }
 
         private void save_file () {
-            var dialog = new Gtk.FileChooserDialog (_("Save"), null, Gtk.FileChooserAction.SAVE, Gtk.Stock.OK, Gtk.ResponseType.OK);
+            var dialog = new Gtk.FileChooserDialog (_("Save"), null, Gtk.FileChooserAction.SAVE, _("OK"), Gtk.ResponseType.OK);
             dialog.set_current_name (source.get_basename ());
 
             var videos_folder = Environment.get_user_special_dir (UserDirectory.VIDEOS);

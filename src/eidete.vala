@@ -252,12 +252,8 @@ namespace Eidete {
 
             var cancel_bt = new Gtk.Button.with_label (_("Cancel"));
 
-            var about_bt = new Gtk.Button.with_label (_("About"));
-            about_bt.image = new Gtk.Image.from_stock (Gtk.Stock.ABOUT, Gtk.IconSize.BUTTON);
-
             home_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
             home_buttons.homogeneous = true;
-            home_buttons.pack_start (about_bt, false, true, 0);
             home_buttons.pack_start (cancel_bt, false, true, 0);
             home_buttons.pack_end (start_bt, false, true, 0);
             home_buttons.margin_top = 24;
@@ -274,10 +270,6 @@ namespace Eidete {
             /*
               Events
             */
-
-            about_bt.clicked.connect (() => {
-                this.show_about (this.main_window);
-            });
 
             cancel_bt.clicked.connect (() => {
                 this.main_window.destroy ();
@@ -508,22 +500,19 @@ namespace Eidete {
 
             var continue_bt = new Gtk.Button.with_label (_("Continue"));
             continue_bt.set_tooltip_text (_("Continue recording"));
-            continue_bt.image = new Gtk.Image.from_stock (Gtk.Stock.MEDIA_RECORD, Gtk.IconSize.BUTTON);
 
             var stop_bt = new Gtk.Button.with_label (_("Finish"));
             stop_bt.set_tooltip_text (_("Stop the recording and save the file"));
-            stop_bt.image = new Gtk.Image.from_stock (Gtk.Stock.APPLY, Gtk.IconSize.BUTTON);
             stop_bt.get_style_context ().add_class ("suggested-action");
 
             var cancel_bt = new Gtk.Button.with_label (_("Cancel"));
             cancel_bt.set_tooltip_text (_("Cancel the recording without saving the file"));
-            cancel_bt.image = new Gtk.Image.from_stock (Gtk.Stock.DELETE, Gtk.IconSize.BUTTON);
 
             buttons.pack_end (stop_bt, false, true, 0);
             buttons.pack_end (continue_bt, false, true, 0);
             buttons.pack_end (cancel_bt, false, true, 0);
 
-            var img = new Gtk.Image.from_stock (Gtk.Stock.MEDIA_PAUSE, Gtk.IconSize.DIALOG);
+            var img = new Gtk.Image.from_icon_name ("media-playback-pause", Gtk.IconSize.DIALOG);
             img.valign = Gtk.Align.START;
             img.margin_right = 12;
 
@@ -772,7 +761,7 @@ Eidete.EideteApp eidete;
 bool pause_rec;
 bool finish_rec;
 
-static const OptionEntry[] entries = {
+const OptionEntry[] entries = {
     { "pause", 'n', 0, OptionArg.NONE, ref pause_rec, N_("Pause Recording"), "" },
     { "finish", 'n', 0, OptionArg.NONE, ref finish_rec, N_("Finish Recording"), "" },
     { null }
