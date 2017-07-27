@@ -1,0 +1,214 @@
+# Russian translation for eidete
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the eidete package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: eidete\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2015-01-04 12:47+0100\n"
+"PO-Revision-Date: 2015-10-23 12:00+0000\n"
+"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2017-01-08 05:38+0000\n"
+"X-Generator: Launchpad (build 18302)\n"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:140
+msgid "Monitor"
+msgstr "Монитор"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:160
+msgid "Fullscreen"
+msgstr "Во весь экран"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:161
+msgid "Custom"
+msgstr "Настроить..."
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:172
+msgid "Default"
+msgstr "По умолчанию"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:181
+msgid "Sound"
+msgstr "Звук"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:184
+msgid "Video"
+msgstr "Видео"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:187
+msgid "Keyboard"
+msgstr "Клавиатура"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:190
+msgid "Mouse"
+msgstr "Мышь"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:193
+msgid "Start Recording"
+msgstr "Начать запись"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:199
+msgid "About"
+msgstr "О программе"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:212
+msgid "Record Computer Sounds"
+msgstr "Запись звуков"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:214
+msgid "Record from Microphone"
+msgstr "Запись микрофона"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:217
+msgid "Record from Monitor"
+msgstr "Записать с монитора"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:219
+msgid "Recording Area"
+msgstr "Область записи"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:221
+msgid "Width"
+msgstr "Ширина"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:223
+msgid "Height"
+msgstr "Высота"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:247
+msgid "Pressed keys on screen"
+msgstr "Показ нажатия клавиш"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:250
+msgid "Mouse clicks on screen"
+msgstr "Показ щелчков"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:252
+msgid "Circle around the cursor"
+msgstr "Круг вокруг указателя"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:258
+msgid "Behavior"
+msgstr "Поведение"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:259
+msgid "Appearance"
+msgstr "Оформление"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:461
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:682
+msgid "Recording paused"
+msgstr "Запись приостановлена"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:464
+msgid "You can continue or finish the recording now"
+msgstr "Вы можете продолжить или завершить запись"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:473
+msgid "Continue"
+msgstr "Продолжить"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:474
+msgid "Continue recording"
+msgstr "Продолжить запись"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:477
+msgid "Finish"
+msgstr "Завершить"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:478
+msgid "Stop the recording and save the file"
+msgstr "Остановить запись и сохранить файл"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:481
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/end_dialog.vala:50
+msgid "Cancel"
+msgstr "Отменить"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:482
+msgid "Cancel the recording without saving the file"
+msgstr "Сбросить запись"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:690
+msgid "Pause recording"
+msgstr "Приостановить запись"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:719
+msgid "Pause Recording"
+msgstr "Остановить запись"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/eidete.vala:720
+msgid "Finish Recording"
+msgstr "Завершить запись"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/desktop_launcher.vala:5
+msgid "Record screencasts"
+msgstr "Записать видео с экрана"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/desktop_launcher.vala:6
+msgid "Screencaster"
+msgstr "Программа записи видео с экрана"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/end_dialog.vala:40
+msgid "Recording complete"
+msgstr "Запись завершена"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/end_dialog.vala:44
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/end_dialog.vala:107
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/end_dialog.vala:146
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/end_dialog.vala:226
+msgid "Save"
+msgstr "Сохранить"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/end_dialog.vala:144
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/end_dialog.vala:224
+msgid "Could not contact Contractor."
+msgstr "Ошибка связи с Contractor"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/end_dialog.vala:214
+msgid "Save file"
+msgstr "Сохранить файл"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/end_dialog.vala:216
+msgid "Execute"
+msgstr "Выполнить"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/countdown.vala:27
+msgid "Recording starts in"
+msgstr "Запись начнётся через"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/countdown.vala:34
+msgid "Focus Eidete to stop recording"
+msgstr "Откройте Eidete снова для остановки записи"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/keyview.vala:48
+msgid "Left"
+msgstr "Слева"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/keyview.vala:51
+msgid "Middle"
+msgstr "В центре"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/Widgets/keyview.vala:54
+msgid "Right"
+msgstr "Справа"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/videobin_uploader.vala:41
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/videobin_uploader.vala:43
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/videobin_uploader.vala:45
+msgid "Optional"
+msgstr "Дополнительно"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/videobin_uploader.vala:48
+msgid "Upload"
+msgstr "Выгрузить"
+
+#: /home/cran/Documents/Projects/elementary/eidete/fix-for-freya/po/../src/videobin_uploader.vala:57
+msgid "Your email address for relocating your videos"
+msgstr "Ваш адрес электронной почты для загрузки видео"

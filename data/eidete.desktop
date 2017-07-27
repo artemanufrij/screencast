@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Application
+Name=Eidete
+Comment=Record screencasts
+GenericName=Screencaster
+Exec=eidete %U
+Icon=eidete
+Terminal=false
+Categories=GNOME;GTK;Utility;
+X-GNOME-Gettext-Domain=eidete
+Actions=Pause;Finish;
+
+[Desktop Action Pause]
+Name=Pause Recording
+Exec=eidete --pause
+
+[Desktop Action Finish]
+Name=Finish Recording
+Exec=eidete --finish

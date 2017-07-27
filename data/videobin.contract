@@ -1,0 +1,6 @@
+[Contractor Entry]
+Name=VideoBin
+Icon=videobin
+Description=Upload to videobin.org (Beta)
+MimeType=video
+Exec=videobin-uploader %u

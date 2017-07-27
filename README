@@ -1,0 +1,22 @@
+## Introduction
+
+A simple screencasting app for the elementary project
+
+Current Features
+- encoding to webm
+- selection of the area to be recorded
+- display of the pressed keys
+- audio recording
+
+For more information go to: https://launchpad.net/eidete
+
+## How to build
+Install dependencies
+    sudo apt-get build-dep eidete 
+OR 
+    sudo apt-get build-dep granite-demo
+    sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+
+    mkdir build && cd build
+    cmake -DCMAKE_INSTALL_PREFIX=/usr ../ 
+    make
