@@ -600,26 +600,16 @@ namespace Eidete {
 
             pipeline = new Gst.Pipeline ("screencast-pipe");
 
-#if GSTREAMER_0_10_IS_DEFINED
-            dynamic Element muxer = Gst.ElementFactory.make ("webmmux", "mux");
-            dynamic Element sink = Gst.ElementFactory.make ("filesink", "sink");
-#else
             var muxer = Gst.ElementFactory.make ("webmmux", "mux");
             var sink = Gst.ElementFactory.make ("filesink", "sink");
-#endif
 
             // video bin
             this.videobin = new Gst.Bin ("video");
 
             try {
-#if GSTREAMER_0_10_IS_DEFINED
-                videobin = (Gst.Bin) Gst.parse_bin_from_description (
-                        "ximagesrc name=\"videosrc\" ! video/x-raw-rgb, framerate=15/1 !
-                        ffmpegcolorspace ! vp8enc name=\"encoder\" ! queue", true);
-#else
+
                 videobin = (Gst.Bin) Gst.parse_bin_from_description (
                             "ximagesrc name=\"videosrc\" ! video/x-raw, framerate=24/1 ! videoconvert ! vp8enc name=\"encoder\" ! queue", true);
-#endif
             } catch (Error e) {
                 stderr.printf ("Error: %s\n", e.message);
             }
