@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 Artem Anufrij <artem.anufrij@live.de> -->
+<component type="desktop">
+    <id>com.github.artemanufrij.screencast.desktop</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <name>Screencast</name>
+    <summary>A simple screen recorder</summary>
+    <description>
+        <p>Current features
+* encoding to webm
+* selection of the area to be recorded
+* display of the pressed keys
+* audio recording</p>
+    </description>
+    <categories>
+        <category>Utility</category>
+    </categories>
+    <custom>
+        <value key="x-appcenter-color-primary">#3E9AD6</value>
+        <value key="x-appcenter-color-primary-text">rgb(255,255,255)</value>
+        <value key="x-appcenter-suggested-price">1</value>
+    </custom>
+    <developer_name>Artem Anufrij</developer_name>
+    <url type="homepage">https://github.com/artemanufrij/screencast</url>
+    <url type="bugtracker">https://github.com/artemanufrij/screencast/issues</url>
+    <url type="help">https://github.com/artemanufrij/screencast/issues</url>
+    <update_contact>artem.anufrij@live.de</update_contact>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/artemanufrij/screencast/master/Screenshot.png</image>
+        </screenshot>
+    </screenshots>
+</component>

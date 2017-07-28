@@ -1,0 +1,20 @@
+Source: com.github.artemanufrij.screencast
+Section: x11
+Priority: optional
+Maintainer: Artem Anufrij <artem.anufrij@live.de>
+Build-Depends: cmake (>= 2.8),
+               cmake-elementary,
+               debhelper (>= 9),
+               libgstreamer1.0-dev,
+               libgranite-dev,
+               libgstreamer1.0-dev,
+               libgstreamer-plugins-bad1.0-dev,
+               libgdk3.0-cil-dev
+               valac (>= 0.26)
+Standards-Version: 3.9.3
+
+Package: com.github.artemanufrij.imageburner
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Simple screen recorder
+ Simple screen recorder, written especially for elementary OS
