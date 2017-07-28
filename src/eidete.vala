@@ -156,18 +156,21 @@ namespace Eidete {
             recordingarea_combo.append ("custom", _("Custom"));
             recordingarea_combo.active = 0;
 
-            var use_comp_sounds = new Gtk.CheckButton ();
+            var use_comp_sounds = new Gtk.Switch ();
             use_comp_sounds.halign = Gtk.Align.START;
+            use_comp_sounds.valign = Gtk.Align.CENTER;
             use_comp_sounds.set_sensitive (false);
 
-            var use_audio = new Gtk.CheckButton ();
-            use_audio.halign =Gtk. Align.START;
+            var use_audio = new Gtk.Switch ();
+            use_audio.halign = Gtk.Align.START;
+            use_audio.valign = Gtk.Align.CENTER;
 
             var audio_source = new Gtk.ComboBoxText ();
             audio_source.append ("0", _("Default"));
             audio_source.active = 0;
             audio_source.hexpand = true;
             audio_source.set_sensitive (false);
+            audio_source.margin_left = 4;
 
             var audio_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             audio_box.pack_start (use_audio, false, true, 0);
@@ -203,16 +206,17 @@ namespace Eidete {
             // grid2
             var grid2 = new Gtk.Grid ();
 
-            var use_keyview = new Gtk.CheckButton ();
+            var use_keyview = new Gtk.Switch ();
             use_keyview.halign = Gtk.Align.START;
 
-            var use_clickview = new Gtk.CheckButton ();
+            var use_clickview = new Gtk.Switch ();
             use_clickview.halign = Gtk.Align.START;
 
-            var use_circle = new Gtk.CheckButton ();
+            var use_circle = new Gtk.Switch ();
             use_circle.halign = Gtk.Align.START;
 
             var circle_color = new Gtk.ColorButton ();
+            circle_color.margin_left = 4;
 
             var circle_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             circle_box.pack_start (use_circle, false);
@@ -373,9 +377,10 @@ namespace Eidete {
             });
 
             settings.audio = false;
-            use_audio.toggled.connect (() => {
-                settings.audio = use_audio.active;
-                audio_source.set_sensitive (use_audio.active);
+            use_audio.state_set.connect ((state) => {
+                settings.audio = state;
+                audio_source.set_sensitive (state);
+                return false;
             });
 
             Gdk.Screen.get_default ().monitors_changed.connect (() => {
@@ -386,18 +391,21 @@ namespace Eidete {
             });
 
             settings.keyview = false;
-            use_keyview.toggled.connect (() => {
-                settings.keyview = use_keyview.active;
+            use_keyview.state_set.connect ((state) => {
+                settings.keyview = state;
+                return false;
             });
 
             settings.clickview = false;
-            use_clickview.toggled.connect (() => {
-                settings.clickview = use_clickview.active;
+            use_clickview.state_set.connect ((state) => {
+                settings.clickview = state;
+                return false;
             });
 
             settings.mouse_circle = false;
-            use_circle.toggled.connect (() => {
-                settings.mouse_circle = use_circle.active;
+            use_circle.state_set.connect ((state) => {
+                settings.mouse_circle = state;
+                return false;
             });
 
             settings.mouse_circle_color = { 1, 1, 0, 0.3 };
@@ -696,10 +704,9 @@ namespace Eidete {
 
                     this.recording = false;
 
-                    var end = new Eidete.Widgets.EndDialog (this);
-                    end.display ();
-                    this.main_window.destroy ();
-
+                    if (save_file ()) {
+                        this.main_window.destroy ();
+                    }
                     break;
                 default:
                     break;
@@ -733,6 +740,33 @@ namespace Eidete {
                 this.main_window.icon_name = "media-playback-pause";
                 this.app_icon = "media-playback-pause";
             }
+        }
+
+        private bool save_file () {
+            var dialog = new Gtk.FileChooserDialog (_("Save"), this.main_window, Gtk.FileChooserAction.SAVE, _("OK"), Gtk.ResponseType.OK);
+            var source = File.new_for_path (settings.destination);
+            dialog.set_current_name (source.get_basename ());
+
+            var videos_folder = Environment.get_user_special_dir (UserDirectory.VIDEOS);
+
+            dialog.set_current_folder (videos_folder);
+            dialog.do_overwrite_confirmation = true;
+
+            var res = dialog.run ();
+
+            if (res == Gtk.ResponseType.OK) {
+                var destination = File.new_for_path (dialog.get_filename ());
+                try {
+
+                    source.copy (destination, FileCopyFlags.OVERWRITE);
+                } catch (GLib.Error e) {
+                    stderr.printf ("Error: %s\n", e.message);
+                }
+            }
+
+            dialog.destroy ();
+
+            return res == Gtk.ResponseType.OK;
         }
 
         /**

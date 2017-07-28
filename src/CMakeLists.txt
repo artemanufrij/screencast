@@ -3,7 +3,6 @@ vala_precompile(VALA_C
     Widgets/countdown.vala
     Widgets/keyview.vala
     Widgets/selectionarea.vala
-    Widgets/end_dialog.vala
     desktop_launcher.vala
     ${CMAKE_BINARY_DIR}/src/Config.vala
 PACKAGES
