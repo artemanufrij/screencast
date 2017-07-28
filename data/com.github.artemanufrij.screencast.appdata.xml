@@ -17,8 +17,8 @@
         <category>Utility</category>
     </categories>
     <custom>
-        <value key="x-appcenter-color-primary">#3E9AD6</value>
-        <value key="x-appcenter-color-primary-text">rgb(255,255,255)</value>
+        <value key="x-appcenter-color-primary">#3A1412</value>
+        <value key="x-appcenter-color-primary-text">rgb(255,244,230)</value>
         <value key="x-appcenter-suggested-price">1</value>
     </custom>
     <developer_name>Artem Anufrij</developer_name>
