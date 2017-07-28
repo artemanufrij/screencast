@@ -63,7 +63,7 @@ namespace Eidete {
             program_name = "Screencast";
             exec_name = "com.github.artemanufrij.screencast";
             application_id = exec_name;
-            app_launcher = application_id + ".desktop";
+            app_launcher = exec_name + ".desktop";
         }
 
         public dynamic Gst.Pipeline pipeline;
@@ -96,7 +96,7 @@ namespace Eidete {
 
             this.screen = Gdk.Screen.get_default ();
             this.main_window = new Gtk.Window ();
-            this.main_window.icon_name = "eidete";
+            this.main_window.icon_name = "artemanufrij.screencast";
             this.main_window.set_application (this);
             this.main_window.window_position = Gtk.WindowPosition.CENTER;
             this.main_window.set_resizable (false);
@@ -573,8 +573,7 @@ namespace Eidete {
             this.audiobin = new Gst.Bin ("audio");
 
             try {
-                audiobin = (Gst.Bin) Gst.parse_bin_from_description ("pulsesrc name=\"audiosrc\" !
-                        audioconvert ! audioresample ! audiorate ! vorbisenc ! queue", true);
+                audiobin = (Gst.Bin) Gst.parse_bin_from_description ("pulsesrc name=\"audiosrc\" ! audioconvert ! audioresample ! audiorate ! vorbisenc ! queue", true);
             } catch (Error e) {
                 stderr.printf ("Error: %s\n", e.message);
             }

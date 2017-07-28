@@ -1,7 +1,7 @@
 project (com.github.artemanufrij.screencast)
 cmake_minimum_required (VERSION 2.8)
 cmake_policy (VERSION 2.6)
-
+include (GNUInstallDirs)
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
@@ -38,6 +38,7 @@ find_package (Vala REQUIRED)
 include (ValaVersion)
 ensure_vala_version ("0.21.2" MINIMUM)
 
+# Translation files
 add_subdirectory (po)
 add_subdirectory (data)
 add_subdirectory (src)

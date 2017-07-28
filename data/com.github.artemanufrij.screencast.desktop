@@ -4,7 +4,7 @@ Name=Screencast
 Comment=Record screencasts
 GenericName=Screencaster
 Exec=com.github.artemanufrij.screencast %U
-Icon=eidete
+Icon=artemanufrij.screencast
 Terminal=false
 Categories=GNOME;GTK;Utility;
 X-GNOME-Gettext-Domain=com.github.artemanufrij.screencast
@@ -16,4 +16,4 @@ Exec=com.github.artemanufrij.screencast --pause
 
 [Desktop Action Finish]
 Name=Finish Recording
-Exec=eidecom.github.artemanufrij.screencastte --finish
+Exec=com.github.artemanufrij.screencast --finish
