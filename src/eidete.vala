@@ -729,8 +729,11 @@ namespace Eidete {
 
         private bool save_file () {
             var dialog = new Gtk.FileChooserDialog (_("Save"), this.main_window, Gtk.FileChooserAction.SAVE, _("OK"), Gtk.ResponseType.OK);
-            var source = File.new_for_path (settings.destination);
-            dialog.set_current_name (source.get_basename ());
+
+            var date_time = new GLib.DateTime.now_local ().format ("%Y-%m-%d %H.%M.%S");
+            var file_name = _("Screencast from %s").printf (date_time);
+
+            dialog.set_current_name (file_name);
 
             var videos_folder = Environment.get_user_special_dir (UserDirectory.VIDEOS);
 
@@ -742,8 +745,8 @@ namespace Eidete {
             if (res == Gtk.ResponseType.OK) {
                 var destination = File.new_for_path (dialog.get_filename ());
                 try {
-
-                    source.copy (destination, FileCopyFlags.OVERWRITE);
+                    var source = File.new_for_path (settings.destination);
+                    source.move (destination, FileCopyFlags.OVERWRITE);
                 } catch (GLib.Error e) {
                     stderr.printf ("Error: %s\n", e.message);
                 }
