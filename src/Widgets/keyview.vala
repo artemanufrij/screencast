@@ -15,7 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Eidete.Widgets {
+namespace Screencast.Widgets {
     public class YellowCircle : Granite.Widgets.CompositedWindow {
         public YellowCircle (Gdk.RGBA color) {
             this.skip_pager_hint = true;
@@ -520,8 +520,9 @@ namespace Eidete.Widgets {
 
         public void capture () {
             try {
-                Thread.create<void*> (this.intercept_key_thread, true);
-            } catch (ThreadError e) {
+                //Thread.create<void*> (this.intercept_key_thread, true);
+                 new Thread<void*>.try (null, this.intercept_key_thread);
+            } catch (Error e) {
                 stderr.printf (e.message);
             }
         }

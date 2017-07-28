@@ -15,7 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Eidete.Widgets {
+namespace Screencast.Widgets {
     public class SelectionArea : Granite.Widgets.CompositedWindow {
         private int[,] pos;
         public bool discrete;

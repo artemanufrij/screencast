@@ -1,21 +1,33 @@
-//
-//  Copyright (C) 2011-2015 Eidete Developers
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-//
+/*-
+ * Copyright (c) 2011-2015 Eidete Developers
+ * Copyright (c) 2017-2017 Artem Anufrij <artem.anufrij@live.de>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * The Noise authors hereby grant permission for non-GPL compatible
+ * GStreamer plugins to be used and distributed together with GStreamer
+ * and Noise. This permission is above and beyond the permissions granted
+ * by the GPL license by which Noise is covered. If you modify this code
+ * you may extend this exception to your version of the code, but you are not
+ * obligated to do so. If you do not wish to do so, delete this exception
+ * statement from your version.
+ *
+ * Authored by: Artem Anufrij <artem.anufrij@live.de>
+ */
 
-namespace Eidete {
+namespace Screencast {
+
     class LLabel : Gtk.Label {
         public LLabel (string label) {
             this.set_halign (Gtk.Align.START);
@@ -58,26 +70,18 @@ namespace Eidete {
         public string destination;
     }
 
-    public class EideteApp : Granite.Application {
-        construct {
-            program_name = "Screencast";
-            exec_name = "com.github.artemanufrij.screencast";
-            application_id = exec_name;
-            app_launcher = exec_name + ".desktop";
-        }
+    public class MainWindow : Gtk.ApplicationWindow {
 
         public dynamic Gst.Pipeline pipeline;
 
-        public Gtk.Window main_window;
-        public Eidete.Widgets.KeyView keyview;
-        public Eidete.Widgets.SelectionArea selectionarea;
+        public Screencast.Widgets.KeyView keyview;
+        public Screencast.Widgets.SelectionArea selectionarea;
         private Gtk.Stack tabs;
         private Gtk.Grid pause_grid;
         private Gtk.Grid main_box;
         private Gtk.Box home_buttons;
         private Gtk.StackSwitcher stack_switcher;
         public Wnck.Window win;
-        public Gdk.Screen screen;
         public Gdk.Rectangle monitor_rec;
 
         public Settings settings;
@@ -88,28 +92,28 @@ namespace Eidete {
         public Gst.Bin videobin;
         public Gst.Bin audiobin;
 
-        public EideteApp () {
+
+        public MainWindow () {
+            start_and_build ();
         }
 
         public void start_and_build () {
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
 
             this.screen = Gdk.Screen.get_default ();
-            this.main_window = new Gtk.Window ();
-            this.main_window.icon_name = "artemanufrij.screencast";
-            this.main_window.set_application (this);
-            this.main_window.window_position = Gtk.WindowPosition.CENTER;
-            this.main_window.set_resizable (false);
+            this.icon_name = "artemanufrij.screencast";
+            this.window_position = Gtk.WindowPosition.CENTER;
+            this.set_resizable (false);
 
             /* Use CSD */
             var header = new Gtk.HeaderBar ();
-            header.title = program_name;
+            header.title = _("Screencast");
             header.set_show_close_button (true);
             header.get_style_context ().remove_class ("header-bar");
 
-            this.main_window.set_titlebar (header);
+            this.set_titlebar (header);
 
-            if (!this.main_window.is_composited ()) {
+            if (!this.is_composited ()) {
                 warning ("Compositing is not supported. No transparency available.");
             }
 
@@ -261,24 +265,24 @@ namespace Eidete {
             main_box.attach (home_buttons, 0, 3, 1, 1);
             main_box.margin = 12;
 
-            this.main_window.add (main_box);
+            this.add (main_box);
 
-            this.main_window.show_all ();
-            this.main_window.set_default (start_bt);
-            this.main_window.present ();
+            this.show_all ();
+            this.set_default (start_bt);
+            this.present ();
 
             /*
               Events
             */
 
             cancel_bt.clicked.connect (() => {
-                this.main_window.destroy ();
+                this.destroy ();
             });
 
             start_bt.clicked.connect (() => {
-                var count = new Eidete.Widgets.Countdown ();
-                this.main_window.iconify ();
-                count.start (this);
+                var count = new Screencast.Widgets.Countdown ();
+                this.iconify ();
+                count.start (this.application as Screencast.ScreencastApp);
             });
 
             settings.monitor = 0;
@@ -306,7 +310,7 @@ namespace Eidete {
 
             recordingarea_combo.changed.connect (() => {
                 if (recordingarea_combo.active_id != "full"){
-                    selectionarea = new Eidete.Widgets.SelectionArea ();
+                    selectionarea = new Screencast.Widgets.SelectionArea ();
                     selectionarea.show_all ();
                     width.set_sensitive (true);
                     height.set_sensitive (true);
@@ -323,8 +327,8 @@ namespace Eidete {
 
                     selectionarea.focus_in_event.connect ((ev) => {
                         if (this.recording){
-                            this.main_window.deiconify ();
-                            this.main_window.present ();
+                            this.deiconify ();
+                            this.present ();
                         }
 
                         return false;
@@ -425,16 +429,16 @@ namespace Eidete {
                 Wnck.Screen.get_default ().disconnect (handle);
             });
 
-            this.main_window.focus_in_event.connect ((ev) => {
+            this.focus_in_event.connect ((ev) => {
                 if (this.selectionarea != null && !this.selectionarea.not_visible) {
                     this.selectionarea.present ();
-                    this.main_window.present ();
+                    this.present ();
                 }
 
                 return false;
             });
 
-            this.main_window.destroy.connect (() => {
+            this.destroy.connect (() => {
                 if (recording) {
                     finish_recording ();
                 }
@@ -455,20 +459,9 @@ namespace Eidete {
             message ("Gtk runtime version: %u.%u.%u", Gtk.get_major_version (), Gtk.get_minor_version (), Gtk.get_micro_version ());
         }
 
-        public override void activate () {
-            if (this.get_windows ().length () == 0) {
-                this.start_and_build ();
-            } else {
-                if (pause_rec)
-                    this.main_window.present ();
-                else if (finish_rec)
-                    finish_recording ();
-            }
-        }
-
         private void build_pause_ui () {
             pause_grid = new Gtk.Grid ();
-            // this.main_window.title = _("Recording paused");
+            // this.title = _("Recording paused");
 
             var img_text_grid = new Gtk.Grid ();
             var text_grid = new Gtk.Grid ();
@@ -513,14 +506,10 @@ namespace Eidete {
             pause_grid.attach (buttons, 0, 2, 1, 1);
 
             stop_bt.can_default = true;
-            this.main_window.set_default (stop_bt);
-
-            /*
-              Events
-            */
+            this.set_default (stop_bt);
 
             cancel_bt.clicked.connect (() => {
-                this.main_window.destroy ();
+                this.destroy ();
             });
 
             stop_bt.clicked.connect (() => {
@@ -528,7 +517,7 @@ namespace Eidete {
             });
 
             continue_bt.clicked.connect (() => {
-                this.main_window.iconify ();
+                this.iconify ();
                 this.pipeline.set_state (Gst.State.PLAYING);
                 this.recording = true;
 
@@ -538,12 +527,11 @@ namespace Eidete {
 
         public void record () {
             if (settings.keyview || settings.clickview || settings.mouse_circle) {
-                keyview = new Eidete.Widgets.KeyView (settings.keyview, settings.clickview,
-                    settings.mouse_circle, settings.mouse_circle_color);
+                keyview = new Screencast.Widgets.KeyView (settings.keyview, settings.clickview, settings.mouse_circle, settings.mouse_circle_color);
                 keyview.focus_in_event.connect ((ev) => {
                     if (this.recording) {
-                        this.main_window.deiconify ();
-                        this.main_window.present ();
+                        this.deiconify ();
+                        this.present ();
                     }
 
                     return false;
@@ -562,9 +550,7 @@ namespace Eidete {
             this.videobin = new Gst.Bin ("video");
 
             try {
-
-                videobin = (Gst.Bin) Gst.parse_bin_from_description (
-                            "ximagesrc name=\"videosrc\" ! video/x-raw, framerate=24/1 ! videoconvert ! vp8enc name=\"encoder\" ! queue", true);
+                videobin = (Gst.Bin) Gst.parse_bin_from_description ("ximagesrc name=\"videosrc\" ! video/x-raw, framerate=24/1 ! videoconvert ! vp8enc name=\"encoder\" ! queue", true);
             } catch (Error e) {
                 stderr.printf ("Error: %s\n", e.message);
             }
@@ -601,7 +587,7 @@ namespace Eidete {
             src.set ("endx",   this.settings.ex);
             src.set ("endy",   this.settings.ey);
             src.set ("use-damage", false);
-            src.set ("screen-num", this.settings.monitor);
+            src.set ("display-name", this.settings.monitor);
 
             // videobin.get_by_name ("encoder").set  ("mode", 1);
             var encoder = videobin.get_by_name ("encoder");
@@ -678,7 +664,7 @@ namespace Eidete {
 
                     break;
                 case Gst.MessageType.EOS:
-                    debug ("received EOS\n");
+                    debug ("received EOS");
 
                     pipeline.set_state (Gst.State.NULL);
 
@@ -686,7 +672,7 @@ namespace Eidete {
 
                     if (save_file ()) {
                         show_tabs ();
-                        this.main_window.title = program_name;
+                        this.title = _("Screencast");
                     }
                     break;
                 default:
@@ -696,24 +682,15 @@ namespace Eidete {
             return true;
         }
 
-        // only visuals
         public void switch_to_paused (bool to_normal) {
-            if (to_normal) {
-                this.main_window.title = _("Recording paused");
-
+            if (tabs.visible) {
                 show_record ();
+            }
 
-                this.main_window.icon_name = "eidete";
-                this.app_icon = "eidete";
+            if (to_normal) {
+                this.title = _("Recording paused");
             } else {
-                this.main_window.title = _("Pause recording");
-
-                if (tabs.visible) {
-                    show_record ();
-                }
-
-                this.main_window.icon_name = "media-playback-pause";
-                this.app_icon = "media-playback-pause";
+                this.title = _("Pause recording");
             }
         }
 
@@ -723,7 +700,7 @@ namespace Eidete {
             home_buttons.show ();
             pause_grid.hide ();
         }
-        
+
         private void show_record () {
             tabs.hide ();
             stack_switcher.hide ();
@@ -732,12 +709,12 @@ namespace Eidete {
         }
 
         private bool save_file () {
-            var dialog = new Gtk.FileChooserDialog (_("Save"), this.main_window, Gtk.FileChooserAction.SAVE, _("OK"), Gtk.ResponseType.OK);
+            var dialog = new Gtk.FileChooserDialog (_("Save"), this, Gtk.FileChooserAction.SAVE, _("OK"), Gtk.ResponseType.OK);
 
             var date_time = new GLib.DateTime.now_local ().format ("%Y-%m-%d %H.%M.%S");
             var file_name = _("Screencast from %s").printf (date_time);
 
-            dialog.set_current_name (file_name);
+            dialog.set_current_name (file_name + ".webm");
 
             var videos_folder = Environment.get_user_special_dir (UserDirectory.VIDEOS);
 
@@ -761,52 +738,17 @@ namespace Eidete {
             return res == Gtk.ResponseType.OK;
         }
 
-        /**
-         * Displays an error dialog with the given message to the user
-         *
-         * @param error The message to display
-         * @param fatal Quit eidete after the user dismissed the dialog
-         */
         private void display_error (string error, bool fatal) {
-            var dialog = new Gtk.MessageDialog (main_window, Gtk.DialogFlags.MODAL,
+            var dialog = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL,
                     Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, error);
             dialog.show_all ();
             dialog.response.connect (() => {
                 dialog.destroy ();
 
                 if (fatal)
-                    main_window.destroy ();
+                    this.destroy ();
             });
             dialog.run ();
         }
     }
-}
-
-Eidete.EideteApp eidete;
-
-bool pause_rec;
-bool finish_rec;
-
-const OptionEntry[] entries = {
-    { "pause", 'n', 0, OptionArg.NONE, ref pause_rec, N_("Pause Recording"), "" },
-    { "finish", 'n', 0, OptionArg.NONE, ref finish_rec, N_("Finish Recording"), "" },
-    { null }
-};
-
-public static int main (string [] args) {
-    var context = new OptionContext ("ctx");
-    context.add_main_entries (entries, "eidete");
-    context.add_group (Gtk.get_option_group (true));
-
-    try {
-        context.parse (ref args);
-    } catch (Error e) {
-        error ("Error: " + e.message);
-    }
-
-    Gst.init (ref args);
-
-    eidete = new Eidete.EideteApp ();
-
-    return eidete.run (args);
 }

@@ -15,7 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Eidete.Widgets {
+namespace Screencast.Widgets {
     public class Countdown : Granite.Widgets.CompositedWindow {
         public Gtk.Label count;
         public int time;
@@ -65,7 +65,7 @@ namespace Eidete.Widgets {
             return base.draw (ctx);
         }
 
-        public void start (EideteApp app) {
+        public void start (ScreencastApp app) {
             this.show_all ();
 
             Timeout.add (1000, () => {
@@ -78,9 +78,9 @@ namespace Eidete.Widgets {
 
                     // let the countdown disappear before starting
                     Timeout.add (100, () => {
-                        app.record ();
-                        app.main_window.iconify ();
-                        app.switch_to_paused (false);
+                        app.mainwindow.record ();
+                        app.mainwindow.iconify ();
+                        app.mainwindow.switch_to_paused (false);
 
                         return false;
                     });

@@ -8,12 +8,3 @@ Icon=artemanufrij.screencast
 Terminal=false
 Categories=GNOME;GTK;Utility;
 X-GNOME-Gettext-Domain=com.github.artemanufrij.screencast
-Actions=Pause;Finish;
-
-[Desktop Action Pause]
-Name=Pause Recording
-Exec=com.github.artemanufrij.screencast --pause
-
-[Desktop Action Finish]
-Name=Finish Recording
-Exec=com.github.artemanufrij.screencast --finish

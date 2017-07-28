@@ -1,5 +1,6 @@
 vala_precompile(VALA_C
-    eidete.vala
+    Application.vala
+    MainWindow.vala
     Widgets/countdown.vala
     Widgets/keyview.vala
     Widgets/selectionarea.vala
@@ -17,7 +18,6 @@ OPTIONS
     --thread
     --vapidir=${CMAKE_BINARY_DIR}/vapi/
     )
-
 
 add_executable (${CMAKE_PROJECT_NAME} ${VALA_C} keycapture.c)
 install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION bin)
