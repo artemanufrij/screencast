@@ -96,7 +96,7 @@ namespace Eidete {
 
             this.screen = Gdk.Screen.get_default ();
             this.main_window = new Gtk.Window ();
-            this.main_window.icon_name = exec_name;
+            this.main_window.icon_name = "eidete";
             this.main_window.set_application (this);
             this.main_window.window_position = Gtk.WindowPosition.CENTER;
             this.main_window.set_resizable (false);
@@ -112,10 +112,6 @@ namespace Eidete {
             if (!this.main_window.is_composited ()) {
                 warning ("Compositing is not supported. No transparency available.");
             }
-
-            /*
-              UI
-            */
 
             tabs = new Gtk.Stack ();
 
@@ -415,9 +411,6 @@ namespace Eidete {
                 settings.mouse_circle_color = circle_color.rgba;
             });
 
-            settings.destination = GLib.Environment.get_tmp_dir () +
-                    "/screencast" + new GLib.DateTime.now_local ().to_unix ().to_string () + ".webm";
-
             ulong handle = 0;
             handle = Wnck.Screen.get_default ().active_window_changed.connect (() => {
                 this.win = Wnck.Screen.get_default ().get_active_window ();
@@ -440,20 +433,6 @@ namespace Eidete {
 
                 return false;
             });
-
-/* disabled for now until mutter supports it better
-            this.main_window.visibility_notify_event.connect ((ev) => {
-                if (this.recording && ev.state == 0){
-                    debug ("pausing recording");
-
-                    pipeline.set_state (State.PAUSED);
-                    this.recording = false;
-                    switch_to_paused (true);
-                }
-
-                return false;
-            });
-*/
 
             this.main_window.destroy.connect (() => {
                 if (recording) {
@@ -610,6 +589,8 @@ namespace Eidete {
 
             //configure
             assert (sink != null);
+            settings.destination = GLib.Environment.get_tmp_dir () +
+                    "/screencast_" + new GLib.DateTime.now_local ().to_unix ().to_string () + ".webm";
             sink.set ("location", settings.destination);
 
             var src = videobin.get_by_name ("videosrc");
@@ -705,7 +686,11 @@ namespace Eidete {
                     this.recording = false;
 
                     if (save_file ()) {
-                        this.main_window.destroy ();
+                        tabs.show ();
+                        stack_switcher.show ();
+                        home_buttons.show ();
+                        pause_grid.hide ();
+                        this.main_window.title = program_name;
                     }
                     break;
                 default:
