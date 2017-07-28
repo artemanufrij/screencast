@@ -9,7 +9,7 @@ Build-Depends: cmake (>= 2.8),
                libgranite-dev,
                libgstreamer1.0-dev,
                libgstreamer-plugins-bad1.0-dev,
-               libwnck-3.0,
+               libwnck-3-dev,
                valac (>= 0.26)
 Standards-Version: 3.9.3
 
