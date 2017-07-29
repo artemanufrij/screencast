@@ -1,4 +1,5 @@
 install (FILES com.github.artemanufrij.screencast.desktop DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/applications)
+install (FILES com.github.artemanufrij.screencast.appdata.xml DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/metainfo)
 
 install (FILES icons/48/artemanufrij.screencast.svg DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/icons/hicolor/)
 install (FILES icons/32/artemanufrij.screencast.svg DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/icons/hicolor/32x32/apps/)
