@@ -67,6 +67,7 @@ namespace Screencast {
         private Gtk.Grid main_box;
         private Gtk.Box home_buttons;
         private Gtk.StackSwitcher stack_switcher;
+        private Gtk.ComboBoxText recordingarea_combo;
         public Wnck.Window win;
         public Gdk.Rectangle monitor_rec;
 
@@ -74,10 +75,10 @@ namespace Screencast {
 
         public bool recording;
         public bool typing_size;
+        private int scale;
 
         public Gst.Bin videobin;
         public Gst.Bin audiobin;
-
 
         public MainWindow () {
             start_and_build ();
@@ -126,7 +127,7 @@ namespace Screencast {
                 monitors_combo.set_sensitive (false);
 
             var primary = screen.get_primary_monitor ();
-            var scale = screen.get_monitor_scale_factor (primary);
+            scale = screen.get_monitor_scale_factor (primary);
             var width = new Gtk.SpinButton.with_range (50, screen.get_width () * scale, 1);
             width.max_length = 4;
             width.margin_left = 1;
@@ -139,7 +140,7 @@ namespace Screencast {
             width.halign = Gtk.Align.START;
             height.halign = Gtk.Align.START;
 
-            var recordingarea_combo = new Gtk.ComboBoxText ();
+            recordingarea_combo = new Gtk.ComboBoxText ();
             recordingarea_combo.append ("full", _("Fullscreen"));
             recordingarea_combo.append ("custom", _("Custom"));
             recordingarea_combo.active = 0;
@@ -392,11 +393,11 @@ namespace Screencast {
             });
 
             circle_color.use_alpha = true;
-          
+
             Gdk.RGBA circle = { 0, 0, 0, 0};
             circle.parse (settings.mouse_circle_color);
-            circle_color.rgba = circle;            
-            
+            circle_color.rgba = circle;
+
             circle_color.color_set.connect (() => {
                 settings.mouse_circle_color = circle_color.rgba.to_string ();
             });
@@ -572,10 +573,22 @@ namespace Screencast {
 
             assert (src != null);
 
-            src.set ("startx", this.settings.sx);
-            src.set ("starty", this.settings.sy);
-            src.set ("endx",   this.settings.ex);
-            src.set ("endy",   this.settings.ey);
+            int startx = this.monitor_rec.x * scale;
+            int starty = this.monitor_rec.y * scale;
+            int endx = settings.sx + this.monitor_rec.width * scale - 1;
+            int endy = settings.sy + this.monitor_rec.height * scale - 1;
+
+            if (recordingarea_combo.active_id != "full")
+            {
+                startx = settings.sx;
+                starty = settings.sy;
+                endx = settings.ex;
+                endy = settings.ey;
+            }
+            src.set ("startx", startx);
+            src.set ("starty", starty);
+            src.set ("endx",   endx);
+            src.set ("endy",   endy);
             src.set ("use-damage", false);
             src.set ("display-name", this.settings.monitor);
 
