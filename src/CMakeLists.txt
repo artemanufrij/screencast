@@ -5,6 +5,7 @@ vala_precompile(VALA_C
     Widgets/keyview.vala
     Widgets/selectionarea.vala
     desktop_launcher.vala
+    Settings.vala
     ${CMAKE_BINARY_DIR}/src/Config.vala
 PACKAGES
     granite

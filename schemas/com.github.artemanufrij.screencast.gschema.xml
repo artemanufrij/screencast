@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+    <schema path="/com/github/artemanufrij/screencast/" id="com.github.artemanufrij.screencast" gettext-domain="com.github.artemanufrij.screencast">
+        <key name="keyview" type="b">
+            <default>false</default>
+            <summary>Show pressed keys on screen</summary>
+            <description>Show pressed keys on screen</description>
+        </key>
+        <key name="clickview" type="b">
+            <default>false</default>
+            <summary>Show mouse clicks on screen</summary>
+            <description>Show mouse clicks on screen</description>
+        </key>
+        <key name="mouse-circle" type="b">
+            <default>false</default>
+            <summary>Show circle around the cursor</summary>
+            <description>Show circle around the cursor</description>
+        </key>
+        <key name="mouse-circle-color" type="s">
+            <default>"rgba(255,255,0,0.3)"</default>
+            <summary>Color of circle around the cursor</summary>
+            <description>Color of circle around the cursor</description>
+        </key>
+        <key name="audio" type="b">
+            <default>false</default>
+            <summary>Record sound from microphone</summary>
+            <description>Record sound from microphone</description>
+        </key>
+        <key name="monitor" type="i">
+            <default>0</default>
+            <summary>Monitor</summary>
+            <description>Monitor</description>
+        </key>
+        <key name="sx" type="i">
+            <default>0</default>
+            <summary>Start X</summary>
+            <description>Start X</description>
+        </key>
+        <key name="sy" type="i">
+            <default>0</default>
+            <summary>Start Y</summary>
+            <description>Start Y</description>
+        </key>
+        <key name="ex" type="i">
+            <default>640</default>
+            <summary>End X</summary>
+            <description>End X</description>
+        </key>
+        <key name="ey" type="i">
+            <default>480</default>
+            <summary>End Y</summary>
+            <description>End Y</description>
+        </key>
+        <key name="destination" type="s">
+            <default>""</default>
+            <summary>Destination for temp files</summary>
+            <description>Destination for temp files</description>
+        </key>
+
+    </schema>
+</schemalist>

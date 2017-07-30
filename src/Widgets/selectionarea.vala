@@ -30,7 +30,6 @@ namespace Screencast.Widgets {
             this.stick ();
             this.resizable = true;
             this.set_has_resize_grip (false);
-            this.set_default_geometry (640, 480);
             this.events = Gdk.EventMask.BUTTON_MOTION_MASK | Gdk.EventMask.BUTTON1_MOTION_MASK |
                     Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK;
             this.skip_taskbar_hint = true;

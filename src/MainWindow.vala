@@ -56,20 +56,6 @@ namespace Screencast {
         }
     }
 
-    public struct Settings {
-        public int sx;
-        public int sy;
-        public int ex;
-        public int ey;
-        public int monitor;
-        public bool audio;
-        public bool keyview;
-        public bool clickview;
-        public bool mouse_circle;
-        public Gdk.RGBA mouse_circle_color;
-        public string destination;
-    }
-
     public class MainWindow : Gtk.ApplicationWindow {
 
         public dynamic Gst.Pipeline pipeline;
@@ -99,6 +85,8 @@ namespace Screencast {
 
         public void start_and_build () {
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
+
+            settings = Settings.get_default ();
 
             this.screen = Gdk.Screen.get_default ();
             this.icon_name = "artemanufrij.screencast";
@@ -303,17 +291,30 @@ namespace Screencast {
             this.screen.get_monitor_geometry (settings.monitor, out this.monitor_rec);
             scale = screen.get_monitor_scale_factor (settings.monitor);
 
-            settings.sx = this.monitor_rec.x * scale;
+            /*settings.sx = this.monitor_rec.x * scale;
             settings.sy = this.monitor_rec.y * scale;
             settings.ex = settings.sx + this.monitor_rec.width * scale - 1;
             settings.ey = settings.sy + this.monitor_rec.height * scale - 1;
-
+*/
             recordingarea_combo.changed.connect (() => {
                 if (recordingarea_combo.active_id != "full"){
                     selectionarea = new Screencast.Widgets.SelectionArea ();
+
+                    int rec_widht = settings.ex - settings.sx;
+                    if (rec_widht < 50) {
+                        rec_widht = 50;
+                    }
+
+                    int rec_height = settings.ey - settings.sy;
+                    if (rec_height < 50) {
+                        rec_height = 50;
+                    }
+                    selectionarea.resize (rec_widht, rec_height);
+                    selectionarea.move (settings.sx, settings.sy);
+
                     selectionarea.show_all ();
-                    width.set_sensitive (true);
-                    height.set_sensitive (true);
+                    width.sensitive = true;
+                    height.sensitive = true;
                     selectionarea.geometry_changed.connect ((x, y, w, h) => {
                         if (!typing_size){
                             width.value  = (int) w;
@@ -345,38 +346,20 @@ namespace Screencast {
                     settings.ex = settings.sx + this.monitor_rec.width * _scale - 1;
                     settings.ey = settings.sy + this.monitor_rec.height * _scale - 1;
 
-                    width.set_sensitive (false);
-                    height.set_sensitive (false);
+                    width.sensitive = false;
+                    height.sensitive = false;
                 }
             });
 
-            width.key_release_event.connect ((e) => {
+            width.value_changed.connect (() => {
                 selectionarea.resize ((int) width.value, (int) height.value);
-                typing_size = true;
-
-                return false;
             });
 
-            width.focus_out_event.connect ((e) => {
-                typing_size = false;
-
-                return false;
-            });
-
-            height.key_release_event.connect ((e) => {
+            height.value_changed.connect (() => {
                 selectionarea.resize ((int) width.value, (int) height.value);
-                typing_size = true;
-
-                return false;
             });
 
-            height.focus_out_event.connect ((e) => {
-                typing_size = false;
-
-                return false;
-            });
-
-            settings.audio = false;
+            use_audio.state = settings.audio;
             use_audio.state_set.connect ((state) => {
                 settings.audio = state;
                 audio_source.set_sensitive (state);
@@ -390,29 +373,32 @@ namespace Screencast {
                     monitors_combo.set_sensitive (false);
             });
 
-            settings.keyview = false;
+            use_keyview.state = settings.keyview;
             use_keyview.state_set.connect ((state) => {
                 settings.keyview = state;
                 return false;
             });
 
-            settings.clickview = false;
+            use_clickview.state = settings.clickview;
             use_clickview.state_set.connect ((state) => {
                 settings.clickview = state;
                 return false;
             });
 
-            settings.mouse_circle = false;
+            use_circle.state = settings.mouse_circle;
             use_circle.state_set.connect ((state) => {
                 settings.mouse_circle = state;
                 return false;
             });
 
-            settings.mouse_circle_color = { 1, 1, 0, 0.3 };
             circle_color.use_alpha = true;
-            circle_color.rgba = settings.mouse_circle_color;
+          
+            Gdk.RGBA circle = { 0, 0, 0, 0};
+            circle.parse (settings.mouse_circle_color);
+            circle_color.rgba = circle;            
+            
             circle_color.color_set.connect (() => {
-                settings.mouse_circle_color = circle_color.rgba;
+                settings.mouse_circle_color = circle_color.rgba.to_string ();
             });
 
             ulong handle = 0;
@@ -442,6 +428,9 @@ namespace Screencast {
                 if (recording) {
                     finish_recording ();
                 }
+                if (selectionarea != null) {
+                    selectionarea.destroy ();
+                }
             });
 
             Granite.Services.Logger.initialize ("Eidete");
@@ -461,7 +450,6 @@ namespace Screencast {
 
         private void build_pause_ui () {
             pause_grid = new Gtk.Grid ();
-            // this.title = _("Recording paused");
 
             var img_text_grid = new Gtk.Grid ();
             var text_grid = new Gtk.Grid ();
@@ -527,7 +515,9 @@ namespace Screencast {
 
         public void record () {
             if (settings.keyview || settings.clickview || settings.mouse_circle) {
-                keyview = new Screencast.Widgets.KeyView (settings.keyview, settings.clickview, settings.mouse_circle, settings.mouse_circle_color);
+                Gdk.RGBA circle = { 0, 0, 0, 0};
+                circle.parse (settings.mouse_circle_color);
+                keyview = new Screencast.Widgets.KeyView (settings.keyview, settings.clickview, settings.mouse_circle, circle);
                 keyview.focus_in_event.connect ((ev) => {
                     if (this.recording) {
                         this.deiconify ();
