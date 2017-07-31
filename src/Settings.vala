@@ -45,6 +45,7 @@ public class Screencast.Settings : Granite.Services.Settings {
     public bool mouse_circle { get; set; }
     public string mouse_circle_color { get; set; }
     public string destination { get; set; }
+    public string save_folder { get; set; }
 
     private Settings () {
         base ("com.github.artemanufrij.screencast");

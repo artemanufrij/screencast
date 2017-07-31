@@ -718,10 +718,7 @@ namespace Screencast {
             var file_name = _("Screencast from %s").printf (date_time);
 
             dialog.set_current_name (file_name + ".webm");
-
-            var videos_folder = Environment.get_user_special_dir (UserDirectory.VIDEOS);
-
-            dialog.set_current_folder (videos_folder);
+            dialog.set_current_folder (settings.save_folder);
             dialog.do_overwrite_confirmation = true;
 
             var res = dialog.run ();

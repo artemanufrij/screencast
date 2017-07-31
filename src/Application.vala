@@ -55,6 +55,17 @@ namespace Screencast {
                 return;
             }
 
+            var settings  = Settings.get_default ();
+            settings.save_folder = Environment.get_user_special_dir (UserDirectory.VIDEOS) + "/" + _("Screencasts");
+            try {
+                File screecast_folder = File.new_for_path (settings.save_folder);
+                if (!screecast_folder.query_exists ()) {
+                    screecast_folder.make_directory ();
+                }
+            } catch (GLib.Error e) {
+                warning (e.message);
+            }
+
             mainwindow = new MainWindow ();
             mainwindow.set_application(this);
         }
