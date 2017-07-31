@@ -56,6 +56,10 @@
             <summary>Destination for temp files</summary>
             <description>Destination for temp files</description>
         </key>
-
+        <key name="save-folder" type="s">
+            <default>""</default>
+            <summary>Folder for screencasts</summary>
+            <description>Foder for screencasts</description>
+        </key>
     </schema>
 </schemalist>

@@ -392,11 +392,11 @@ namespace Screencast {
             });
 
             circle_color.use_alpha = true;
-          
+
             Gdk.RGBA circle = { 0, 0, 0, 0};
             circle.parse (settings.mouse_circle_color);
-            circle_color.rgba = circle;            
-            
+            circle_color.rgba = circle;
+
             circle_color.color_set.connect (() => {
                 settings.mouse_circle_color = circle_color.rgba.to_string ();
             });
@@ -705,10 +705,7 @@ namespace Screencast {
             var file_name = _("Screencast from %s").printf (date_time);
 
             dialog.set_current_name (file_name + ".webm");
-
-            var videos_folder = Environment.get_user_special_dir (UserDirectory.VIDEOS);
-
-            dialog.set_current_folder (videos_folder);
+            dialog.set_current_folder (settings.save_folder);
             dialog.do_overwrite_confirmation = true;
 
             var res = dialog.run ();
