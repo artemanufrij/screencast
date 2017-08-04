@@ -236,7 +236,7 @@ namespace Screencast {
             start_bt.get_style_context ().add_class ("noundo");
             start_bt.get_style_context ().add_class ("suggested-action");
 
-            var cancel_bt = new Gtk.Button.with_label (_("Cancel"));
+            var cancel_bt = new Gtk.Button.with_label (_("Close"));
 
             home_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
             home_buttons.homogeneous = true;
