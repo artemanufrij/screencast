@@ -42,7 +42,7 @@ namespace Screencast.Widgets {
             this.count = new Gtk.Label ("<span size='40000' color='#fbfbfb'>" + time.to_string () + "</span>");
             this.count.use_markup = true;
 
-            var tipp = new Gtk.Label("<span size='10000' color='#fbfbfb' font-style='italic'>" + _("Focus Eidete to stop recording") + "</span>");
+            var tipp = new Gtk.Label("<span size='10000' color='#fbfbfb' font-style='italic'>" + _("Focus Screencast to stop recording") + "</span>");
             tipp.use_markup = true;
             tipp.margin_top = 20;
 
