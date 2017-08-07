@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-05 10:06+0200\n"
-"PO-Revision-Date: 2017-08-05 10:12+0200\n"
+"POT-Creation-Date: 2017-08-07 14:42+0200\n"
+"PO-Revision-Date: 2017-08-07 14:45+0200\n"
 "Last-Translator: Artem Anufrij <artem.anufrij@live.de>\n"
 "Language-Team: Deutsch <artem.anufrij@live.de>\n"
 "Language: de\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//Application.vala:59
 msgid "Screencasts"
-msgstr "Bildschirmaufnahmen"
+msgstr "Bildschirmaufzeichnungen"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/keyview.vala:61
 msgid "Left"
@@ -37,7 +37,7 @@ msgstr "Rechts"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/countdown.vala:38
 msgid "Recording starts in"
-msgstr "Aufnahme startet in"
+msgstr "Aufzeichnung startet in"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/countdown.vala:45
 msgid "Focus Screencast to stop recording"
@@ -45,11 +45,11 @@ msgstr "Fokusiere die Anwendung, um die Aufnahme zu stoppen"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//desktop_launcher.vala:22
 msgid "Record screencasts"
-msgstr ""
+msgstr "Zeichne den Bildschirm auf"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//desktop_launcher.vala:23
 msgid "Screencaster"
-msgstr ""
+msgstr "Bildschirmaufzeichner"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:96
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:671
@@ -98,11 +98,11 @@ msgstr "Mikrofon aufzeichnen:"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:179
 msgid "Record from Monitor:"
-msgstr "Aufnahme des Monitors:"
+msgstr "Aufzeichnung des Monitors:"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:181
 msgid "Recording Area:"
-msgstr "Aufnahmebereich:"
+msgstr "Aufzeichnungsbereich:"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:183
 msgid "Width:"
@@ -155,7 +155,7 @@ msgstr "Fortsetzen"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:464
 msgid "Continue recording"
-msgstr "Aufnahme fortsetzen"
+msgstr "Aufzeichnung fortsetzen"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:466
 msgid "Finish"
@@ -163,7 +163,7 @@ msgstr "Abschließen"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:467
 msgid "Stop the recording and save the file"
-msgstr "Aufnahme stoppen und Datei speichern"
+msgstr "Aufzeichnung stoppen und Datei speichern"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:470
 msgid "Cancel"
@@ -171,11 +171,11 @@ msgstr "Abbrechen"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:471
 msgid "Cancel the recording without saving the file"
-msgstr "Aufnahme abbrechen ohne zu speichern"
+msgstr "Aufzeichnung abbrechen ohne zu speichern"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:689
 msgid "Pause recording"
-msgstr "Aufnahme anhalten"
+msgstr "Aufzeichnung anhalten"
 
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:708
 msgid "Save"
@@ -188,7 +188,7 @@ msgstr "OK"
 #: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:711
 #, c-format
 msgid "Screencast from %s"
-msgstr "Bildschirmaufnahme von %s"
+msgstr "Bildschirmaufzeichnung von %s"
 
 #~ msgid "Pause Recording"
 #~ msgstr "Aufnahme anhalten"
