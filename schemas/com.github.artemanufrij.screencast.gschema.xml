@@ -26,6 +26,11 @@
             <summary>Record sound from microphone</summary>
             <description>Record sound from microphone</description>
         </key>
+        <key name="sound" type="b">
+            <default>false</default>
+            <summary>Record desktop sound</summary>
+            <description>Record desktop sound</description>
+        </key>
         <key name="monitor" type="i">
             <default>0</default>
             <summary>Monitor</summary>
