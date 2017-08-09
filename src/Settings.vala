@@ -40,6 +40,7 @@ public class Screencast.Settings : Granite.Services.Settings {
     public int ey { get; set; }
     public int monitor { get; set; }
     public bool audio { get; set; }
+    public bool sound { get; set; }
     public bool keyview { get; set; }
     public bool clickview { get; set; }
     public bool mouse_circle { get; set; }

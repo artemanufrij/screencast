@@ -138,25 +138,19 @@ namespace Screencast {
             recordingarea_combo.append ("custom", _("Custom"));
             recordingarea_combo.active = 0;
 
-            var use_comp_sounds = new Gtk.Switch ();
-            use_comp_sounds.halign = Gtk.Align.START;
-            use_comp_sounds.valign = Gtk.Align.CENTER;
-            use_comp_sounds.set_sensitive (false);
+            var use_sound = new Gtk.Switch ();
+            use_sound.halign = Gtk.Align.START;
+            use_sound.valign = Gtk.Align.CENTER;
+
+            var sound_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            sound_box.pack_start (use_sound, false, true, 0);
 
             var use_audio = new Gtk.Switch ();
             use_audio.halign = Gtk.Align.START;
             use_audio.valign = Gtk.Align.CENTER;
 
-            var audio_source = new Gtk.ComboBoxText ();
-            audio_source.append ("0", _("Default"));
-            audio_source.active = 0;
-            audio_source.hexpand = true;
-            audio_source.set_sensitive (false);
-            audio_source.margin_left = 4;
-
             var audio_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             audio_box.pack_start (use_audio, false, true, 0);
-            audio_box.pack_start (audio_source, true, true, 0);
 
             var sound = new LLabel.markup ("<b>" + _("Sound") + "</b>");
             sound.margin_top = 18;
@@ -172,7 +166,7 @@ namespace Screencast {
 
             grid.attach (sound, 0, 0, 1, 1);
             grid.attach (new LLabel.right (_("Record Computer Sounds:")), 0, 1, 1, 1);
-            grid.attach (use_comp_sounds, 1, 1, 1, 1);
+            grid.attach (sound_box, 1, 1, 1, 1);
             grid.attach (new LLabel.right (_("Record from Microphone:")), 0, 2, 1, 1);
             grid.attach (audio_box, 1, 2, 1, 1);
             grid.attach ((video), 0, 3, 2, 1);
@@ -285,11 +279,6 @@ namespace Screencast {
             this.screen.get_monitor_geometry (settings.monitor, out this.monitor_rec);
             scale = screen.get_monitor_scale_factor (settings.monitor);
 
-            /*settings.sx = this.monitor_rec.x * scale;
-            settings.sy = this.monitor_rec.y * scale;
-            settings.ex = settings.sx + this.monitor_rec.width * scale - 1;
-            settings.ey = settings.sy + this.monitor_rec.height * scale - 1;
-*/
             recordingarea_combo.changed.connect (() => {
                 if (recordingarea_combo.active_id != "full"){
                     selectionarea = new Screencast.Widgets.SelectionArea ();
@@ -353,10 +342,15 @@ namespace Screencast {
                 selectionarea.resize ((int) width.value, (int) height.value);
             });
 
+            use_sound.state = settings.sound;
+            use_sound.state_set.connect ((state) => {
+                settings.sound = state;
+                return false;
+            });
+
             use_audio.state = settings.audio;
             use_audio.state_set.connect ((state) => {
                 settings.audio = state;
-                audio_source.set_sensitive (state);
                 return false;
             });
 
@@ -426,20 +420,6 @@ namespace Screencast {
                     selectionarea.destroy ();
                 }
             });
-
-            Granite.Services.Logger.initialize ("Eidete");
-            Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
-
-            uint major;
-            uint minor;
-            uint micro;
-            uint nano;
-
-            Gst.version (out major, out minor, out micro, out nano);
-
-            message ("GStreamer version  : %u.%u.%u.%u", major, minor, micro, nano);
-            message ("Gtk build version  : %u.%u.%u", Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION, Gtk.MICRO_VERSION);
-            message ("Gtk runtime version: %u.%u.%u", Gtk.get_major_version (), Gtk.get_minor_version (), Gtk.get_micro_version ());
         }
 
         private void build_pause_ui () {
@@ -542,8 +522,28 @@ namespace Screencast {
             // audio bin
             this.audiobin = new Gst.Bin ("audio");
 
+            string default_output = "";
             try {
-                audiobin = (Gst.Bin) Gst.parse_bin_from_description ("pulsesrc name=\"audiosrc\" ! audioconvert ! audioresample ! audiorate ! vorbisenc ! queue", true);
+                string sound_outputs = "";
+                Process.spawn_command_line_sync ("pacmd list-sinks", out sound_outputs);
+                GLib.Regex re = new GLib.Regex ("(?<=\\*\\sindex:\\s\\d\\s\\sname:\\s<)[\\w\\.\\-]*");
+                MatchInfo mi;
+                if (re.match (sound_outputs, 0 , out mi)) {
+                    default_output = mi.fetch (0);
+                }
+            } catch (Error e) {
+                warning (e.message);
+            }
+
+            try {
+                if (settings.audio && settings.sound && default_output != "") {
+                    audiobin = (Gst.Bin) Gst.parse_bin_from_description ("adder name=mux ! audioconvert ! audioresample ! vorbisenc pulsesrc ! queue ! mux. pulsesrc device=" + default_output + ".monitor ! queue ! mux.", true);
+                } else if (settings.audio) {
+                    audiobin = (Gst.Bin) Gst.parse_bin_from_description ("pulsesrc name=\"audiosrc\" ! audioconvert ! vorbisenc ! queue", true);
+                } else if (settings.sound && default_output != "") {
+                    audiobin = (Gst.Bin) Gst.parse_bin_from_description ("pulsesrc device=" + default_output + ".monitor ! audioconvert ! vorbisenc ! queue", true);
+                }
+
             } catch (Error e) {
                 stderr.printf ("Error: %s\n", e.message);
             }
@@ -601,22 +601,15 @@ namespace Screencast {
                 stderr.printf ("Error: Elements weren't made correctly!\n");
             }
 
-            if (settings.audio)
+
+            if (settings.audio || (settings.sound && default_output != ""))
                 pipeline.add_many (audiobin, videobin, muxer, sink);
             else
                 pipeline.add_many (videobin, muxer, sink);
 
-            var video_pad = videobin.get_static_pad ("src");
+            videobin.get_static_pad ("src").link (muxer.get_request_pad ("video_%u"));
 
-            assert (video_pad != null);
-
-            var m = muxer.get_request_pad ("video_%u");
-
-            assert (m != null);
-
-            video_pad.link (m);
-
-            if (settings.audio) {
+            if (settings.audio || (settings.sound && default_output != "")) {
                 audiobin.get_static_pad ("src").link (muxer.get_request_pad ("audio_%u"));
             }
 
@@ -635,12 +628,10 @@ namespace Screencast {
 
         public void finish_recording () {
             if (!this.recording) {
-                debug ("resuming recording\n");
-
+                debug ("resuming recording");
                 this.pipeline.set_state(Gst.State.PLAYING);
                 this.recording = true;
             }
-
             pipeline.send_event (new Gst.Event.eos ());
         }
 
@@ -653,7 +644,7 @@ namespace Screencast {
 
                     msg.parse_error (out err, out debug);
 
-                    display_error ("Eidete encountered a gstreamer error while recording, creating a screencast is not possible:\n%s\n\n[%s]"
+                    display_error ("Screencast encountered a gstreamer error while recording, creating a screencast is not possible:\n%s\n\n[%s]"
                         .printf (err.message, debug), true);
                     stderr.printf ("Error: %s\n", debug);
                     pipeline.set_state (Gst.State.NULL);
@@ -705,6 +696,8 @@ namespace Screencast {
         }
 
         private bool save_file () {
+            debug (settings.save_folder);
+
             var dialog = new Gtk.FileChooserDialog (_("Save"), this, Gtk.FileChooserAction.SAVE, _("OK"), Gtk.ResponseType.OK);
 
             var date_time = new GLib.DateTime.now_local ().format ("%Y-%m-%d %H.%M.%S");
