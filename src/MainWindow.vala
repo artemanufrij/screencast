@@ -714,6 +714,7 @@ namespace Screencast {
                 try {
                     var source = File.new_for_path (settings.destination);
                     source.move (destination, FileCopyFlags.OVERWRITE);
+                    settings.save_folder = destination.get_parent ().get_path ();
                 } catch (GLib.Error e) {
                     stderr.printf ("Error: %s\n", e.message);
                 }
