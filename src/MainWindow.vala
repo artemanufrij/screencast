@@ -92,8 +92,13 @@ namespace Screencast {
             this.screen = Gdk.Screen.get_default ();
             this.icon_name = "artemanufrij.screencast";
             this.window_position = Gtk.WindowPosition.CENTER;
-            this.set_resizable (false);
-            this.title =  _("Screencast");
+            this.resizable = false;
+            var headerbar = new Gtk.HeaderBar ();
+            headerbar.title = _("Screencast");
+            headerbar.get_style_context ().add_class("flat");
+            headerbar.show_close_button = true;
+            this.set_titlebar (headerbar);
+
 
             if (!this.is_composited ()) {
                 warning ("Compositing is not supported. No transparency available.");
