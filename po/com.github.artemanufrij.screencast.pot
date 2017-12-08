@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-05 10:01+0200\n"
+"POT-Creation-Date: 2017-12-08 22:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,173 +17,165 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//Application.vala:59
-msgid "Screencasts"
-msgstr ""
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/keyview.vala:61
-msgid "Left"
-msgstr ""
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/keyview.vala:64
-msgid "Middle"
-msgstr ""
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/keyview.vala:67
-msgid "Right"
-msgstr ""
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/countdown.vala:38
+#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:38
 msgid "Recording starts in"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/countdown.vala:45
+#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:45
 msgid "Focus Screencast to stop recording"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//desktop_launcher.vala:22
+#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:61
+msgid "Left"
+msgstr ""
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:64
+msgid "Middle"
+msgstr ""
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:67
+msgid "Right"
+msgstr ""
+
+#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:22
 msgid "Record screencasts"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//desktop_launcher.vala:23
+#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:23
 msgid "Screencaster"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:96
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:671
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:97
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:667
 msgid "Screencast"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:114
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:119
 msgid "Monitor"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:137
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:142
 msgid "Fullscreen"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:138
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:143
 msgid "Custom"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:151
-msgid "Default"
-msgstr ""
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:161
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:160
 msgid "Sound"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:164
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:163
 msgid "Video"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:167
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:166
 msgid "Keyboard"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:170
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:169
 msgid "Mouse"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:174
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:173
 msgid "Record Computer Sounds:"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:176
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:175
 msgid "Record from Microphone:"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:179
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:178
 msgid "Record from Monitor:"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:181
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:180
 msgid "Recording Area:"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:183
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:182
 msgid "Width:"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:185
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:184
 msgid "Height:"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:208
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:207
 msgid "Pressed keys on screen:"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:211
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:210
 msgid "Mouse clicks on screen:"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:213
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:212
 msgid "Circle around the cursor:"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:219
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:218
 msgid "Behavior"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:220
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:219
 msgid "Appearance"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:234
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:233
 msgid "Start Recording"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:239
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:238
 msgid "Close"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:451
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:687
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:683
 msgid "Recording paused"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:454
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:439
 msgid "You can continue or finish the recording now"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:463
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:448
 msgid "Continue"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:464
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:449
 msgid "Continue recording"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:466
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:451
 msgid "Finish"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:467
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:452
 msgid "Stop the recording and save the file"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:470
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:455
 msgid "Cancel"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:471
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:456
 msgid "Cancel the recording without saving the file"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:689
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:685
 msgid "Pause recording"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:708
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:706
 msgid "Save"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:708
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:706
 msgid "OK"
 msgstr ""
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:711
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:709
 #, c-format
 msgid "Screencast from %s"
 msgstr ""
