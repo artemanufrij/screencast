@@ -109,13 +109,11 @@ namespace Screencast {
             var width = new Gtk.SpinButton.with_range (50, screen.get_width () * scale, 1);
             width.max_length = 4;
             width.sensitive = false;
-            width.halign = Gtk.Align.START;
             width.value = settings.ex - settings.sx;
 
             var height = new Gtk.SpinButton.with_range (50, screen.get_height () * scale, 1);
             height.max_length = 4;
             height.sensitive = false;
-            height.halign = Gtk.Align.START;
             height.value = settings.ey - settings.sy;
 
             recordingarea_combo = new Gtk.ComboBoxText ();
