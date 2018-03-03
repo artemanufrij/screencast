@@ -22,7 +22,7 @@
         <value key="x-appcenter-suggested-price">1</value>
     </custom>
     <developer_name>Artem Anufrij</developer_name>
-    <url type="homepage">https://github.com/artemanufrij/screencast</url>
+    <url type="homepage">https://artemanufrij.github.io</url>
     <url type="bugtracker">https://github.com/artemanufrij/screencast/issues</url>
     <url type="help">https://github.com/artemanufrij/screencast/issues</url>
     <update_contact>artem.anufrij@live.de</update_contact>
@@ -31,4 +31,19 @@
             <image>https://raw.githubusercontent.com/artemanufrij/screencast/master/Screenshot.png</image>
         </screenshot>
     </screenshots>
+    <releases>
+        <release version="0.2.0" date="2018-03-05">
+            <description>
+                <p>New:</p>
+                <ul>
+                    <li>Media Key Listener</li>
+                </ul>
+                <p>Translation:</p>
+                <ul>
+                    <li>Lithuanian (by welaq)</li>
+                    <li>Spanish (by Juan Velandia)</li>
+                </ul>
+            </description>
+        </release>
+    </releases>
 </component>
