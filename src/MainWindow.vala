@@ -555,8 +555,7 @@ namespace Screencast {
             this.recording = false;
             set_indicator_icon ("media-playback-pause-symbolic");
             toggle_item.label = _ ("Continue");
-            if (keyview != null) {
-                keyview.hide ();
+            if (keyview != null && settings.mouse_circle) {
                 if (settings.mouse_circle) {
                     keyview.circle.hide ();
                 }
@@ -598,9 +597,7 @@ namespace Screencast {
             set_indicator_icon ("media-record-symbolic");
             toggle_item.label = _ ("Pause");
 
-            if (settings.keyview || settings.clickview || settings.mouse_circle) {
-                keyview.place (settings.ex, settings.sy, settings.ey - settings.sy);
-                keyview.show ();
+            if (settings.keyview || settings.clickview || settings.mouse_circle) {;
                 if (settings.mouse_circle) {
                     keyview.circle.show ();
                 }

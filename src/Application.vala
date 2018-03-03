@@ -71,7 +71,9 @@ namespace Screencast {
         }
 
         public override int command_line (ApplicationCommandLine cmd) {
-            activate ();
+            if (mainwindow == null) {
+                activate ();
+            }
             command_line_interpreter (cmd);
             return 0;
         }
