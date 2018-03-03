@@ -15,6 +15,7 @@ PACKAGES
     gstreamer-pbutils-1.0
     libwnck-3.0
     gdk-x11-3.0
+    appindicator3-0.1
 OPTIONS
     --enable-experimental
     --thread

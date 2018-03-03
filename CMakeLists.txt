@@ -23,7 +23,8 @@ pkg_check_modules(DEPS REQUIRED gtk+-3.0>=3.10
     gdk-x11-3.0
     x11
     gstreamer-1.0
-    gstreamer-pbutils-1.0)
+    gstreamer-pbutils-1.0
+    appindicator3-0.1)
 
 # Comment this out to enable C compiler warnings
 add_definitions (-w)

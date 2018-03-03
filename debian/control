@@ -10,6 +10,7 @@ Build-Depends: cmake (>= 2.8),
                libgstreamer1.0-dev,
                libgstreamer-plugins-bad1.0-dev,
                libwnck-3-dev,
+               libappindicator3-dev,
                valac (>= 0.26)
 Standards-Version: 3.9.3
 

@@ -33,24 +33,13 @@ namespace Screencast {
             this.label = label;
         }
 
-        public LLabel.indent (string label) {
-            this(label);
-            this.margin_left = 10;
-        }
-
         public LLabel.markup (string label) {
-            this(label);
+            this (label);
             this.use_markup = true;
         }
 
         public LLabel.right (string label) {
             this.set_halign (Gtk.Align.END);
-            this.label = label;
-        }
-
-        public LLabel.right_with_markup (string label) {
-            this.set_halign (Gtk.Align.END);
-            this.use_markup = true;
             this.label = label;
         }
     }
@@ -61,7 +50,6 @@ namespace Screencast {
         public Screencast.Widgets.KeyView keyview;
         public Screencast.Widgets.SelectionArea selectionarea;
         private Gtk.Stack tabs;
-        private Gtk.Grid pause_grid;
         private Gtk.Grid main_box;
         private Gtk.Box home_buttons;
         private Gtk.StackSwitcher stack_switcher;
@@ -70,6 +58,8 @@ namespace Screencast {
         public Gdk.Rectangle monitor_rec;
 
         public Settings settings;
+        AppIndicator.Indicator indicator;
+        Gtk.MenuItem toggle_item;
 
         public bool recording;
         public bool typing_size;
@@ -113,8 +103,7 @@ namespace Screencast {
             monitors_combo.hexpand = true;
 
             for (var i = 0; i < screen.get_n_monitors (); i++) {
-                // TODO proper translation here
-                monitors_combo.append (i.to_string (), _ ("Monitor") + " " + (i + 1).to_string ());
+                monitors_combo.append (i.to_string (), _ ("Monitor %d").printf (i + 1));
             }
 
             monitors_combo.active = 0;
@@ -220,13 +209,9 @@ namespace Screencast {
             stack_switcher = new Gtk.StackSwitcher ();
             stack_switcher.stack = tabs;
             stack_switcher.halign = Gtk.Align.CENTER;
-            build_pause_ui ();
-            pause_grid.show_all ();
-            pause_grid.hide ();
-            pause_grid.no_show_all = true;
+
             main_box.attach (stack_switcher, 0, 0, 1, 1);
             main_box.attach (tabs, 0, 1, 1, 1);
-            main_box.attach (pause_grid, 0, 2, 1, 1);
 
             var start_bt = new Gtk.Button.with_label (_ ("Start Recording"));
             start_bt.can_default = true;
@@ -255,7 +240,6 @@ namespace Screencast {
              */
 
             cancel_bt.clicked.connect (() => { this.destroy (); });
-
             start_bt.clicked.connect (start_cowndown);
 
             settings.monitor = 0;
@@ -400,20 +384,6 @@ namespace Screencast {
                     settings.mouse_circle_color = circle_color.rgba.to_string ();
                 });
 
-            ulong handle = 0;
-            handle = Wnck.Screen.get_default ().active_window_changed.connect (
-                () => {
-                    this.win = Wnck.Screen.get_default ().get_active_window ();
-                    this.win.state_changed.connect (
-                        (changed_s, new_s) => {
-                            if (recording && (new_s == 0)) {
-                                pause_recording ();
-                            }
-                        });
-
-                    Wnck.Screen.get_default ().disconnect (handle);
-                });
-
             this.focus_in_event.connect (
                 (ev) => {
                     if (this.selectionarea != null && !this.selectionarea.not_visible) {
@@ -433,61 +403,8 @@ namespace Screencast {
                         selectionarea.destroy ();
                     }
                 });
-        }
 
-        private void build_pause_ui () {
-            pause_grid = new Gtk.Grid ();
-
-            var img_text_grid = new Gtk.Grid ();
-            var text_grid = new Gtk.Grid ();
-
-            var title = new LLabel.markup ("<span weight='bold' size='larger'>" + _ ("Recording paused") + "</span>");
-            title.valign = Gtk.Align.START;
-
-            var info = new LLabel (_ ("You can continue or finish the recording now"));
-            info.valign = Gtk.Align.START;
-            info.margin_top = 6;
-
-            var buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            buttons.homogeneous = true;
-            buttons.spacing = 6;
-            buttons.margin_top = 24;
-
-            var continue_bt = new Gtk.Button.with_label (_ ("Continue"));
-            continue_bt.set_tooltip_text (_ ("Continue recording"));
-
-            var stop_bt = new Gtk.Button.with_label (_ ("Finish"));
-            stop_bt.set_tooltip_text (_ ("Stop the recording and save the file"));
-            stop_bt.get_style_context ().add_class ("suggested-action");
-
-            var cancel_bt = new Gtk.Button.with_label (_ ("Cancel"));
-            cancel_bt.set_tooltip_text (_ ("Cancel the recording without saving the file"));
-
-            buttons.pack_end (stop_bt, false, true, 0);
-            buttons.pack_end (continue_bt, false, true, 0);
-            buttons.pack_end (cancel_bt, false, true, 0);
-
-            var img = new Gtk.Image.from_icon_name ("media-playback-pause", Gtk.IconSize.DIALOG);
-            img.valign = Gtk.Align.START;
-            img.margin_right = 12;
-
-            text_grid.attach (title, 0, 0, 1, 1);
-            text_grid.attach (info, 0, 1, 1, 1);
-
-            img_text_grid.attach (img, 0, 0, 1, 1);
-            img_text_grid.attach (text_grid, 1, 0, 1, 1);
-
-            pause_grid.attach (img_text_grid, 0, 0, 1, 1);
-            pause_grid.attach (buttons, 0, 2, 1, 1);
-
-            stop_bt.can_default = true;
-            this.set_default (stop_bt);
-
-            cancel_bt.clicked.connect (() => { this.destroy (); });
-
-            stop_bt.clicked.connect (stop_recording);
-
-            continue_bt.clicked.connect (continue_recording);
+            create_indicator ();
         }
 
         private bool bus_message_cb (Gst.Bus bus, Gst.Message msg) {
@@ -511,10 +428,7 @@ namespace Screencast {
 
                 this.recording = false;
 
-                if (save_file ()) {
-                    show_tabs ();
-                    this.title = _ ("Screencast");
-                }
+                save_file ();
                 pipeline = null;
                 break;
             default :
@@ -522,32 +436,6 @@ namespace Screencast {
             }
 
             return true;
-        }
-
-        public void switch_to_paused (bool to_normal) {
-            if (tabs.visible) {
-                show_record ();
-            }
-
-            if (to_normal) {
-                this.title = _ ("Recording paused");
-            } else {
-                this.title = _ ("Pause recording");
-            }
-        }
-
-        private void show_tabs () {
-            tabs.show ();
-            stack_switcher.show ();
-            home_buttons.show ();
-            pause_grid.hide ();
-        }
-
-        private void show_record () {
-            tabs.hide ();
-            stack_switcher.hide ();
-            home_buttons.hide ();
-            pause_grid.show ();
         }
 
         private bool save_file () {
@@ -580,6 +468,38 @@ namespace Screencast {
             return res == Gtk.ResponseType.OK;
         }
 
+        public void create_indicator () {
+            indicator = new AppIndicator.Indicator ("screencast", "media-playback-stop-symbolic", AppIndicator.IndicatorCategory.APPLICATION_STATUS);
+            indicator.set_status (AppIndicator.IndicatorStatus.ACTIVE);
+
+            var menu = new Gtk.Menu ();
+            toggle_item = new Gtk.MenuItem.with_label (_ ("Start Recording"));
+            toggle_item.activate.connect (
+                () => {
+                    toggle_recording ();
+                });
+            menu.append (toggle_item);
+
+            var stop_item = new Gtk.MenuItem.with_label (_ ("Finish"));
+            stop_item.activate.connect (
+                () => {
+                    stop_recording ();
+                });
+            menu.append (stop_item);
+
+            menu.append (new Gtk.SeparatorMenuItem ());
+
+            var quit_item = new Gtk.MenuItem.with_label (_ ("Cancel"));
+            quit_item.activate.connect (
+                () => {
+                    ScreencastApp.instance.quit ();
+                });
+            menu.append (quit_item);
+
+            menu.show_all ();
+            indicator.set_menu (menu);
+        }
+
         private void display_error (string error, bool fatal) {
             var dialog = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, error);
             dialog.show_all ();
@@ -593,6 +513,11 @@ namespace Screencast {
             dialog.run ();
         }
 
+        public void set_icolabel (string icon, string label) {
+            indicator.set_icon_full (icon, icon);
+            indicator.label = label;
+        }
+
         public void start_cowndown () {
             var count = new Screencast.Widgets.Countdown ();
             this.iconify ();
@@ -602,7 +527,8 @@ namespace Screencast {
         public void pause_recording () {
             pipeline.set_state (Gst.State.PAUSED);
             this.recording = false;
-            switch_to_paused (true);
+            set_icolabel ("media-playback-pause-symbolic", "");
+            toggle_item.label = _ ("Continue");
         }
 
         public void stop_recording () {
@@ -612,6 +538,7 @@ namespace Screencast {
                 this.recording = true;
             }
             pipeline.send_event (new Gst.Event.eos ());
+            set_icolabel ("media-playback-stop-symbolic", "");
         }
 
         public void toggle_recording () {
@@ -629,7 +556,8 @@ namespace Screencast {
             this.pipeline.set_state (Gst.State.PLAYING);
             this.recording = true;
 
-            switch_to_paused (false);
+            set_icolabel ("media-record-symbolic", "");
+            toggle_item.label = _ ("Pause");
 
             if (settings.keyview || settings.clickview || settings.mouse_circle) {
                 keyview.place (settings.ex, settings.sy, settings.ey - settings.sy);
@@ -772,6 +700,10 @@ namespace Screencast {
 
             pipeline.set_state (Gst.State.PLAYING);
             this.recording = true;
+
+            this.iconify ();
+            set_icolabel ("media-record-symbolic", "");
+            toggle_item.label = _ ("Pause");
         }
     }
 }

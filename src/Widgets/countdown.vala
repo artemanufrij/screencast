@@ -79,9 +79,6 @@ namespace Screencast.Widgets {
                     // let the countdown disappear before starting
                     Timeout.add (100, () => {
                         ScreencastApp.instance.mainwindow.start_recording ();
-                        ScreencastApp.instance.mainwindow.iconify ();
-                        ScreencastApp.instance.mainwindow.switch_to_paused (false);
-
                         return false;
                     });
 
