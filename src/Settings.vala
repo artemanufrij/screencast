@@ -39,6 +39,7 @@ public class Screencast.Settings : Granite.Services.Settings {
     public int ex { get; set; }
     public int ey { get; set; }
     public int monitor { get; set; }
+    public int delay { get; set; }
     public bool audio { get; set; }
     public bool sound { get; set; }
     public bool keyview { get; set; }

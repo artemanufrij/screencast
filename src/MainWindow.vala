@@ -147,6 +147,9 @@ namespace Screencast {
             var mouse = new LLabel (_ ("Mouse"));
             mouse.get_style_context ().add_class ("h4");
 
+            var delay = new LLabel (_ ("Delay"));
+            delay.get_style_context ().add_class ("h4");
+
             general.attach (sound, 0, 0, 1, 1);
             general.attach (new LLabel.right (_ ("Record Computer Sounds:")), 0, 1, 1, 1);
             general.attach (sound_box, 1, 1, 1, 1);
@@ -181,6 +184,15 @@ namespace Screencast {
             circle_box.pack_start (use_circle, false);
             circle_box.pack_start (circle_color);
 
+            var delay_spin = new Gtk.SpinButton.with_range (1, 10, 1);
+            delay_spin.max_length = 4;
+            delay_spin.halign = Gtk.Align.START;
+            delay_spin.value = settings.delay;
+            delay_spin.value_changed.connect (
+                () => {
+                    settings.delay = (int)delay_spin.value;
+                });
+
             apperance.attach (keyboard, 0, 0, 1, 1);
             apperance.attach (new LLabel.right (_ ("Pressed keys on screen:")), 0, 1, 1, 1);
             apperance.attach (use_keyview, 1, 1, 1, 1);
@@ -189,6 +201,9 @@ namespace Screencast {
             apperance.attach (use_clickview, 1, 3, 1, 1);
             apperance.attach (new LLabel.right (_ ("Circle around the cursor:")), 0, 4, 1, 1);
             apperance.attach (circle_box, 1, 4, 1, 1);
+            apperance.attach (delay, 0, 5, 1, 1);
+            apperance.attach (new LLabel.right (_ ("Delay in seconds:")), 0, 6, 1, 1);
+            apperance.attach (delay_spin, 1, 6, 1, 1);
 
             tabs.add_titled (general, "behavior", _ ("Behavior"));
             tabs.add_titled (apperance, "apperance", _ ("Appearance"));

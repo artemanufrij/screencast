@@ -66,5 +66,10 @@
             <summary>Folder for screencasts</summary>
             <description>Foder for screencasts</description>
         </key>
+        <key name="delay" type="i">
+            <default>5</default>
+            <summary>Delay in seconds</summary>
+            <description>Delay in seconds</description>
+        </key>
     </schema>
 </schemalist>

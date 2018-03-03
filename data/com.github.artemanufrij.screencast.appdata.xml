@@ -36,6 +36,10 @@
             <description>
                 <p>New:</p>
                 <ul>
+                    <li>Custom delay in seconds</li>
+                    <li>Desktop Actions: Record/Pause, Finish</li>
+                    <li>Start recording instand from Plank</li>
+                    <li>Indicator Menu</li>
                     <li>Media Key Listener</li>
                 </ul>
                 <p>Translation:</p>

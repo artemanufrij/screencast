@@ -21,7 +21,7 @@ namespace Screencast.Widgets {
         public int time;
 
         public Countdown () {
-            this.time = 5;
+            this.time = Settings.get_default ().delay;;
 
             this.set_default_size (300, 200);
             this.window_position = Gtk.WindowPosition.CENTER;
