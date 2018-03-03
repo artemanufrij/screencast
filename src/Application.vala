@@ -54,6 +54,7 @@ namespace Screencast {
                 if (mainwindow.recording) {
                     mainwindow.pause_recording ();
                 }
+                mainwindow.present ();
                 return;
             }
 
@@ -71,14 +72,6 @@ namespace Screencast {
         }
 
         public override int command_line (ApplicationCommandLine cmd) {
-            if (mainwindow == null) {
-                activate ();
-            }
-            command_line_interpreter (cmd);
-            return 0;
-        }
-
-        private void command_line_interpreter (ApplicationCommandLine cmd) {
             string[] args_cmd = cmd.get_arguments ();
             unowned string[] args = args_cmd;
 
@@ -97,7 +90,7 @@ namespace Screencast {
                 opt_context.parse (ref args);
             } catch (Error err) {
                 warning (err.message);
-                return;
+                return 0;
             }
 
             if (toggle) {
@@ -105,6 +98,12 @@ namespace Screencast {
             } else if (finish) {
                 mainwindow.stop_recording ();
             }
+
+            if (!toggle) {
+                activate ();
+            }
+
+            return 0;
         }
     }
 }

@@ -451,7 +451,7 @@ namespace Screencast {
         }
 
         private bool save_file () {
-            var dialog = new Gtk.FileChooserDialog (_ ("Save"), this, Gtk.FileChooserAction.SAVE, _ ("OK"), Gtk.ResponseType.OK);
+            var dialog = new Gtk.FileChooserDialog (_ ("Save Screencast"), this, Gtk.FileChooserAction.SAVE, _ ("Save"), Gtk.ResponseType.OK);
 
             var date_time = new GLib.DateTime.now_local ().format ("%Y-%m-%d %H.%M.%S");
             var file_name = _ ("Screencast from %s").printf (date_time);
@@ -567,7 +567,6 @@ namespace Screencast {
         public void stop_recording () {
             keyview.destroy ();
             keyview = null;
-            this.show ();
             this.present ();
             if (!this.recording) {
                 debug ("resuming recording");
@@ -577,6 +576,7 @@ namespace Screencast {
             pipeline.send_event (new Gst.Event.eos ());
             set_indicator_icon ("media-playback-stop-symbolic");
             show_default_view ();
+            this.show ();
         }
 
         public void toggle_recording () {
