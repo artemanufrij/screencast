@@ -51,6 +51,7 @@ namespace Screencast {
         Gtk.Stack tabs;
         Gtk.StackSwitcher stack_switcher;
         Gtk.Grid recording_controls;
+        Gtk.Button rec_finish;
         Gtk.ComboBoxText recordingarea_combo;
         Gdk.Rectangle monitor_rec;
 
@@ -234,7 +235,7 @@ namespace Screencast {
             rec_continue.clicked.connect (toggle_recording);
 
             var img_finish = new Gtk.Image.from_icon_name ("document-save", Gtk.IconSize.DIALOG);
-            var rec_finish = new Gtk.Button.with_label (_("Finish"));
+            rec_finish = new Gtk.Button.with_label (_("Finish"));
             rec_finish.tooltip_text = _ ("Stop the recording and save the file");
             rec_finish.clicked.connect (stop_recording);
             rec_finish.get_style_context ().add_class ("suggested-action");
@@ -315,16 +316,6 @@ namespace Screencast {
                                     settings.ey = settings.sy + h - 1;
                                 }
                             });
-
-                        selectionarea.focus_in_event.connect (
-                            (ev) => {
-                                if (this.recording) {
-                                    this.deiconify ();
-                                    this.present ();
-                                }
-
-                                return false;
-                            });
                     } else {
                         selectionarea.destroy ();
                         settings.monitor = int.parse (monitors_combo.active_id);
@@ -396,16 +387,6 @@ namespace Screencast {
             circle_color.color_set.connect (
                 () => {
                     settings.mouse_circle_color = circle_color.rgba.to_string ();
-                });
-
-            this.focus_in_event.connect (
-                (ev) => {
-                    if (this.selectionarea != null && !this.selectionarea.not_visible) {
-                        this.selectionarea.present ();
-                        this.present ();
-                    }
-
-                    return false;
                 });
 
             this.destroy.connect (
@@ -530,6 +511,7 @@ namespace Screencast {
             tabs.hide ();
             stack_switcher.hide ();
             this.get_action_area ().hide ();
+            rec_finish.grab_focus ();
         }
 
         private void show_default_view () {
@@ -550,7 +532,6 @@ namespace Screencast {
         }
 
         public void pause_recording () {
-            this.show ();
             pipeline.set_state (Gst.State.PAUSED);
             this.recording = false;
             set_indicator_icon ("media-playback-pause-symbolic");
@@ -562,6 +543,8 @@ namespace Screencast {
             }
 
             show_recording_view ();
+            this.show ();
+            this.present ();
         }
 
         public void stop_recording () {
