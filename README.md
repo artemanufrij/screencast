@@ -1,5 +1,5 @@
 <div>
-  <h1 align="center">Screencast</h1>
+  <h1 align="center" style="display:table-cell; vertical-align:middle"><img src="data/icons/32/com.github.artemanufrij.screencast.svg" style="padding-right: 8px;"/>Screencast</h1>
   <h3 align="center">A simple screencast recorder designed for [elementary OS]</h3>
   <p align="center">Designed for <a href="https://elementary.io">elementary OS</p>
 </div>
