@@ -7,11 +7,13 @@
     <name>Screencast</name>
     <summary>A simple screen recorder</summary>
     <description>
-        <p>Current features
-* encoding to webm
-* selection of the area to be recorded
-* display of the pressed keys
-* audio recording</p>
+        <p>Features:</p>
+        <ul>
+            <li>encoding to webm</li>
+            <li>selection of the area to be recorded</li>
+            <li>display of the pressed keys</li>
+            <li>audio recording</li>
+        </ul>
     </description>
     <categories>
         <category>Utility</category>
