@@ -206,13 +206,13 @@ namespace Screencast {
             tabs.add_titled (general, "behavior", _ ("Behavior"));
             tabs.add_titled (apperance, "apperance", _ ("Appearance"));
 
-            Gtk.Box content = get_content_area () as Gtk.Box;
+            Gtk.Box content = this.get_content_area () as Gtk.Box;
 
             stack_switcher = new Gtk.StackSwitcher ();
             stack_switcher.stack = tabs;
             stack_switcher.margin_top = 12;
 
-            var header = get_header_bar () as Gtk.HeaderBar;
+            var header = this.get_header_bar () as Gtk.HeaderBar;
             header.set_custom_title (stack_switcher);
 
             recording_controls = new Gtk.Grid ();
@@ -257,7 +257,7 @@ namespace Screencast {
             var cancel_bt = new Gtk.Button.with_label (_ ("Close"));
             cancel_bt.clicked.connect (() => { this.destroy (); });
 
-            Gtk.Box actions = get_action_area () as Gtk.Box;
+            Gtk.Box actions = this.get_action_area () as Gtk.Box;
             actions.halign = Gtk.Align.CENTER;
             actions.margin_top = 12;
             actions.add (cancel_bt);
