@@ -51,8 +51,8 @@ namespace Screencast {
 
         protected override void activate () {
             if (mainwindow != null) {
-                if (!mainwindow.recording) {
-                    mainwindow.present ();
+                if (mainwindow.recording) {
+                    mainwindow.pause_recording ();
                 }
                 return;
             }
