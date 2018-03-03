@@ -14,5 +14,6 @@
 </p>
 <p align="center">
   <img src="screenshots/Screenshot.png"/>
+  <img src="screenshots/Screenshot_Recording.png"/>
 </p>
 <p>Screencast is a fork of Eidete created by Sergey "Shnatsel" Davidoff</p>
