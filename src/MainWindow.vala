@@ -655,7 +655,7 @@ namespace Screencast {
                 stderr.printf ("Error: %s\n", e.message);
             }
 
-            string cores;
+            string cores = "0-1";
 
             try {
                 Process.spawn_command_line_sync ("cat /sys/devices/system/cpu/online", out cores);
@@ -731,7 +731,6 @@ namespace Screencast {
 
             recording = true;
 
-            this.hide ();
             set_indicator_icon ("media-record-symbolic");
             toggle_item.label = _ ("Pause");
         }

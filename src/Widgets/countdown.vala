@@ -1,6 +1,6 @@
 //
 //  Copyright (C) 2011-2015 Eidete Developers
-//  Copyright (C) 2017-2018 Artem Anufrij <artem.anufrij@live.de>
+//  Copyright (C) 2018-2018 Artem Anufrij <artem.anufrij@live.de>
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
