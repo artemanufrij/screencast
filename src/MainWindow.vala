@@ -39,7 +39,7 @@ namespace Screencast {
         }
     }
 
-    public class MainWindow : Gtk.ApplicationWindow {
+    public class MainWindow : Gtk.Dialog {
         public dynamic Gst.Pipeline pipeline;
 
         public Screencast.Widgets.KeyView keyview;
@@ -66,14 +66,17 @@ namespace Screencast {
         public Gst.Bin videobin;
         public Gst.Bin audiobin;
 
+        construct {
+            Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
+            settings = Settings.get_default ();
+        }
+
         public MainWindow () {
             start_and_build ();
         }
 
         public void start_and_build () {
-            Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
-
-            settings = Settings.get_default ();
+            this.deletable = false;
 
             this.screen = Gdk.Screen.get_default ();
             this.window_position = Gtk.WindowPosition.CENTER;
@@ -210,12 +213,12 @@ namespace Screencast {
             home_buttons.homogeneous = true;
             home_buttons.pack_start (cancel_bt, false, true, 0);
             home_buttons.pack_end (start_bt, false, true, 0);
-            home_buttons.margin_top = 24;
 
             main_box.attach (home_buttons, 0, 3, 1, 1);
-            main_box.margin = 12;
+            main_box.margin_left = main_box.margin_right = 12;
 
-            this.add (main_box);
+            Gtk.Box content = get_content_area () as Gtk.Box;
+            content.add (main_box);
 
             this.show_all ();
             this.set_default (start_bt);
