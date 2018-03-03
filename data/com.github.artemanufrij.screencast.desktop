@@ -8,3 +8,13 @@ Icon=com.github.artemanufrij.screencast
 Terminal=false
 Categories=GNOME;GTK;Utility;
 X-GNOME-Gettext-Domain=com.github.artemanufrij.screencast
+Actions=Toggle;Finish;
+
+
+[Desktop Action Toggle]
+Name=Record/Pause
+Exec=com.github.artemanufrij.screencast --toggle
+
+[Desktop Action Finish]
+Name=Finish
+Exec=com.github.artemanufrij.screencast --finish

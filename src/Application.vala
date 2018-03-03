@@ -27,9 +27,7 @@
  */
 
 namespace Screencast {
-
     public class ScreencastApp : Granite.Application {
-
         static ScreencastApp _instance = null;
 
         public static ScreencastApp instance {
@@ -41,17 +39,21 @@ namespace Screencast {
         }
 
         construct {
+            this.flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
+
             program_name = "Screencast";
             exec_name = "com.github.artemanufrij.screencast";
             application_id = exec_name;
             app_launcher = exec_name + ".desktop";
         }
 
-        public MainWindow mainwindow { get; set; }
+        public MainWindow mainwindow { get; private set; default = null; }
 
         protected override void activate () {
             if (mainwindow != null) {
-                mainwindow.present ();
+                if (!mainwindow.recording) {
+                    mainwindow.present ();
+                }
                 return;
             }
 
@@ -66,6 +68,41 @@ namespace Screencast {
             mainwindow.application = this;
 
             Interfaces.MediaKeyListener.listen ();
+        }
+
+        public override int command_line (ApplicationCommandLine cmd) {
+            activate ();
+            command_line_interpreter (cmd);
+            return 0;
+        }
+
+        private void command_line_interpreter (ApplicationCommandLine cmd) {
+            string[] args_cmd = cmd.get_arguments ();
+            unowned string[] args = args_cmd;
+
+            bool toggle = false;
+            bool finish = false;
+
+            GLib.OptionEntry [] options = new OptionEntry [3];
+            options [0] = { "toggle", 0, 0, OptionArg.NONE, ref toggle, "Toggle recording", null };
+            options [1] = { "finish", 0, 0, OptionArg.NONE, ref finish, "Finish recording", null };
+            options [2] = { null };
+
+            var opt_context = new OptionContext ("actions");
+            opt_context.set_help_enabled (true);
+            opt_context.add_main_entries (options, null);
+            try {
+                opt_context.parse (ref args);
+            } catch (Error err) {
+                warning (err.message);
+                return;
+            }
+
+            if (toggle) {
+                mainwindow.toggle_recording ();
+            } else if (finish) {
+                mainwindow.stop_recording ();
+            }
         }
     }
 }

@@ -33,11 +33,6 @@ namespace Screencast {
             this.label = label;
         }
 
-        public LLabel.markup (string label) {
-            this (label);
-            this.use_markup = true;
-        }
-
         public LLabel.right (string label) {
             this.set_halign (Gtk.Align.END);
             this.label = label;
@@ -56,6 +51,9 @@ namespace Screencast {
         private Gtk.ComboBoxText recordingarea_combo;
         public Wnck.Window win;
         public Gdk.Rectangle monitor_rec;
+
+        Gtk.Button start_bt;
+        Gtk.Button cancel_bt;
 
         public Settings settings;
         AppIndicator.Indicator indicator;
@@ -78,15 +76,8 @@ namespace Screencast {
             settings = Settings.get_default ();
 
             this.screen = Gdk.Screen.get_default ();
-            this.icon_name = "artemanufrij.screencast";
             this.window_position = Gtk.WindowPosition.CENTER;
             this.resizable = false;
-            var headerbar = new Gtk.HeaderBar ();
-            headerbar.title = _ ("Screencast");
-            headerbar.get_style_context ().add_class ("flat");
-            headerbar.show_close_button = true;
-            this.set_titlebar (headerbar);
-
 
             if (!this.is_composited ()) {
                 warning ("Compositing is not supported. No transparency available.");
@@ -97,7 +88,6 @@ namespace Screencast {
             var grid = new Gtk.Grid ();
             grid.column_spacing = 12;
             grid.row_spacing = 6;
-            grid.hexpand = false;
 
             var monitors_combo = new Gtk.ComboBoxText ();
             monitors_combo.hexpand = true;
@@ -144,24 +134,21 @@ namespace Screencast {
             var audio_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             audio_box.pack_start (use_audio, false, true, 0);
 
-            var sound = new LLabel.markup ("<b>" + _ ("Sound") + "</b>");
-            sound.margin_top = 18;
-
-            var video = new LLabel.markup ("<b>" + _ ("Video") + "</b>");
-            video.margin_top = 12;
-
-            var keyboard = new LLabel.markup ("<b>" + _ ("Keyboard") + "</b>");
-            keyboard.margin_top = 18;
-
-            var mouse = new LLabel.markup ("<b>" + _ ("Mouse") + "</b>");
-            mouse.margin_top = 12;
+            var sound = new LLabel (_ ("Sound"));
+            sound.get_style_context ().add_class ("h4");
+            var video = new LLabel( _ ("Video"));
+            video.get_style_context ().add_class ("h4");
+            var keyboard = new LLabel(_ ("Keyboard"));
+            keyboard.get_style_context ().add_class ("h4");
+            var mouse = new LLabel(_ ("Mouse"));
+            mouse.get_style_context ().add_class ("h4");
 
             grid.attach (sound, 0, 0, 1, 1);
             grid.attach (new LLabel.right (_ ("Record Computer Sounds:")), 0, 1, 1, 1);
             grid.attach (sound_box, 1, 1, 1, 1);
             grid.attach (new LLabel.right (_ ("Record from Microphone:")), 0, 2, 1, 1);
             grid.attach (audio_box, 1, 2, 1, 1);
-            grid.attach ((video), 0, 3, 2, 1);
+            grid.attach (video, 0, 3, 2, 1);
             grid.attach (new LLabel.right (_ ("Record from Monitor:")), 0, 4, 1, 1);
             grid.attach (monitors_combo, 1, 4, 1, 1);
             grid.attach (new LLabel.right (_ ("Recording Area:")), 0, 5, 1, 1);
@@ -173,6 +160,8 @@ namespace Screencast {
 
             // grid2
             var grid2 = new Gtk.Grid ();
+            grid2.column_spacing = 12;
+            grid2.row_spacing = 6;
 
             var use_keyview = new Gtk.Switch ();
             use_keyview.halign = Gtk.Align.START;
@@ -190,22 +179,20 @@ namespace Screencast {
             circle_box.pack_start (use_circle, false);
             circle_box.pack_start (circle_color);
 
-            grid2.attach ((keyboard), 0, 0, 1, 1);
+            grid2.attach (keyboard, 0, 0, 1, 1);
             grid2.attach (new LLabel.right (_ ("Pressed keys on screen:")), 0, 1, 1, 1);
             grid2.attach (use_keyview, 1, 1, 1, 1);
-            grid2.attach ((mouse), 0, 2, 1, 1);
+            grid2.attach (mouse, 0, 2, 1, 1);
             grid2.attach (new LLabel.right (_ ("Mouse clicks on screen:")), 0, 3, 1, 1);
             grid2.attach (use_clickview, 1, 3, 1, 1);
             grid2.attach (new LLabel.right (_ ("Circle around the cursor:")), 0, 4, 1, 1);
             grid2.attach (circle_box, 1, 4, 1, 1);
-            grid2.column_spacing = 12;
-            grid2.row_spacing = 6;
-            grid2.hexpand = true;
 
             tabs.add_titled (grid, "behavior", _ ("Behavior"));
             tabs.add_titled (grid2, "apperance", _ ("Appearance"));
 
             main_box = new Gtk.Grid ();
+            main_box.row_spacing = 12;
             stack_switcher = new Gtk.StackSwitcher ();
             stack_switcher.stack = tabs;
             stack_switcher.halign = Gtk.Align.CENTER;
@@ -213,12 +200,11 @@ namespace Screencast {
             main_box.attach (stack_switcher, 0, 0, 1, 1);
             main_box.attach (tabs, 0, 1, 1, 1);
 
-            var start_bt = new Gtk.Button.with_label (_ ("Start Recording"));
+            start_bt = new Gtk.Button.with_label (_ ("Start Recording"));
             start_bt.can_default = true;
-            start_bt.get_style_context ().add_class ("noundo");
             start_bt.get_style_context ().add_class ("suggested-action");
 
-            var cancel_bt = new Gtk.Button.with_label (_ ("Close"));
+            cancel_bt = new Gtk.Button.with_label (_ ("Close"));
 
             home_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
             home_buttons.homogeneous = true;
@@ -233,14 +219,13 @@ namespace Screencast {
 
             this.show_all ();
             this.set_default (start_bt);
-            this.present ();
 
             /*
                Events
              */
 
             cancel_bt.clicked.connect (() => { this.destroy (); });
-            start_bt.clicked.connect (start_cowndown);
+            start_bt.clicked.connect (toggle_recording);
 
             settings.monitor = 0;
             monitors_combo.changed.connect (
@@ -419,16 +404,14 @@ namespace Screencast {
                 display_error ("Screencast encountered a gstreamer error while recording, creating a screencast is not possible:\n%s\n\n[%s]".printf (err.message, debug), true);
                 stderr.printf ("Error: %s\n", debug);
                 pipeline.set_state (Gst.State.NULL);
-
                 break;
             case Gst.MessageType.EOS :
-                debug ("received EOS");
-
                 pipeline.set_state (Gst.State.NULL);
 
                 this.recording = false;
 
                 save_file ();
+                pipeline.dispose ();
                 pipeline = null;
                 break;
             default :
@@ -439,8 +422,6 @@ namespace Screencast {
         }
 
         private bool save_file () {
-            debug (settings.save_folder);
-
             var dialog = new Gtk.FileChooserDialog (_ ("Save"), this, Gtk.FileChooserAction.SAVE, _ ("OK"), Gtk.ResponseType.OK);
 
             var date_time = new GLib.DateTime.now_local ().format ("%Y-%m-%d %H.%M.%S");
@@ -513,32 +494,39 @@ namespace Screencast {
             dialog.run ();
         }
 
-        public void set_icolabel (string icon, string label) {
-            indicator.set_icon_full (icon, icon);
-            indicator.label = label;
+        public void set_indicator_icon (string icon) {
+            indicator.set_icon_full (icon, icon);;
         }
 
         public void start_cowndown () {
+            this.hide ();
             var count = new Screencast.Widgets.Countdown ();
-            this.iconify ();
             count.start ();
         }
 
         public void pause_recording () {
+            this.show ();
             pipeline.set_state (Gst.State.PAUSED);
             this.recording = false;
-            set_icolabel ("media-playback-pause-symbolic", "");
+            set_indicator_icon ("media-playback-pause-symbolic");
             toggle_item.label = _ ("Continue");
+            if (keyview != null) {
+                keyview.hide ();
+            }
         }
 
         public void stop_recording () {
+            keyview.destroy ();
+            keyview = null;
+            this.show ();
+            this.present ();
             if (!this.recording) {
                 debug ("resuming recording");
                 this.pipeline.set_state (Gst.State.PLAYING);
                 this.recording = true;
             }
             pipeline.send_event (new Gst.Event.eos ());
-            set_icolabel ("media-playback-stop-symbolic", "");
+            set_indicator_icon ("media-playback-stop-symbolic");
         }
 
         public void toggle_recording () {
@@ -552,16 +540,16 @@ namespace Screencast {
         }
 
         public void continue_recording () {
-            this.iconify ();
+            this.hide ();
             this.pipeline.set_state (Gst.State.PLAYING);
             this.recording = true;
 
-            set_icolabel ("media-record-symbolic", "");
+            set_indicator_icon ("media-record-symbolic");
             toggle_item.label = _ ("Pause");
 
             if (settings.keyview || settings.clickview || settings.mouse_circle) {
                 keyview.place (settings.ex, settings.sy, settings.ey - settings.sy);
-                keyview.show_all ();
+                keyview.show ();
             }
         }
 
@@ -691,7 +679,6 @@ namespace Screencast {
             muxer.link (sink);
 
             pipeline.get_bus ().add_watch (Priority.DEFAULT, bus_message_cb);
-
             pipeline.set_state (Gst.State.READY);
 
             if (selectionarea != null) {
@@ -699,10 +686,11 @@ namespace Screencast {
             }
 
             pipeline.set_state (Gst.State.PLAYING);
-            this.recording = true;
 
-            this.iconify ();
-            set_icolabel ("media-record-symbolic", "");
+            recording = true;
+
+            this.hide ();
+            set_indicator_icon ("media-record-symbolic");
             toggle_item.label = _ ("Pause");
         }
     }

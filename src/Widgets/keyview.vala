@@ -143,7 +143,7 @@ namespace Screencast.Widgets {
 
         public Queue<Key> keys;
 
-        public YellowCircle circle;
+        public YellowCircle circle = null;
 
         public Cairo.ImageSurface key_bg;
 
@@ -240,6 +240,13 @@ namespace Screencast.Widgets {
                 this.get_window ().input_shape_combine_region (new Cairo.Region.rectangle (rect), 0, 0);
 
                 return true;
+            });
+
+            this.destroy.connect (() => {
+                if (circle != null) {
+                    circle.destroy ();
+                    circle = null;
+                }
             });
 
             this.keys = new Queue<Key> ();
@@ -528,4 +535,3 @@ namespace Screencast.Widgets {
         }
     }
 }
-
