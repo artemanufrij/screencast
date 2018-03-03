@@ -63,7 +63,9 @@ namespace Screencast {
             }
 
             mainwindow = new MainWindow ();
-            mainwindow.set_application(this);
+            mainwindow.application = this;
+
+            Interfaces.MediaKeyListener.listen ();
         }
     }
 }

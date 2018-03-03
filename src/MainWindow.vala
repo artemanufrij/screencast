@@ -1,6 +1,6 @@
 /*-
  * Copyright (c) 2011-2015 Eidete Developers
- * Copyright (c) 2017-2017 Artem Anufrij <artem.anufrij@live.de>
+ * Copyright (c) 2017-2018 Artem Anufrij <artem.anufrij@live.de>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -27,7 +27,6 @@
  */
 
 namespace Screencast {
-
     class LLabel : Gtk.Label {
         public LLabel (string label) {
             this.set_halign (Gtk.Align.START);
@@ -35,12 +34,12 @@ namespace Screencast {
         }
 
         public LLabel.indent (string label) {
-            this (label);
+            this(label);
             this.margin_left = 10;
         }
 
         public LLabel.markup (string label) {
-            this (label);
+            this(label);
             this.use_markup = true;
         }
 
@@ -57,7 +56,6 @@ namespace Screencast {
     }
 
     public class MainWindow : Gtk.ApplicationWindow {
-
         public dynamic Gst.Pipeline pipeline;
 
         public Screencast.Widgets.KeyView keyview;
@@ -94,8 +92,8 @@ namespace Screencast {
             this.window_position = Gtk.WindowPosition.CENTER;
             this.resizable = false;
             var headerbar = new Gtk.HeaderBar ();
-            headerbar.title = _("Screencast");
-            headerbar.get_style_context ().add_class("flat");
+            headerbar.title = _ ("Screencast");
+            headerbar.get_style_context ().add_class ("flat");
             headerbar.show_close_button = true;
             this.set_titlebar (headerbar);
 
@@ -116,7 +114,7 @@ namespace Screencast {
 
             for (var i = 0; i < screen.get_n_monitors (); i++) {
                 // TODO proper translation here
-                monitors_combo.append (i.to_string (), _("Monitor") + " " + (i + 1).to_string ());
+                monitors_combo.append (i.to_string (), _ ("Monitor") + " " + (i + 1).to_string ());
             }
 
             monitors_combo.active = 0;
@@ -139,8 +137,8 @@ namespace Screencast {
             height.halign = Gtk.Align.START;
 
             recordingarea_combo = new Gtk.ComboBoxText ();
-            recordingarea_combo.append ("full", _("Fullscreen"));
-            recordingarea_combo.append ("custom", _("Custom"));
+            recordingarea_combo.append ("full", _ ("Fullscreen"));
+            recordingarea_combo.append ("custom", _ ("Custom"));
             recordingarea_combo.active = 0;
 
             var use_sound = new Gtk.Switch ();
@@ -157,31 +155,31 @@ namespace Screencast {
             var audio_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             audio_box.pack_start (use_audio, false, true, 0);
 
-            var sound = new LLabel.markup ("<b>" + _("Sound") + "</b>");
+            var sound = new LLabel.markup ("<b>" + _ ("Sound") + "</b>");
             sound.margin_top = 18;
 
-            var video = new LLabel.markup ("<b>" + _("Video") + "</b>");
+            var video = new LLabel.markup ("<b>" + _ ("Video") + "</b>");
             video.margin_top = 12;
 
-            var keyboard = new LLabel.markup ("<b>" + _("Keyboard") + "</b>");
+            var keyboard = new LLabel.markup ("<b>" + _ ("Keyboard") + "</b>");
             keyboard.margin_top = 18;
 
-            var mouse = new LLabel.markup ("<b>" + _("Mouse") + "</b>");
+            var mouse = new LLabel.markup ("<b>" + _ ("Mouse") + "</b>");
             mouse.margin_top = 12;
 
             grid.attach (sound, 0, 0, 1, 1);
-            grid.attach (new LLabel.right (_("Record Computer Sounds:")), 0, 1, 1, 1);
+            grid.attach (new LLabel.right (_ ("Record Computer Sounds:")), 0, 1, 1, 1);
             grid.attach (sound_box, 1, 1, 1, 1);
-            grid.attach (new LLabel.right (_("Record from Microphone:")), 0, 2, 1, 1);
+            grid.attach (new LLabel.right (_ ("Record from Microphone:")), 0, 2, 1, 1);
             grid.attach (audio_box, 1, 2, 1, 1);
             grid.attach ((video), 0, 3, 2, 1);
-            grid.attach (new LLabel.right (_("Record from Monitor:")), 0, 4, 1, 1);
+            grid.attach (new LLabel.right (_ ("Record from Monitor:")), 0, 4, 1, 1);
             grid.attach (monitors_combo, 1, 4, 1, 1);
-            grid.attach (new LLabel.right (_("Recording Area:")), 0, 5, 1, 1);
+            grid.attach (new LLabel.right (_ ("Recording Area:")), 0, 5, 1, 1);
             grid.attach (recordingarea_combo, 1, 5, 1, 1);
-            grid.attach (new LLabel.right (_("Width:")), 0, 6, 1, 1);
+            grid.attach (new LLabel.right (_ ("Width:")), 0, 6, 1, 1);
             grid.attach (width, 1, 6, 1, 1);
-            grid.attach (new LLabel.right (_("Height:")), 0, 7, 1, 1);
+            grid.attach (new LLabel.right (_ ("Height:")), 0, 7, 1, 1);
             grid.attach (height, 1, 7, 1, 1);
 
             // grid2
@@ -204,38 +202,38 @@ namespace Screencast {
             circle_box.pack_start (circle_color);
 
             grid2.attach ((keyboard), 0, 0, 1, 1);
-            grid2.attach (new LLabel.right (_("Pressed keys on screen:")), 0, 1, 1, 1);
+            grid2.attach (new LLabel.right (_ ("Pressed keys on screen:")), 0, 1, 1, 1);
             grid2.attach (use_keyview, 1, 1, 1, 1);
             grid2.attach ((mouse), 0, 2, 1, 1);
-            grid2.attach (new LLabel.right (_("Mouse clicks on screen:")), 0, 3, 1, 1);
+            grid2.attach (new LLabel.right (_ ("Mouse clicks on screen:")), 0, 3, 1, 1);
             grid2.attach (use_clickview, 1, 3, 1, 1);
-            grid2.attach (new LLabel.right (_("Circle around the cursor:")), 0, 4, 1, 1);
+            grid2.attach (new LLabel.right (_ ("Circle around the cursor:")), 0, 4, 1, 1);
             grid2.attach (circle_box, 1, 4, 1, 1);
             grid2.column_spacing = 12;
             grid2.row_spacing = 6;
             grid2.hexpand = true;
 
-            tabs.add_titled (grid, "behavior", _("Behavior"));
-            tabs.add_titled (grid2, "apperance", _("Appearance"));
+            tabs.add_titled (grid, "behavior", _ ("Behavior"));
+            tabs.add_titled (grid2, "apperance", _ ("Appearance"));
 
             main_box = new Gtk.Grid ();
             stack_switcher = new Gtk.StackSwitcher ();
             stack_switcher.stack = tabs;
             stack_switcher.halign = Gtk.Align.CENTER;
             build_pause_ui ();
-            pause_grid.show_all();
-            pause_grid.hide();
+            pause_grid.show_all ();
+            pause_grid.hide ();
             pause_grid.no_show_all = true;
             main_box.attach (stack_switcher, 0, 0, 1, 1);
             main_box.attach (tabs, 0, 1, 1, 1);
             main_box.attach (pause_grid, 0, 2, 1, 1);
 
-            var start_bt = new Gtk.Button.with_label (_("Start Recording"));
+            var start_bt = new Gtk.Button.with_label (_ ("Start Recording"));
             start_bt.can_default = true;
             start_bt.get_style_context ().add_class ("noundo");
             start_bt.get_style_context ().add_class ("suggested-action");
 
-            var cancel_bt = new Gtk.Button.with_label (_("Close"));
+            var cancel_bt = new Gtk.Button.with_label (_ ("Close"));
 
             home_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
             home_buttons.homogeneous = true;
@@ -253,77 +251,16 @@ namespace Screencast {
             this.present ();
 
             /*
-              Events
-            */
+               Events
+             */
 
-            cancel_bt.clicked.connect (() => {
-                this.destroy ();
-            });
+            cancel_bt.clicked.connect (() => { this.destroy (); });
 
-            start_bt.clicked.connect (() => {
-                var count = new Screencast.Widgets.Countdown ();
-                this.iconify ();
-                count.start (this.application as Screencast.ScreencastApp);
-            });
+            start_bt.clicked.connect (start_cowndown);
 
             settings.monitor = 0;
-            monitors_combo.changed.connect (() => {
-                settings.monitor = int.parse (monitors_combo.active_id);
-
-                this.screen.get_monitor_geometry (settings.monitor, out this.monitor_rec);
-                var _scale = screen.get_monitor_scale_factor (settings.monitor);
-
-                settings.sx = this.monitor_rec.x * _scale;
-                settings.sy = this.monitor_rec.y * _scale;
-                settings.ex = settings.sx + this.monitor_rec.width * _scale - 1;
-                settings.ey = settings.sy + this.monitor_rec.height * _scale - 1;
-            });
-
-            settings.monitor = int.parse (monitors_combo.active_id);
-
-            this.screen.get_monitor_geometry (settings.monitor, out this.monitor_rec);
-            scale = screen.get_monitor_scale_factor (settings.monitor);
-
-            recordingarea_combo.changed.connect (() => {
-                if (recordingarea_combo.active_id != "full"){
-                    selectionarea = new Screencast.Widgets.SelectionArea ();
-
-                    int rec_widht = settings.ex - settings.sx;
-                    if (rec_widht < 50) {
-                        rec_widht = 50;
-                    }
-
-                    int rec_height = settings.ey - settings.sy;
-                    if (rec_height < 50) {
-                        rec_height = 50;
-                    }
-                    selectionarea.resize (rec_widht, rec_height);
-                    selectionarea.move (settings.sx, settings.sy);
-
-                    selectionarea.show_all ();
-                    width.sensitive = true;
-                    height.sensitive = true;
-                    selectionarea.geometry_changed.connect ((x, y, w, h) => {
-                        if (!typing_size){
-                            width.value  = (int) w;
-                            height.value = (int) h;
-                            settings.sx = x;
-                            settings.sy = y;
-                            settings.ex = settings.sx + w - 1;
-                            settings.ey = settings.sy + h - 1;
-                        }
-                    });
-
-                    selectionarea.focus_in_event.connect ((ev) => {
-                        if (this.recording){
-                            this.deiconify ();
-                            this.present ();
-                        }
-
-                        return false;
-                    });
-                } else {
-                    selectionarea.destroy ();
+            monitors_combo.changed.connect (
+                () => {
                     settings.monitor = int.parse (monitors_combo.active_id);
 
                     this.screen.get_monitor_geometry (settings.monitor, out this.monitor_rec);
@@ -333,56 +270,124 @@ namespace Screencast {
                     settings.sy = this.monitor_rec.y * _scale;
                     settings.ex = settings.sx + this.monitor_rec.width * _scale - 1;
                     settings.ey = settings.sy + this.monitor_rec.height * _scale - 1;
+                });
 
-                    width.sensitive = false;
-                    height.sensitive = false;
-                }
-            });
+            settings.monitor = int.parse (monitors_combo.active_id);
 
-            width.value_changed.connect (() => {
-                selectionarea.resize ((int) width.value, (int) height.value);
-            });
+            this.screen.get_monitor_geometry (settings.monitor, out this.monitor_rec);
+            scale = screen.get_monitor_scale_factor (settings.monitor);
 
-            height.value_changed.connect (() => {
-                selectionarea.resize ((int) width.value, (int) height.value);
-            });
+            recordingarea_combo.changed.connect (
+                () => {
+                    if (recordingarea_combo.active_id != "full") {
+                        selectionarea = new Screencast.Widgets.SelectionArea ();
+
+                        int rec_widht = settings.ex - settings.sx;
+                        if (rec_widht < 50) {
+                            rec_widht = 50;
+                        }
+
+                        int rec_height = settings.ey - settings.sy;
+                        if (rec_height < 50) {
+                            rec_height = 50;
+                        }
+                        selectionarea.resize (rec_widht, rec_height);
+                        selectionarea.move (settings.sx, settings.sy);
+
+                        selectionarea.show_all ();
+                        width.sensitive = true;
+                        height.sensitive = true;
+                        selectionarea.geometry_changed.connect (
+                            (x, y, w, h) => {
+                                if (!typing_size) {
+                                    width.value  = (int)w;
+                                    height.value = (int)h;
+                                    settings.sx = x;
+                                    settings.sy = y;
+                                    settings.ex = settings.sx + w - 1;
+                                    settings.ey = settings.sy + h - 1;
+                                }
+                            });
+
+                        selectionarea.focus_in_event.connect (
+                            (ev) => {
+                                if (this.recording) {
+                                    this.deiconify ();
+                                    this.present ();
+                                }
+
+                                return false;
+                            });
+                    } else {
+                        selectionarea.destroy ();
+                        settings.monitor = int.parse (monitors_combo.active_id);
+
+                        this.screen.get_monitor_geometry (settings.monitor, out this.monitor_rec);
+                        var _scale = screen.get_monitor_scale_factor (settings.monitor);
+
+                        settings.sx = this.monitor_rec.x * _scale;
+                        settings.sy = this.monitor_rec.y * _scale;
+                        settings.ex = settings.sx + this.monitor_rec.width * _scale - 1;
+                        settings.ey = settings.sy + this.monitor_rec.height * _scale - 1;
+
+                        width.sensitive = false;
+                        height.sensitive = false;
+                    }
+                });
+
+            width.value_changed.connect (
+                () => {
+                    selectionarea.resize ((int)width.value, (int)height.value);
+                });
+
+            height.value_changed.connect (
+                () => {
+                    selectionarea.resize ((int)width.value, (int)height.value);
+                });
 
             use_sound.state = settings.sound;
-            use_sound.state_set.connect ((state) => {
-                settings.sound = state;
-                return false;
-            });
+            use_sound.state_set.connect (
+                (state) => {
+                    settings.sound = state;
+                    return false;
+                });
 
             use_audio.state = settings.audio;
-            use_audio.state_set.connect ((state) => {
-                settings.audio = state;
-                return false;
-            });
+            use_audio.state_set.connect (
+                (state) => {
+                    settings.audio = state;
+                    return false;
+                });
 
-            Gdk.Screen.get_default ().monitors_changed.connect (() => {
-                if (Gdk.Screen.get_default ().get_n_monitors () > 1)
-                    monitors_combo.set_sensitive (true);
-                else
-                    monitors_combo.set_sensitive (false);
-            });
+            Gdk.Screen.get_default ().monitors_changed.connect (
+                () => {
+                    if (Gdk.Screen.get_default ().get_n_monitors () > 1) {
+                        monitors_combo.set_sensitive (true);
+                    } else {
+                        monitors_combo.set_sensitive (false);
+                    }
+                });
 
             use_keyview.state = settings.keyview;
-            use_keyview.state_set.connect ((state) => {
-                settings.keyview = state;
-                return false;
-            });
+            use_keyview.state_set.connect (
+                (state) => {
+                    settings.keyview = state;
+                    return false;
+                });
 
             use_clickview.state = settings.clickview;
-            use_clickview.state_set.connect ((state) => {
-                settings.clickview = state;
-                return false;
-            });
+            use_clickview.state_set.connect (
+                (state) => {
+                    settings.clickview = state;
+                    return false;
+                });
 
             use_circle.state = settings.mouse_circle;
-            use_circle.state_set.connect ((state) => {
-                settings.mouse_circle = state;
-                return false;
-            });
+            use_circle.state_set.connect (
+                (state) => {
+                    settings.mouse_circle = state;
+                    return false;
+                });
 
             circle_color.use_alpha = true;
 
@@ -390,41 +395,44 @@ namespace Screencast {
             circle.parse (settings.mouse_circle_color);
             circle_color.rgba = circle;
 
-            circle_color.color_set.connect (() => {
-                settings.mouse_circle_color = circle_color.rgba.to_string ();
-            });
-
-            ulong handle = 0;
-            handle = Wnck.Screen.get_default ().active_window_changed.connect (() => {
-                this.win = Wnck.Screen.get_default ().get_active_window ();
-                this.win.state_changed.connect ((changed_s, new_s) => {
-                    if (recording && (new_s == 0)) {
-                        pipeline.set_state (Gst.State.PAUSED);
-                        this.recording = false;
-                        switch_to_paused (true);
-                    }
+            circle_color.color_set.connect (
+                () => {
+                    settings.mouse_circle_color = circle_color.rgba.to_string ();
                 });
 
-                Wnck.Screen.get_default ().disconnect (handle);
-            });
+            ulong handle = 0;
+            handle = Wnck.Screen.get_default ().active_window_changed.connect (
+                () => {
+                    this.win = Wnck.Screen.get_default ().get_active_window ();
+                    this.win.state_changed.connect (
+                        (changed_s, new_s) => {
+                            if (recording && (new_s == 0)) {
+                                pause_recording ();
+                            }
+                        });
 
-            this.focus_in_event.connect ((ev) => {
-                if (this.selectionarea != null && !this.selectionarea.not_visible) {
-                    this.selectionarea.present ();
-                    this.present ();
-                }
+                    Wnck.Screen.get_default ().disconnect (handle);
+                });
 
-                return false;
-            });
+            this.focus_in_event.connect (
+                (ev) => {
+                    if (this.selectionarea != null && !this.selectionarea.not_visible) {
+                        this.selectionarea.present ();
+                        this.present ();
+                    }
 
-            this.destroy.connect (() => {
-                if (recording) {
-                    finish_recording ();
-                }
-                if (selectionarea != null) {
-                    selectionarea.destroy ();
-                }
-            });
+                    return false;
+                });
+
+            this.destroy.connect (
+                () => {
+                    if (recording) {
+                        stop_recording ();
+                    }
+                    if (selectionarea != null) {
+                        selectionarea.destroy ();
+                    }
+                });
         }
 
         private void build_pause_ui () {
@@ -433,10 +441,10 @@ namespace Screencast {
             var img_text_grid = new Gtk.Grid ();
             var text_grid = new Gtk.Grid ();
 
-            var title = new LLabel.markup ("<span weight='bold' size='larger'>" + _("Recording paused") + "</span>");
+            var title = new LLabel.markup ("<span weight='bold' size='larger'>" + _ ("Recording paused") + "</span>");
             title.valign = Gtk.Align.START;
 
-            var info = new LLabel (_("You can continue or finish the recording now"));
+            var info = new LLabel (_ ("You can continue or finish the recording now"));
             info.valign = Gtk.Align.START;
             info.margin_top = 6;
 
@@ -445,15 +453,15 @@ namespace Screencast {
             buttons.spacing = 6;
             buttons.margin_top = 24;
 
-            var continue_bt = new Gtk.Button.with_label (_("Continue"));
-            continue_bt.set_tooltip_text (_("Continue recording"));
+            var continue_bt = new Gtk.Button.with_label (_ ("Continue"));
+            continue_bt.set_tooltip_text (_ ("Continue recording"));
 
-            var stop_bt = new Gtk.Button.with_label (_("Finish"));
-            stop_bt.set_tooltip_text (_("Stop the recording and save the file"));
+            var stop_bt = new Gtk.Button.with_label (_ ("Finish"));
+            stop_bt.set_tooltip_text (_ ("Stop the recording and save the file"));
             stop_bt.get_style_context ().add_class ("suggested-action");
 
-            var cancel_bt = new Gtk.Button.with_label (_("Cancel"));
-            cancel_bt.set_tooltip_text (_("Cancel the recording without saving the file"));
+            var cancel_bt = new Gtk.Button.with_label (_ ("Cancel"));
+            cancel_bt.set_tooltip_text (_ ("Cancel the recording without saving the file"));
 
             buttons.pack_end (stop_bt, false, true, 0);
             buttons.pack_end (continue_bt, false, true, 0);
@@ -475,36 +483,173 @@ namespace Screencast {
             stop_bt.can_default = true;
             this.set_default (stop_bt);
 
-            cancel_bt.clicked.connect (() => {
-                this.destroy ();
-            });
+            cancel_bt.clicked.connect (() => { this.destroy (); });
 
-            stop_bt.clicked.connect (() => {
-                finish_recording ();
-            });
+            stop_bt.clicked.connect (stop_recording);
 
-            continue_bt.clicked.connect (() => {
-                this.iconify ();
-                this.pipeline.set_state (Gst.State.PLAYING);
-                this.recording = true;
-
-                switch_to_paused (false);
-            });
+            continue_bt.clicked.connect (continue_recording);
         }
 
-        public void record () {
+        private bool bus_message_cb (Gst.Bus bus, Gst.Message msg) {
+            switch (msg.type) {
+            case Gst.MessageType.ERROR :
+                GLib.Error err;
+
+                string debug;
+
+                msg.parse_error (out err, out debug);
+
+                display_error ("Screencast encountered a gstreamer error while recording, creating a screencast is not possible:\n%s\n\n[%s]".printf (err.message, debug), true);
+                stderr.printf ("Error: %s\n", debug);
+                pipeline.set_state (Gst.State.NULL);
+
+                break;
+            case Gst.MessageType.EOS :
+                debug ("received EOS");
+
+                pipeline.set_state (Gst.State.NULL);
+
+                this.recording = false;
+
+                if (save_file ()) {
+                    show_tabs ();
+                    this.title = _ ("Screencast");
+                }
+                pipeline = null;
+                break;
+            default :
+                break;
+            }
+
+            return true;
+        }
+
+        public void switch_to_paused (bool to_normal) {
+            if (tabs.visible) {
+                show_record ();
+            }
+
+            if (to_normal) {
+                this.title = _ ("Recording paused");
+            } else {
+                this.title = _ ("Pause recording");
+            }
+        }
+
+        private void show_tabs () {
+            tabs.show ();
+            stack_switcher.show ();
+            home_buttons.show ();
+            pause_grid.hide ();
+        }
+
+        private void show_record () {
+            tabs.hide ();
+            stack_switcher.hide ();
+            home_buttons.hide ();
+            pause_grid.show ();
+        }
+
+        private bool save_file () {
+            debug (settings.save_folder);
+
+            var dialog = new Gtk.FileChooserDialog (_ ("Save"), this, Gtk.FileChooserAction.SAVE, _ ("OK"), Gtk.ResponseType.OK);
+
+            var date_time = new GLib.DateTime.now_local ().format ("%Y-%m-%d %H.%M.%S");
+            var file_name = _ ("Screencast from %s").printf (date_time);
+
+            dialog.set_current_name (file_name + ".webm");
+            dialog.set_current_folder (settings.save_folder);
+            dialog.do_overwrite_confirmation = true;
+
+            var res = dialog.run ();
+
+            if (res == Gtk.ResponseType.OK) {
+                var destination = File.new_for_path (dialog.get_filename ());
+                try {
+                    var source = File.new_for_path (settings.destination);
+                    source.move (destination, FileCopyFlags.OVERWRITE);
+                    settings.save_folder = destination.get_parent ().get_path ();
+                } catch (GLib.Error e) {
+                    stderr.printf ("Error: %s\n", e.message);
+                }
+            }
+
+            dialog.destroy ();
+
+            return res == Gtk.ResponseType.OK;
+        }
+
+        private void display_error (string error, bool fatal) {
+            var dialog = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, error);
+            dialog.show_all ();
+            dialog.response.connect (
+                () => {
+                    dialog.destroy ();
+                    if (fatal) {
+                        this.destroy ();
+                    }
+                });
+            dialog.run ();
+        }
+
+        public void start_cowndown () {
+            var count = new Screencast.Widgets.Countdown ();
+            this.iconify ();
+            count.start ();
+        }
+
+        public void pause_recording () {
+            pipeline.set_state (Gst.State.PAUSED);
+            this.recording = false;
+            switch_to_paused (true);
+        }
+
+        public void stop_recording () {
+            if (!this.recording) {
+                debug ("resuming recording");
+                this.pipeline.set_state (Gst.State.PLAYING);
+                this.recording = true;
+            }
+            pipeline.send_event (new Gst.Event.eos ());
+        }
+
+        public void toggle_recording () {
+            if (pipeline == null) {
+                start_cowndown ();
+            } else if (this.recording) {
+                pause_recording ();
+            } else {
+                continue_recording ();
+            }
+        }
+
+        public void continue_recording () {
+            this.iconify ();
+            this.pipeline.set_state (Gst.State.PLAYING);
+            this.recording = true;
+
+            switch_to_paused (false);
+
+            if (settings.keyview || settings.clickview || settings.mouse_circle) {
+                keyview.place (settings.ex, settings.sy, settings.ey - settings.sy);
+                keyview.show_all ();
+            }
+        }
+
+        public void start_recording () {
             if (settings.keyview || settings.clickview || settings.mouse_circle) {
                 Gdk.RGBA circle = { 0, 0, 0, 0};
                 circle.parse (settings.mouse_circle_color);
                 keyview = new Screencast.Widgets.KeyView (settings.keyview, settings.clickview, settings.mouse_circle, circle);
-                keyview.focus_in_event.connect ((ev) => {
-                    if (this.recording) {
-                        this.deiconify ();
-                        this.present ();
-                    }
-
-                    return false;
-                });
+                keyview.focus_in_event.connect (
+                    (ev) => {
+                        if (this.recording) {
+                            this.deiconify ();
+                            this.present ();
+                        }
+                        return false;
+                    });
 
                 keyview.place (settings.ex, settings.sy, settings.ey - settings.sy);
                 keyview.show_all ();
@@ -519,7 +664,7 @@ namespace Screencast {
             this.videobin = new Gst.Bin ("video");
 
             try {
-                videobin = (Gst.Bin) Gst.parse_bin_from_description ("ximagesrc name=\"videosrc\" ! video/x-raw, framerate=24/1 ! videoconvert ! vp8enc name=\"encoder\" ! queue", true);
+                videobin = (Gst.Bin)Gst.parse_bin_from_description ("ximagesrc name=\"videosrc\" ! video/x-raw, framerate=24/1 ! videoconvert ! vp8enc name=\"encoder\" ! queue", true);
             } catch (Error e) {
                 stderr.printf ("Error: %s\n", e.message);
             }
@@ -533,7 +678,7 @@ namespace Screencast {
                 Process.spawn_command_line_sync ("pacmd list-sinks", out sound_outputs);
                 GLib.Regex re = new GLib.Regex ("(?<=\\*\\sindex:\\s\\d\\s\\sname:\\s<)[\\w\\.\\-]*");
                 MatchInfo mi;
-                if (re.match (sound_outputs, 0 , out mi)) {
+                if (re.match (sound_outputs, 0, out mi)) {
                     default_output = mi.fetch (0);
                 }
             } catch (Error e) {
@@ -542,13 +687,12 @@ namespace Screencast {
 
             try {
                 if (settings.audio && settings.sound && default_output != "") {
-                    audiobin = (Gst.Bin) Gst.parse_bin_from_description ("adder name=mux ! audioconvert ! audioresample ! vorbisenc pulsesrc ! queue ! mux. pulsesrc device=" + default_output + ".monitor ! queue ! mux.", true);
+                    audiobin = (Gst.Bin)Gst.parse_bin_from_description ("adder name=mux ! audioconvert ! audioresample ! vorbisenc pulsesrc ! queue ! mux. pulsesrc device=" + default_output + ".monitor ! queue ! mux.", true);
                 } else if (settings.audio) {
-                    audiobin = (Gst.Bin) Gst.parse_bin_from_description ("pulsesrc name=\"audiosrc\" ! audioconvert ! vorbisenc ! queue", true);
+                    audiobin = (Gst.Bin)Gst.parse_bin_from_description ("pulsesrc name=\"audiosrc\" ! audioconvert ! vorbisenc ! queue", true);
                 } else if (settings.sound && default_output != "") {
-                    audiobin = (Gst.Bin) Gst.parse_bin_from_description ("pulsesrc device=" + default_output + ".monitor ! audioconvert ! vorbisenc ! queue", true);
+                    audiobin = (Gst.Bin)Gst.parse_bin_from_description ("pulsesrc device=" + default_output + ".monitor ! audioconvert ! vorbisenc ! queue", true);
                 }
-
             } catch (Error e) {
                 stderr.printf ("Error: %s\n", e.message);
             }
@@ -563,8 +707,7 @@ namespace Screencast {
 
             //configure
             assert (sink != null);
-            settings.destination = GLib.Environment.get_tmp_dir () +
-                    "/screencast_" + new GLib.DateTime.now_local ().to_unix ().to_string () + ".webm";
+            settings.destination = GLib.Environment.get_tmp_dir () + "/screencast_" + new GLib.DateTime.now_local ().to_unix ().to_string () + ".webm";
             sink.set ("location", settings.destination);
 
             var src = videobin.get_by_name ("videosrc");
@@ -576,8 +719,7 @@ namespace Screencast {
             int endx = settings.sx + this.monitor_rec.width * scale - 1;
             int endy = settings.sy + this.monitor_rec.height * scale - 1;
 
-            if (recordingarea_combo.active_id != "full")
-            {
+            if (recordingarea_combo.active_id != "full") {
                 startx = settings.sx;
                 starty = settings.sy;
                 endx = settings.ex;
@@ -606,11 +748,11 @@ namespace Screencast {
                 stderr.printf ("Error: Elements weren't made correctly!\n");
             }
 
-
-            if (settings.audio || (settings.sound && default_output != ""))
+            if (settings.audio || (settings.sound && default_output != "")) {
                 pipeline.add_many (audiobin, videobin, muxer, sink);
-            else
+            } else {
                 pipeline.add_many (videobin, muxer, sink);
+            }
 
             videobin.get_static_pad ("src").link (muxer.get_request_pad ("video_%u"));
 
@@ -624,123 +766,12 @@ namespace Screencast {
 
             pipeline.set_state (Gst.State.READY);
 
-            if (selectionarea != null)
+            if (selectionarea != null) {
                 selectionarea.to_discrete ();
+            }
 
             pipeline.set_state (Gst.State.PLAYING);
             this.recording = true;
-        }
-
-        public void finish_recording () {
-            if (!this.recording) {
-                debug ("resuming recording");
-                this.pipeline.set_state(Gst.State.PLAYING);
-                this.recording = true;
-            }
-            pipeline.send_event (new Gst.Event.eos ());
-        }
-
-        private bool bus_message_cb (Gst.Bus bus, Gst.Message msg) {
-            switch (msg.type) {
-                case Gst.MessageType.ERROR:
-                    GLib.Error err;
-
-                    string debug;
-
-                    msg.parse_error (out err, out debug);
-
-                    display_error ("Screencast encountered a gstreamer error while recording, creating a screencast is not possible:\n%s\n\n[%s]"
-                        .printf (err.message, debug), true);
-                    stderr.printf ("Error: %s\n", debug);
-                    pipeline.set_state (Gst.State.NULL);
-
-                    break;
-                case Gst.MessageType.EOS:
-                    debug ("received EOS");
-
-                    pipeline.set_state (Gst.State.NULL);
-
-                    this.recording = false;
-
-                    if (save_file ()) {
-                        show_tabs ();
-                        this.title = _("Screencast");
-                    }
-                    break;
-                default:
-                    break;
-            }
-
-            return true;
-        }
-
-        public void switch_to_paused (bool to_normal) {
-            if (tabs.visible) {
-                show_record ();
-            }
-
-            if (to_normal) {
-                this.title = _("Recording paused");
-            } else {
-                this.title = _("Pause recording");
-            }
-        }
-
-        private void show_tabs () {
-            tabs.show ();
-            stack_switcher.show ();
-            home_buttons.show ();
-            pause_grid.hide ();
-        }
-
-        private void show_record () {
-            tabs.hide ();
-            stack_switcher.hide ();
-            home_buttons.hide ();
-            pause_grid.show ();
-        }
-
-        private bool save_file () {
-            debug (settings.save_folder);
-
-            var dialog = new Gtk.FileChooserDialog (_("Save"), this, Gtk.FileChooserAction.SAVE, _("OK"), Gtk.ResponseType.OK);
-
-            var date_time = new GLib.DateTime.now_local ().format ("%Y-%m-%d %H.%M.%S");
-            var file_name = _("Screencast from %s").printf (date_time);
-
-            dialog.set_current_name (file_name + ".webm");
-            dialog.set_current_folder (settings.save_folder);
-            dialog.do_overwrite_confirmation = true;
-
-            var res = dialog.run ();
-
-            if (res == Gtk.ResponseType.OK) {
-                var destination = File.new_for_path (dialog.get_filename ());
-                try {
-                    var source = File.new_for_path (settings.destination);
-                    source.move (destination, FileCopyFlags.OVERWRITE);
-                    settings.save_folder = destination.get_parent ().get_path ();
-                } catch (GLib.Error e) {
-                    stderr.printf ("Error: %s\n", e.message);
-                }
-            }
-
-            dialog.destroy ();
-
-            return res == Gtk.ResponseType.OK;
-        }
-
-        private void display_error (string error, bool fatal) {
-            var dialog = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL,
-                    Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, error);
-            dialog.show_all ();
-            dialog.response.connect (() => {
-                dialog.destroy ();
-
-                if (fatal)
-                    this.destroy ();
-            });
-            dialog.run ();
         }
     }
 }

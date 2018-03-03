@@ -1,6 +1,7 @@
 vala_precompile(VALA_C
     Application.vala
     MainWindow.vala
+    Interfaces/MediaKeys.vala
     Widgets/countdown.vala
     Widgets/keyview.vala
     Widgets/selectionarea.vala
