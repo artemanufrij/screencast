@@ -94,6 +94,9 @@ namespace Screencast {
             }
 
             if (toggle) {
+                if (mainwindow == null) {
+                    activate ();
+                }
                 mainwindow.toggle_recording ();
             } else if (finish) {
                 mainwindow.stop_recording ();
