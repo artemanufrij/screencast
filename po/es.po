@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-03 13:40+0100\n"
-"PO-Revision-Date: 2018-03-03 13:40+0100\n"
+"PO-Revision-Date: 2018-03-05 09:49-0300\n"
 "Last-Translator: Juan Velandia <juankz.github.io>\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
@@ -19,11 +19,11 @@ msgstr ""
 
 #: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:38
 msgid "Recording starts in"
-msgstr "La grabaciÃ³n empieza en"
+msgstr "La grabación empieza en"
 
 #: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:45
 msgid "Focus Screencast to stop recording"
-msgstr "Enfoca la aplicaciÃ³n Grabar Pantalla para detener la grabaciÃ³n"
+msgstr "Enfoca la aplicación Grabar Pantalla para detener la grabación"
 
 #: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:61
 msgid "Left"
@@ -76,7 +76,7 @@ msgstr "Teclado"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:167
 msgid "Mouse"
-msgstr "RatÃ³n"
+msgstr "Ratón"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:171
 msgid "Record Computer Sounds:"
@@ -84,7 +84,7 @@ msgstr "Grabar sonidos del computador"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:173
 msgid "Record from Microphone:"
-msgstr "Grabar sonidos desde el micrÃ³fono"
+msgstr "Grabar sonidos desde el micrófono"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:176
 msgid "Record from Monitor:"
@@ -92,7 +92,7 @@ msgstr "Grabar desde el monitor"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:178
 msgid "Recording Area:"
-msgstr "Grabar Ã¡rea"
+msgstr "Grabar Área"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:180
 msgid "Width:"
@@ -112,7 +112,7 @@ msgstr "Mostrar clics:"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:210
 msgid "Circle around the cursor:"
-msgstr "CÃ­rculo alrededor del cursor:"
+msgstr "Círculo alrededor del cursor:"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:216
 msgid "Behavior"
@@ -124,7 +124,7 @@ msgstr "Apariencia"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:231
 msgid "Start Recording"
-msgstr "Iniciar grabaciÃ³n"
+msgstr "Iniciar grabación"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:236
 msgid "Close"
@@ -133,11 +133,11 @@ msgstr "Cerrar"
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:444
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:533
 msgid "Recording paused"
-msgstr "GrabaciÃ³n en pausa"
+msgstr "Grabación en pausa"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:447
 msgid "You can continue or finish the recording now"
-msgstr "Puede continuar o finalizar la grabaciÃ³n ahora"
+msgstr "Puede continuar o finalizar la grabación ahora"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:456
 msgid "Continue"
@@ -153,7 +153,7 @@ msgstr "Finalizar"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:460
 msgid "Stop the recording and save the file"
-msgstr "Detener la grabaciÃ³n y guardar el archivo"
+msgstr "Detener la grabación y guardar el archivo"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:463
 msgid "Cancel"
@@ -161,11 +161,11 @@ msgstr "Cancelar"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:464
 msgid "Cancel the recording without saving the file"
-msgstr "Cancelar la grabaciÃ³n sin guardar el archivo"
+msgstr "Cancelar la grabación sin guardar el archivo"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:535
 msgid "Pause recording"
-msgstr "Pausar grabaciÃ³n"
+msgstr "Pausar grabación"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:556
 msgid "Save"
