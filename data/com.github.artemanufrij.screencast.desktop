@@ -14,7 +14,9 @@ Actions=Toggle;Finish;
 [Desktop Action Toggle]
 Name=Record/Pause
 Exec=com.github.artemanufrij.screencast --toggle
+Icon=media-record-symbolic
 
 [Desktop Action Finish]
 Name=Finish
 Exec=com.github.artemanufrij.screencast --finish
+Icon=document-save-symbolic
