@@ -37,6 +37,14 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="0.2.3" date="2018-03-05">
+            <description>
+                <p>Translation:</p>
+                <ul>
+                    <li>Spanish (by Franklin Ruiz)</li>
+                </ul>
+            </description>
+        </release>
         <release version="0.2.2" date="2018-03-05">
             <description>
                 <p>New:</p>
