@@ -7,184 +7,203 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-28 15:06+0300\n"
-"PO-Revision-Date: 2017-08-28 15:20+0300\n"
+"POT-Creation-Date: 2018-03-06 11:41+0200\n"
+"PO-Revision-Date: 2018-03-06 11:42+0200\n"
+"Last-Translator: Moo\n"
 "Language-Team: \n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7.1\n"
-"Last-Translator: Moo\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Language: lt\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//Application.vala:59
-msgid "Screencasts"
-msgstr "Ekrano įrašai"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/keyview.vala:61
-msgid "Left"
-msgstr "Kairysis"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/keyview.vala:64
-msgid "Middle"
-msgstr "Vidurinysis"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/keyview.vala:67
-msgid "Right"
-msgstr "Dešinysis"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/countdown.vala:38
+#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:39
 msgid "Recording starts in"
 msgstr "Įrašymas pradedamas po"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/countdown.vala:45
+#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:46
 msgid "Focus Screencast to stop recording"
 msgstr "Norėdami sustabdyti įrašą, sufokusuokite Ekrano įrašo programą"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//desktop_launcher.vala:22
+#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:62
+msgid "Left"
+msgstr "Kairysis"
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:65
+msgid "Middle"
+msgstr "Vidurinysis"
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:68
+msgid "Right"
+msgstr "Dešinysis"
+
+#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:22
 msgid "Record screencasts"
 msgstr "Įrašinėti ekrano įrašus"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//desktop_launcher.vala:23
+#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:23
 msgid "Screencaster"
 msgstr "Ekrano įrašų programa"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:96
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:671
-msgid "Screencast"
-msgstr "Ekrano įrašas"
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:96
+#, c-format
+msgid "Monitor %d"
+msgstr "Monitorius %d"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:114
-msgid "Monitor"
-msgstr "Monitorius"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:137
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:120
 msgid "Fullscreen"
 msgstr "Visas ekranas"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:138
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:121
 msgid "Custom"
 msgstr "Tinkinta"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:151
-msgid "Default"
-msgstr "Numatytasis"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:161
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:136
 msgid "Sound"
 msgstr "Garsas"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:164
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:139
 msgid "Video"
 msgstr "Vaizdas"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:167
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:142
 msgid "Keyboard"
 msgstr "Klaviatūra"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:170
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:145
 msgid "Mouse"
 msgstr "Pelė"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:174
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:148
+msgid "Delay"
+msgstr "Delsa"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:152
 msgid "Record Computer Sounds:"
 msgstr "Įrašinėti kompiuterio garsus:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:176
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:154
 msgid "Record from Microphone:"
 msgstr "Įrašinėti iš mikrofono:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:179
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:157
 msgid "Record from Monitor:"
 msgstr "Įrašinėti iš monitoriaus:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:181
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:159
 msgid "Recording Area:"
 msgstr "Įrašinėjimo sritis:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:183
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:161
 msgid "Width:"
 msgstr "Plotis:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:185
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:163
 msgid "Height:"
 msgstr "Aukštis:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:208
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:195
 msgid "Pressed keys on screen:"
 msgstr "Rodyti ekrane paspaudžiamus klavišus:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:211
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:198
 msgid "Mouse clicks on screen:"
 msgstr "Rodyti ekrane pelės spustelėjimus:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:213
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:200
 msgid "Circle around the cursor:"
 msgstr "Apskritimas aplink žymeklį:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:219
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:203
+msgid "Delay in seconds:"
+msgstr "Delsa sekundėmis:"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:206
 msgid "Behavior"
 msgstr "Elgsena"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:220
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:207
 msgid "Appearance"
 msgstr "Išvaizda"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:234
-msgid "Start Recording"
-msgstr "Pradėti įrašymą"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:239
-msgid "Close"
-msgstr "Užverti"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:451
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:687
-msgid "Recording paused"
-msgstr "Įrašymas pristabdytas"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:454
-msgid "You can continue or finish the recording now"
-msgstr "Galite tęsti arba dabar pat užbaigti įrašymą"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:463
-msgid "Continue"
-msgstr "Tęsti"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:464
-msgid "Continue recording"
-msgstr "Tęsti įrašymą"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:466
-msgid "Finish"
-msgstr "Užbaigti"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:467
-msgid "Stop the recording and save the file"
-msgstr "Stabdyti įrašymą ir įrašyti failą"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:470
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:227
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:503
 msgid "Cancel"
 msgstr "Atsisakyti"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:471
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:228
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:504
 msgid "Cancel the recording without saving the file"
 msgstr "Atsisakyti įrašymo, neįrašant failo"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:689
-msgid "Pause recording"
-msgstr "Pristabdyti įrašymą"
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:232
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:557
+msgid "Continue"
+msgstr "Tęsti"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:708
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:233
+msgid "Continue recording"
+msgstr "Tęsti įrašymą"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:237
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:493
+msgid "Finish"
+msgstr "Užbaigti"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:238
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:494
+msgid "Stop the recording and save the file"
+msgstr "Stabdyti įrašymą ir įrašyti failą"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:252
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:486
+msgid "Start Recording"
+msgstr "Pradėti įrašymą"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:257
+msgid "Close"
+msgstr "Užverti"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:454
+msgid "Save Screencast"
+msgstr "Įrašyti ekrano įrašą"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:454
 msgid "Save"
 msgstr "Įrašyti"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:708
-msgid "OK"
-msgstr "Gerai"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:711
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:457
 #, c-format
 msgid "Screencast from %s"
 msgstr "Ekrano įrašas iš %s"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:598
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:735
+msgid "Pause"
+msgstr "Pristabdyti"
+
+#~ msgid "Screencasts"
+#~ msgstr "Ekrano įrašai"
+
+#~ msgid "Screencast"
+#~ msgstr "Ekrano įrašas"
+
+#~ msgid "Monitor"
+#~ msgstr "Monitorius"
+
+#~ msgid "Default"
+#~ msgstr "Numatytasis"
+
+#~ msgid "Recording paused"
+#~ msgstr "Įrašymas pristabdytas"
+
+#~ msgid "You can continue or finish the recording now"
+#~ msgstr "Galite tęsti arba dabar pat užbaigti įrašymą"
+
+#~ msgid "Pause recording"
+#~ msgstr "Pristabdyti įrašymą"
+
+#~ msgid "OK"
+#~ msgstr "Gerai"
