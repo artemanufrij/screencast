@@ -214,6 +214,7 @@ namespace Screencast {
             stack_switcher.margin_top = 12;
 
             var header = this.get_header_bar () as Gtk.HeaderBar;
+            header.get_style_context ().add_class ("default-decoration");
             header.set_custom_title (stack_switcher);
 
             recording_controls = new Gtk.Grid ();
