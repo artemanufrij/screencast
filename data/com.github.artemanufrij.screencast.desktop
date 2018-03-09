@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
 Name=Screencast
-Comment=Record screencasts
-GenericName=Screencaster
+Comment=Record your screen
+GenericName=Screen Recorder
 Exec=com.github.artemanufrij.screencast %U
 Icon=com.github.artemanufrij.screencast
 Terminal=false
