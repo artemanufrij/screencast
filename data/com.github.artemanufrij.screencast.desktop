@@ -2,7 +2,7 @@
 Type=Application
 Name=Screencast
 Comment=Record your screen
-GenericName=Screen recorder
+GenericName=Screen Recorder
 Exec=com.github.artemanufrij.screencast %U
 Icon=com.github.artemanufrij.screencast
 Terminal=false
