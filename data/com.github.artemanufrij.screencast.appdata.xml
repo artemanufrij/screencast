@@ -39,10 +39,15 @@
     <releases>
         <release version="0.2.3" date="2018-03-10">
             <description>
+                <ul>
+                    <li>Cover fetching</li>
+                    <li>Small UI fixes</li>
+                </ul>
                 <p>Translation:</p>
                 <ul>
                     <li>German</li>
                     <li>Spanish (by Franklin Ruiz)</li>
+                    <li>Lithuanian (by welaq)</li>
                 </ul>
             </description>
         </release>
