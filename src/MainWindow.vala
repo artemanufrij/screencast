@@ -150,14 +150,14 @@ namespace Screencast {
             delay.get_style_context ().add_class ("h4");
 
             general.attach (sound, 0, 0, 1, 1);
-            general.attach (new LLabel.right (_ ("Record Computer Sounds:")), 0, 1, 1, 1);
+            general.attach (new LLabel.right (_ ("Record computer sounds:")), 0, 1, 1, 1);
             general.attach (sound_box, 1, 1, 1, 1);
-            general.attach (new LLabel.right (_ ("Record from Microphone:")), 0, 2, 1, 1);
+            general.attach (new LLabel.right (_ ("Record from microphone:")), 0, 2, 1, 1);
             general.attach (audio_box, 1, 2, 1, 1);
             general.attach (video, 0, 3, 2, 1);
-            general.attach (new LLabel.right (_ ("Record from Monitor:")), 0, 4, 1, 1);
+            general.attach (new LLabel.right (_ ("Record from monitor:")), 0, 4, 1, 1);
             general.attach (monitors_combo, 1, 4, 1, 1);
-            general.attach (new LLabel.right (_ ("Recording Area:")), 0, 5, 1, 1);
+            general.attach (new LLabel.right (_ ("Recording area:")), 0, 5, 1, 1);
             general.attach (recordingarea_combo, 1, 5, 1, 1);
             general.attach (new LLabel.right (_ ("Width:")), 0, 6, 1, 1);
             general.attach (width, 1, 6, 1, 1);
