@@ -5,15 +5,17 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0+</project_license>
     <name>Screencast</name>
-    <summary>A simple screen recorder (fork of Eidete)</summary>
+    <summary>A simple screen recorder</summary>
     <description>
-        <p>Features:</p>
+        <p>Screencast makes it simple to record your screen.</p>
         <ul>
-            <li>encoding to webm</li>
-            <li>selection of the area to be recorded</li>
-            <li>display of the pressed keys</li>
-            <li>audio recording</li>
+            <li>Record the whole screen</li>
+            <li>Select an area of the screen to record</li>
+            <li>Display pressed keys</li>
+            <li>Record audio along with the screen recording</li>
+            <li>Encodes to webm</li>
         </ul>
+        <p>Screencast is a fork of Eidete.</p>
     </description>
     <categories>
         <category>Utility</category>
