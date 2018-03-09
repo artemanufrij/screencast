@@ -41,9 +41,10 @@
     <releases>
         <release version="0.2.3" date="2018-03-10">
             <description>
+                <p>Improved:</p>
                 <ul>
-                    <li>Cover fetching</li>
-                    <li>Small UI fixes</li>
+                    <li>Desktop Action Menu</li>
+                    <li>.desktop, appdata descriptions (by aljelly)</li>
                 </ul>
                 <p>Translation:</p>
                 <ul>
