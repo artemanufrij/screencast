@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 20:33+0100\n"
+"POT-Creation-Date: 2018-03-09 20:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,19 +79,19 @@ msgid "Delay"
 msgstr ""
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:153
-msgid "Record Computer Sounds:"
+msgid "Record computer sounds:"
 msgstr ""
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:155
-msgid "Record from Microphone:"
+msgid "Record from microphone:"
 msgstr ""
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:158
-msgid "Record from Monitor:"
+msgid "Record from monitor:"
 msgstr ""
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:160
-msgid "Recording Area:"
+msgid "Recording area:"
 msgstr ""
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:162
