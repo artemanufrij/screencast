@@ -149,7 +149,7 @@ trunk of it can be found at::
 	svn://pureenergy.cc/pdf_presenter_console/trunk
 
 
-__ http://westhoffswelt.de/projects/pdf_presenter_console.html
+__ https://github.com/jakobwesthoff/Pdf-Presenter-Console
 
 
 Acknowledgments
@@ -159,9 +159,9 @@ Thanks go out to Florian Sowade, a fellow local PHP-Usergroupie, who helped me
 a lot with the initial version of this macros and always answered my mostly
 dumb CMake questions.
 
-.. _CMake: http://cmake.org
-.. _Vala: http://live.gnome.org/Vala
-.. _Genie: http://live.gnome.org/Genie
+.. _CMake: https://cmake.org
+.. _Vala: https://wiki.gnome.org/Projects/Vala
+.. _Genie: https://wiki.gnome.org/Projects/Genie
 
 
 
