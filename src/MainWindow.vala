@@ -265,6 +265,8 @@ namespace Screencast {
             actions.add (cancel_bt);
             actions.add (start_bt);
 
+            create_indicator ();
+
             this.show_all ();
             this.set_default (start_bt);
 
@@ -399,8 +401,6 @@ namespace Screencast {
                         selectionarea.destroy ();
                     }
                 });
-
-            create_indicator ();
         }
 
         private bool bus_message_cb (Gst.Bus bus, Gst.Message msg) {
