@@ -222,7 +222,6 @@ namespace Screencast {
             recording_controls.column_spacing = 12;
             recording_controls.row_spacing = 12;
             recording_controls.margin = 12;
-            recording_controls.margin_top = 0;
             recording_controls.valign = Gtk.Align.CENTER;
 
             var img_cancel = new Gtk.Image.from_icon_name ("edit-delete", Gtk.IconSize.DIALOG);
