@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-06 11:41+0200\n"
-"PO-Revision-Date: 2018-03-06 11:42+0200\n"
+"POT-Creation-Date: 2018-03-25 17:24+0300\n"
+"PO-Revision-Date: 2018-03-25 17:25+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: \n"
 "Language: lt\n"
@@ -47,142 +47,154 @@ msgstr "Įrašinėti ekrano įrašus"
 msgid "Screencaster"
 msgstr "Ekrano įrašų programa"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:96
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:97
 #, c-format
 msgid "Monitor %d"
 msgstr "Monitorius %d"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:120
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:121
 msgid "Fullscreen"
 msgstr "Visas ekranas"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:121
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:122
 msgid "Custom"
 msgstr "Tinkinta"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:136
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:137
 msgid "Sound"
 msgstr "Garsas"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:139
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:140
 msgid "Video"
 msgstr "Vaizdas"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:142
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:143
 msgid "Keyboard"
 msgstr "Klaviatūra"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:145
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:146
 msgid "Mouse"
 msgstr "Pelė"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:148
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:149
 msgid "Delay"
 msgstr "Delsa"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:152
-msgid "Record Computer Sounds:"
-msgstr "Įrašinėti kompiuterio garsus:"
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:153
+msgid "Record computer sounds:"
+msgstr "Įrašyti kompiuterio garsus:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:154
-msgid "Record from Microphone:"
-msgstr "Įrašinėti iš mikrofono:"
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:155
+msgid "Record from microphone:"
+msgstr "Įrašyti iš mikrofono:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:157
-msgid "Record from Monitor:"
-msgstr "Įrašinėti iš monitoriaus:"
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:158
+msgid "Record from monitor:"
+msgstr "Įrašyti iš monitoriaus:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:159
-msgid "Recording Area:"
-msgstr "Įrašinėjimo sritis:"
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:160
+msgid "Recording area:"
+msgstr "Įrašymo sritis:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:161
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:162
 msgid "Width:"
 msgstr "Plotis:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:163
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:164
 msgid "Height:"
 msgstr "Aukštis:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:195
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:196
 msgid "Pressed keys on screen:"
 msgstr "Rodyti ekrane paspaudžiamus klavišus:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:198
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:199
 msgid "Mouse clicks on screen:"
 msgstr "Rodyti ekrane pelės spustelėjimus:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:200
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:201
 msgid "Circle around the cursor:"
 msgstr "Apskritimas aplink žymeklį:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:203
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:204
 msgid "Delay in seconds:"
 msgstr "Delsa sekundėmis:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:206
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:207
 msgid "Behavior"
 msgstr "Elgsena"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:207
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:208
 msgid "Appearance"
 msgstr "Išvaizda"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:227
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:503
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:229
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:485
 msgid "Cancel"
 msgstr "Atsisakyti"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:228
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:504
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:230
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:486
 msgid "Cancel the recording without saving the file"
 msgstr "Atsisakyti įrašymo, neįrašant failo"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:232
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:557
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:234
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:539
 msgid "Continue"
 msgstr "Tęsti"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:233
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:235
 msgid "Continue recording"
 msgstr "Tęsti įrašymą"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:237
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:493
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:239
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:475
 msgid "Finish"
 msgstr "Užbaigti"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:238
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:494
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:240
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:476
 msgid "Stop the recording and save the file"
 msgstr "Stabdyti įrašymą ir įrašyti failą"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:252
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:486
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:254
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:468
 msgid "Start Recording"
 msgstr "Pradėti įrašymą"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:257
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:259
 msgid "Close"
 msgstr "Užverti"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:454
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
 msgid "Save Screencast"
 msgstr "Įrašyti ekrano įrašą"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:454
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
 msgid "Save"
 msgstr "Įrašyti"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:457
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:439
 #, c-format
 msgid "Screencast from %s"
 msgstr "Ekrano įrašas iš %s"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:598
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:735
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:582
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:719
 msgid "Pause"
 msgstr "Pristabdyti"
+
+#~ msgid "Record Computer Sounds:"
+#~ msgstr "Įrašinėti kompiuterio garsus:"
+
+#~ msgid "Record from Microphone:"
+#~ msgstr "Įrašinėti iš mikrofono:"
+
+#~ msgid "Record from Monitor:"
+#~ msgstr "Įrašinėti iš monitoriaus:"
+
+#~ msgid "Recording Area:"
+#~ msgstr "Įrašinėjimo sritis:"
 
 #~ msgid "Screencasts"
 #~ msgstr "Ekrano įrašai"
