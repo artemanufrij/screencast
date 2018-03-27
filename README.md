@@ -17,3 +17,35 @@
   <img src="screenshots/Screenshot_Recording.png"/>
 </p>
 <p>Screencast is a fork of Eidete created by Sergey "Shnatsel" Davidoff</p>
+
+## Install from Github.
+
+As first you need elementary SDK
+```
+sudo apt install elementary-sdk
+```
+
+Install dependencies
+```
+sudo apt install libgstreamer1.0-dev libgstreamer-plugins-bad1.0-dev libwnck-3-dev libappindicator3-dev
+```
+
+Clone repository and change directory
+```
+git clone https://github.com/artemanufrij/screencast.git
+cd screencast
+```
+
+Create **build** folder, compile and start application
+```
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+make
+```
+
+Install and start Screencast on your system
+```
+sudo make install
+com.github.artemanufrij.screencast
+```
