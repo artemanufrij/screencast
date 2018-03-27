@@ -5,7 +5,6 @@ Maintainer: Artem Anufrij <artem.anufrij@live.de>
 Build-Depends: cmake (>= 2.8),
                cmake-elementary,
                debhelper (>= 9),
-               libgstreamer1.0-dev,
                libgranite-dev,
                libgstreamer1.0-dev,
                libgstreamer-plugins-bad1.0-dev,
