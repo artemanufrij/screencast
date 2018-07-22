@@ -39,6 +39,15 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="0.3.0" date="2018-07-24">
+            <description>
+                Prepare for JUNO
+                <p>Translation:</p>
+                <ul>
+                    <li>Japanese (by Ryo Nakano)</li>
+                </ul>
+            </description>
+        </release>
         <release version="0.2.4" date="2018-03-30">
             <description>
                 <p>Improved:</p>
