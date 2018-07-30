@@ -526,9 +526,9 @@ namespace Screencast {
         }
 
         private void start_cowndown () {
+            this.iconify ();
             var count = new Screencast.Widgets.Countdown ();
             count.start ();
-            this.opacity = 0;
         }
 
         public void pause_recording () {
@@ -541,9 +541,7 @@ namespace Screencast {
                     keyview.circle.hide ();
                 }
             }
-
             show_recording_view ();
-            this.opacity = 1;
             this.present ();
         }
 
@@ -559,7 +557,7 @@ namespace Screencast {
             pipeline.send_event (new Gst.Event.eos ());
             set_indicator_icon ("media-playback-stop-symbolic");
             show_default_view ();
-            this.opacity = 1;
+            this.present ();
         }
 
         public void toggle_recording () {
@@ -573,7 +571,7 @@ namespace Screencast {
         }
 
         public void continue_recording () {
-            this.opacity = 0;
+            this.iconify ();
             this.pipeline.set_state (Gst.State.PLAYING);
             this.recording = true;
 
