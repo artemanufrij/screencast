@@ -211,6 +211,7 @@ namespace Screencast {
 
             stack_switcher = new Gtk.StackSwitcher ();
             stack_switcher.stack = tabs;
+            stack_switcher.homogeneous = true;
             stack_switcher.margin_top = 12;
 
             var header = this.get_header_bar () as Gtk.HeaderBar;
