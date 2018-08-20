@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 20:34+0100\n"
-"PO-Revision-Date: 2018-03-09 20:37+0100\n"
+"PO-Revision-Date: 2018-08-20 12:50+0200\n"
 "Last-Translator: Artem Anufrij <artem.anufrij@live.de>\n"
 "Language-Team: Deutsch <artem.anufrij@live.de>\n"
 "Language: de\n"
@@ -82,7 +82,7 @@ msgstr "Verzögerung"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:153
 msgid "Record computer sounds:"
-msgstr "Komputerklänge aufzeichnen:"
+msgstr "Computerklänge aufzeichnen:"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:155
 msgid "Record from microphone:"
@@ -126,7 +126,7 @@ msgstr "Verhalten"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:208
 msgid "Appearance"
-msgstr "Ansicht"
+msgstr "Darstellung"
 
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:229
 #: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:485
