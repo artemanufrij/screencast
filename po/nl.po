@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-09 20:34+0100\n"
+"PO-Revision-Date: 2018-09-06 17:56+0200\n"
+"Language-Team: Dutch <vistausss@outlook.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl_NL\n"
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:39
+msgid "Recording starts in"
+msgstr "Opname start over"
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:46
+msgid "Focus Screencast to stop recording"
+msgstr "Focus Screencast om de opname stoppen"
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:62
+msgid "Left"
+msgstr "Links"
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:65
+msgid "Middle"
+msgstr "Midden"
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:68
+msgid "Right"
+msgstr "Rechts"
+
+#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:22
+msgid "Record screencasts"
+msgstr "Screencasts opnemen"
+
+#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:23
+msgid "Screencaster"
+msgstr "Screencaster"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:97
+#, c-format
+msgid "Monitor %d"
+msgstr "Beeldscherm %d"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:121
+msgid "Fullscreen"
+msgstr "Volledig scherm"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:122
+msgid "Custom"
+msgstr "Aangepast"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:137
+msgid "Sound"
+msgstr "Audio"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:140
+msgid "Video"
+msgstr "Video"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:143
+msgid "Keyboard"
+msgstr "Toetsenbord"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:146
+msgid "Mouse"
+msgstr "Muis"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:149
+msgid "Delay"
+msgstr "Vertraging"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:153
+msgid "Record computer sounds:"
+msgstr "Computergeluiden openen:"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:155
+msgid "Record from microphone:"
+msgstr "Microfoon gebruiken:"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:158
+msgid "Record from monitor:"
+msgstr "Op te nemen beeldscherm:"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:160
+msgid "Recording area:"
+msgstr "Opnamegebied:"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:162
+msgid "Width:"
+msgstr "Breedte:"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:164
+msgid "Height:"
+msgstr "Hoogte:"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:196
+msgid "Pressed keys on screen:"
+msgstr "Ingedrukte toetsen tonen op scherm:"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:199
+msgid "Mouse clicks on screen:"
+msgstr "Muisklikken tonen op scherm:"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:201
+msgid "Circle around the cursor:"
+msgstr "Cirkel rondom de cursor:"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:204
+msgid "Delay in seconds:"
+msgstr "Vertraging, in seconden:"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:207
+msgid "Behavior"
+msgstr "Gedrag"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:208
+msgid "Appearance"
+msgstr "Uiterlijk"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:229
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:485
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:230
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:486
+msgid "Cancel the recording without saving the file"
+msgstr "Opname annuleren zonder het bestand op te slaan"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:234
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:539
+msgid "Continue"
+msgstr "Doorgaan"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:235
+msgid "Continue recording"
+msgstr "Doorgaan met opnemen"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:239
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:475
+msgid "Finish"
+msgstr "Afronden"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:240
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:476
+msgid "Stop the recording and save the file"
+msgstr "Opname stoppen en het bestand opslaan"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:254
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:468
+msgid "Start Recording"
+msgstr "Opname starten"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:259
+msgid "Close"
+msgstr "Sluiten"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
+msgid "Save Screencast"
+msgstr "Screencast opslaan"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
+msgid "Save"
+msgstr "Opslaan"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:439
+#, c-format
+msgid "Screencast from %s"
+msgstr "Screencast van %s"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:582
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:719
+msgid "Pause"
+msgstr "Pauzeren"
