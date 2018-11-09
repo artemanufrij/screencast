@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-09 20:34+0100\n"
+"PO-Revision-Date: 2018-11-09 15:35+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:39
+msgid "Recording starts in"
+msgstr "La capture commence dans"
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:46
+msgid "Focus Screencast to stop recording"
+msgstr "Focaliser Screencast pour arrêter l'enregistrement"
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:62
+msgid "Left"
+msgstr "Gauche"
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:65
+msgid "Middle"
+msgstr "Milieu"
+
+#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:68
+msgid "Right"
+msgstr "Droite"
+
+#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:22
+msgid "Record screencasts"
+msgstr ""
+
+#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:23
+msgid "Screencaster"
+msgstr "Capturer l'écran"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:97
+#, c-format
+msgid "Monitor %d"
+msgstr "Moniteur %d"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:121
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:122
+msgid "Custom"
+msgstr "Personnalisé"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:137
+msgid "Sound"
+msgstr "Son"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:140
+msgid "Video"
+msgstr "Vidéo"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:143
+msgid "Keyboard"
+msgstr "Clavier"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:146
+msgid "Mouse"
+msgstr "Souris"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:149
+msgid "Delay"
+msgstr "Délai"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:153
+msgid "Record computer sounds:"
+msgstr "Capturer le son de l'ordinateur :"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:155
+msgid "Record from microphone:"
+msgstr "Capturer le son du microphone :"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:158
+msgid "Record from monitor:"
+msgstr "Capturer depuis le moniteur :"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:160
+msgid "Recording area:"
+msgstr "Zone de capture :"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:162
+msgid "Width:"
+msgstr "Largeur :"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:164
+msgid "Height:"
+msgstr "Hauteur :"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:196
+msgid "Pressed keys on screen:"
+msgstr "Touches appuyées à l'écran :"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:199
+msgid "Mouse clicks on screen:"
+msgstr "Clics de la souris à l'écran :"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:201
+msgid "Circle around the cursor:"
+msgstr "Cercle autour du pointeur :"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:204
+msgid "Delay in seconds:"
+msgstr "Délai en secondes :"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:207
+msgid "Behavior"
+msgstr "Comportement"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:208
+msgid "Appearance"
+msgstr "Apparence"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:229
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:485
+msgid "Cancel"
+msgstr "Annuler"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:230
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:486
+msgid "Cancel the recording without saving the file"
+msgstr "Annuler la capture sans enregistrer le fichier"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:234
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:539
+msgid "Continue"
+msgstr "Continuer"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:235
+msgid "Continue recording"
+msgstr "Continuer la capture"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:239
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:475
+msgid "Finish"
+msgstr "Terminer"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:240
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:476
+msgid "Stop the recording and save the file"
+msgstr "Arrêter la capture et enregistrer le fichier"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:254
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:468
+msgid "Start Recording"
+msgstr "Démarrer la capture"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:259
+msgid "Close"
+msgstr "Fermer"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
+msgid "Save Screencast"
+msgstr "Enregistrer la capture d'écran"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
+msgid "Save"
+msgstr "Enregister"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:439
+#, c-format
+msgid "Screencast from %s"
+msgstr "Capture d'écran du %s"
+
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:582
+#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:719
+msgid "Pause"
+msgstr "Pause"
