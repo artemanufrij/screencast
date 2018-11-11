@@ -32,8 +32,9 @@ namespace Screencast {
 
         public static ScreencastApp instance {
             get {
-                if (_instance == null)
+                if (_instance == null) {
                     _instance = new ScreencastApp ();
+                }
                 return _instance;
             }
         }
@@ -58,7 +59,7 @@ namespace Screencast {
                 return;
             }
 
-            var settings  = Settings.get_default ();
+            var settings = Settings.get_default ();
 
             File screecast_folder = File.new_for_path (settings.save_folder);
             if (settings.save_folder == "" || !screecast_folder.query_exists ()) {

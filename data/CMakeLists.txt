@@ -7,3 +7,5 @@ install (FILES icons/48/com.github.artemanufrij.screencast.svg DESTINATION ${CMA
 install (FILES icons/64/com.github.artemanufrij.screencast.svg DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/icons/hicolor/64x64/apps/)
 install (FILES icons/128/com.github.artemanufrij.screencast.svg DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/icons/hicolor/128x128/apps/)
 
+install (FILES icons/grab-area-symbolic.svg DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/icons/)
+install (FILES icons/grab-screen-symbolic.svg DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/icons/)
