@@ -39,7 +39,7 @@ namespace Screencast {
         }
     }
 
-    public class MainWindow : Gtk.Dialog {
+    public class MainWindow : Gtk.ApplicationWindow {
         dynamic Gst.Pipeline pipeline;
         Gst.Bin videobin;
         Gst.Bin audiobin;
@@ -47,13 +47,14 @@ namespace Screencast {
         Settings settings;
 
         Screencast.Widgets.KeyView keyview;
-        Screencast.Widgets.SelectionArea selectionarea;
-        Gtk.Stack tabs;
-        Gtk.StackSwitcher stack_switcher;
+        Screencast.Widgets.SelectionArea? selectionarea;
         Gtk.Grid recording_controls;
         Gtk.Button rec_finish;
-        Gtk.ComboBoxText recordingarea_combo;
         Gdk.Rectangle monitor_rec;
+        Gtk.ComboBoxText monitors_combo;
+        Gtk.SpinButton width;
+        Gtk.SpinButton height;
+        Gtk.Grid general;
 
         AppIndicator.Indicator indicator;
         Gtk.MenuItem toggle_item;
@@ -68,13 +69,10 @@ namespace Screencast {
         }
 
         public MainWindow () {
-            Object (use_header_bar: 1);
             start_and_build ();
         }
 
         public void start_and_build () {
-            this.deletable = false;
-
             this.screen = Gdk.Screen.get_default ();
             this.window_position = Gtk.WindowPosition.CENTER;
             this.resizable = false;
@@ -83,140 +81,29 @@ namespace Screencast {
                 warning ("Compositing is not supported. No transparency available.");
             }
 
-            tabs = new Gtk.Stack ();
-            tabs.margin = 12;
-
-            var general = new Gtk.Grid ();
-            general.column_spacing = 12;
+            general = new Gtk.Grid ();
+            general.margin = 12;
             general.row_spacing = 6;
+            general.hexpand = true;
+            general.halign = Gtk.Align.FILL;
 
-            var monitors_combo = new Gtk.ComboBoxText ();
-            monitors_combo.hexpand = true;
-
-            for (var i = 0; i < screen.get_n_monitors (); i++) {
-                monitors_combo.append (i.to_string (), _ ("Monitor %d").printf (i + 1));
-            }
-
-            monitors_combo.active = 0;
-            settings.monitor = 0;
-
-            if (screen.get_n_monitors () == 1) {
-                monitors_combo.set_sensitive (false);
-            }
 
             var primary = screen.get_primary_monitor ();
             scale = screen.get_monitor_scale_factor (primary);
 
-            var width = new Gtk.SpinButton.with_range (50, screen.get_width () * scale, 1);
-            width.max_length = 4;
-            width.sensitive = false;
-            width.value = settings.ex - settings.sx;
+            header_build ();
 
-            var height = new Gtk.SpinButton.with_range (50, screen.get_height () * scale, 1);
-            height.max_length = 4;
-            height.sensitive = false;
-            height.value = settings.ey - settings.sy;
+            build_video_area ();
 
-            recordingarea_combo = new Gtk.ComboBoxText ();
-            recordingarea_combo.append ("full", _ ("Fullscreen"));
-            recordingarea_combo.append ("custom", _ ("Custom"));
-            recordingarea_combo.active = 0;
+            build_sound_area ();
 
-            var use_sound = new Gtk.Switch ();
-            use_sound.halign = Gtk.Align.START;
+            build_keyboard_area ();
 
-            var sound_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            sound_box.pack_start (use_sound, false, true, 0);
+            build_mouse_area ();
 
-            var use_audio = new Gtk.Switch ();
-            use_audio.halign = Gtk.Align.START;
+            build_delay_area ();
 
-            var audio_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            audio_box.pack_start (use_audio, false, true, 0);
-
-            var sound = new LLabel (_ ("Sound"));
-            sound.get_style_context ().add_class ("h4");
-
-            var video = new LLabel (_ ("Video"));
-            video.get_style_context ().add_class ("h4");
-
-            var keyboard = new LLabel (_ ("Keyboard"));
-            keyboard.get_style_context ().add_class ("h4");
-
-            var mouse = new LLabel (_ ("Mouse"));
-            mouse.get_style_context ().add_class ("h4");
-
-            var delay = new LLabel (_ ("Delay"));
-            delay.get_style_context ().add_class ("h4");
-
-            general.attach (sound, 0, 0, 1, 1);
-            general.attach (new LLabel.right (_ ("Record computer sounds:")), 0, 1, 1, 1);
-            general.attach (sound_box, 1, 1, 1, 1);
-            general.attach (new LLabel.right (_ ("Record from microphone:")), 0, 2, 1, 1);
-            general.attach (audio_box, 1, 2, 1, 1);
-            general.attach (video, 0, 3, 2, 1);
-            general.attach (new LLabel.right (_ ("Record from monitor:")), 0, 4, 1, 1);
-            general.attach (monitors_combo, 1, 4, 1, 1);
-            general.attach (new LLabel.right (_ ("Recording area:")), 0, 5, 1, 1);
-            general.attach (recordingarea_combo, 1, 5, 1, 1);
-            general.attach (new LLabel.right (_ ("Width:")), 0, 6, 1, 1);
-            general.attach (width, 1, 6, 1, 1);
-            general.attach (new LLabel.right (_ ("Height:")), 0, 7, 1, 1);
-            general.attach (height, 1, 7, 1, 1);
-
-            var apperance = new Gtk.Grid ();
-            apperance.column_spacing = 12;
-            apperance.row_spacing = 6;
-
-            var use_keyview = new Gtk.Switch ();
-            use_keyview.halign = Gtk.Align.START;
-
-            var use_clickview = new Gtk.Switch ();
-            use_clickview.halign = Gtk.Align.START;
-
-            var use_circle = new Gtk.Switch ();
-            use_circle.halign = Gtk.Align.START;
-
-            var circle_color = new Gtk.ColorButton ();
-
-            var circle_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 4);
-            circle_box.pack_start (use_circle, false);
-            circle_box.pack_start (circle_color);
-
-            var delay_spin = new Gtk.SpinButton.with_range (1, 10, 1);
-            delay_spin.max_length = 4;
-            delay_spin.halign = Gtk.Align.START;
-            delay_spin.value = settings.delay;
-            delay_spin.value_changed.connect (
-                () => {
-                    settings.delay = (int)delay_spin.value;
-                });
-
-            apperance.attach (keyboard, 0, 0, 1, 1);
-            apperance.attach (new LLabel.right (_ ("Pressed keys on screen:")), 0, 1, 1, 1);
-            apperance.attach (use_keyview, 1, 1, 1, 1);
-            apperance.attach (mouse, 0, 2, 1, 1);
-            apperance.attach (new LLabel.right (_ ("Mouse clicks on screen:")), 0, 3, 1, 1);
-            apperance.attach (use_clickview, 1, 3, 1, 1);
-            apperance.attach (new LLabel.right (_ ("Circle around the cursor:")), 0, 4, 1, 1);
-            apperance.attach (circle_box, 1, 4, 1, 1);
-            apperance.attach (delay, 0, 5, 1, 1);
-            apperance.attach (new LLabel.right (_ ("Delay in seconds:")), 0, 6, 1, 1);
-            apperance.attach (delay_spin, 1, 6, 1, 1);
-
-            tabs.add_titled (general, "behavior", _ ("Behavior"));
-            tabs.add_titled (apperance, "apperance", _ ("Appearance"));
-
-            Gtk.Box content = this.get_content_area () as Gtk.Box;
-
-            stack_switcher = new Gtk.StackSwitcher ();
-            stack_switcher.stack = tabs;
-            stack_switcher.homogeneous = true;
-            stack_switcher.margin_top = 12;
-
-            var header = this.get_header_bar () as Gtk.HeaderBar;
-            header.get_style_context ().add_class ("default-decoration");
-            header.set_custom_title (stack_switcher);
+            var content = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
             recording_controls = new Gtk.Grid ();
             recording_controls.column_homogeneous = true;
@@ -248,7 +135,7 @@ namespace Screencast {
             recording_controls.attach (img_finish, 2, 0);
             recording_controls.attach (rec_finish, 2, 1);
 
-            content.add (tabs);
+            content.add (general);
             content.add (recording_controls);
 
             var start_bt = new Gtk.Button.with_label (_ ("Start Recording"));
@@ -259,7 +146,7 @@ namespace Screencast {
             var cancel_bt = new Gtk.Button.with_label (_ ("Close"));
             cancel_bt.clicked.connect (() => { this.destroy (); });
 
-            Gtk.Box actions = this.get_action_area () as Gtk.Box;
+            var actions = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             actions.halign = Gtk.Align.CENTER;
             actions.margin_top = 12;
             actions.add (cancel_bt);
@@ -267,140 +154,292 @@ namespace Screencast {
 
             create_indicator ();
 
-            this.show_all ();
             this.set_default (start_bt);
 
             recording_controls.hide ();
 
-            monitors_combo.changed.connect (
-                () => {
-                    settings.monitor = int.parse (monitors_combo.active_id);
-
-                    this.screen.get_monitor_geometry (settings.monitor, out this.monitor_rec);
-                    var _scale = screen.get_monitor_scale_factor (settings.monitor);
-
-                    settings.sx = this.monitor_rec.x * _scale;
-                    settings.sy = this.monitor_rec.y * _scale;
-                    settings.ex = settings.sx + this.monitor_rec.width * _scale - 1;
-                    settings.ey = settings.sy + this.monitor_rec.height * _scale - 1;
-                });
-
             this.screen.get_monitor_geometry (settings.monitor, out this.monitor_rec);
             scale = screen.get_monitor_scale_factor (settings.monitor);
 
-            recordingarea_combo.changed.connect (
-                () => {
-                    if (recordingarea_combo.active_id != "full") {
-                        selectionarea = new Screencast.Widgets.SelectionArea ();
+            Gdk.Screen.get_default ().monitors_changed.connect (() => {
+                if (Gdk.Screen.get_default ().get_n_monitors () > 1) {
+                    monitors_combo.sensitive = true;
+                } else {
+                    monitors_combo.sensitive = false;
+                }
+            });
 
-                        int rec_widht = settings.ex - settings.sx;
-                        if (rec_widht < 50) {
-                            rec_widht = 50;
-                        }
+            this.add (content);
+            this.show_all ();
 
-                        int rec_height = settings.ey - settings.sy;
-                        if (rec_height < 50) {
-                            rec_height = 50;
-                        }
-                        selectionarea.resize (rec_widht, rec_height);
-                        selectionarea.move (settings.sx, settings.sy);
+            this.destroy.connect (() => {
+                if (recording) {
+                    stop_recording ();
+                }
+                if (selectionarea != null) {
+                    selectionarea.destroy ();
+                }
+            });
+        }
 
-                        selectionarea.show_all ();
-                        width.sensitive = true;
-                        height.sensitive = true;
-                        selectionarea.geometry_changed.connect (
-                            (x, y, w, h) => {
-                                if (!typing_size) {
-                                    width.value  = (int)w;
-                                    height.value = (int)h;
-                                    settings.sx = x;
-                                    settings.sy = y;
-                                    settings.ex = settings.sx + w - 1;
-                                    settings.ey = settings.sy + h - 1;
-                                }
-                            });
-                    } else {
-                        selectionarea.destroy ();
-                        settings.monitor = int.parse (monitors_combo.active_id);
-                        width.sensitive = false;
-                        height.sensitive = false;
+        private void header_build () {
+            var all = new Gtk.RadioButton (null);
+            all.image = new Gtk.Image.from_icon_name ("grab-screen-symbolic", Gtk.IconSize.DND);
+            all.tooltip_text = _("Grab the whole screen");
+            all.toggled.connect (() => {
+                if (!all.active) {
+                    return;
+                }
+                selectionarea.destroy ();
+                settings.monitor = int.parse (monitors_combo.active_id);
+                width.sensitive = false;
+                height.sensitive = false;
+            });
+
+            var selection = new Gtk.RadioButton.from_widget (all);
+            selection.image = new Gtk.Image.from_icon_name ("grab-area-symbolic", Gtk.IconSize.DND);
+            selection.tooltip_text = _("Select area to grab");
+
+            selection.toggled.connect (() => {
+                if (!selection.active) {
+                    return;
+                }
+                selectionarea = new Screencast.Widgets.SelectionArea ();
+
+                int rec_widht = settings.ex - settings.sx;
+                if (rec_widht < 50) {
+                    rec_widht = 50;
+                }
+
+                int rec_height = settings.ey - settings.sy;
+                if (rec_height < 50) {
+                    rec_height = 50;
+                }
+                selectionarea.resize (rec_widht, rec_height);
+                selectionarea.move (settings.sx, settings.sy);
+
+                selectionarea.show_all ();
+                width.sensitive = true;
+                height.sensitive = true;
+                selectionarea.geometry_changed.connect ((x, y, w, h) => {
+                    if (!typing_size) {
+                        width.value  = (int)w;
+                        height.value = (int)h;
+                        settings.sx = x;
+                        settings.sy = y;
+                        settings.ex = settings.sx + w - 1;
+                        settings.ey = settings.sy + h - 1;
                     }
                 });
+            });
 
-            width.value_changed.connect (
-                () => {
-                    selectionarea.resize ((int)width.value, (int)height.value);
-                });
+            var radio_grid = new Gtk.Grid ();
+            radio_grid.halign = Gtk.Align.CENTER;
+            radio_grid.column_spacing = 24;
+            radio_grid.margin = 24;
+            radio_grid.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
+            radio_grid.add (all);
+            radio_grid.add (selection);
 
-            height.value_changed.connect (
-                () => {
-                    selectionarea.resize ((int)width.value, (int)height.value);
-                });
+            var titlebar = new Gtk.HeaderBar ();
+            titlebar.has_subtitle = false;
+            titlebar.set_custom_title (radio_grid);
 
+            var titlebar_style_context = titlebar.get_style_context ();
+            titlebar_style_context.add_class (Gtk.STYLE_CLASS_FLAT);
+            titlebar_style_context.add_class ("default-decoration");
+
+            this.set_titlebar (titlebar);
+        }
+
+        private void build_sound_area () {
+            var sound_grid = new Gtk.Grid ();
+            sound_grid.row_spacing = 6;
+
+            var use_sound = new Gtk.Switch ();
+            use_sound.halign = Gtk.Align.START;
             use_sound.state = settings.sound;
-            use_sound.state_set.connect (
-                (state) => {
-                    settings.sound = state;
-                    return false;
-                });
+            use_sound.state_set.connect ((state) => {
+                settings.sound = state;
+                return false;
+            });
 
+            var use_audio = new Gtk.Switch ();
+            use_audio.halign = Gtk.Align.START;
             use_audio.state = settings.audio;
-            use_audio.state_set.connect (
-                (state) => {
-                    settings.audio = state;
-                    return false;
-                });
+            use_audio.state_set.connect ((state) => {
+                settings.audio = state;
+                return false;
+            });
 
-            Gdk.Screen.get_default ().monitors_changed.connect (
-                () => {
-                    if (Gdk.Screen.get_default ().get_n_monitors () > 1) {
-                        monitors_combo.set_sensitive (true);
-                    } else {
-                        monitors_combo.set_sensitive (false);
-                    }
-                });
+            var comp_sound = new Gtk.Image.from_icon_name ("audio-volume-low-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            comp_sound.tooltip_text = _ ("Record computer sounds");
 
+            var mic_sound = new Gtk.Image.from_icon_name ("audio-input-microphone-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            mic_sound.tooltip_text = _ ("Record from microphone");
+
+            sound_grid.attach (comp_sound, 0, 0);
+            sound_grid.attach (use_sound, 1, 0);
+            sound_grid.attach (mic_sound, 0, 1);
+            sound_grid.attach (use_audio, 1, 1);
+
+            general.attach_next_to (sound_grid, null, Gtk.PositionType.BOTTOM);
+        }
+
+        private void build_video_area () {
+            var video_grid = new Gtk.Grid ();
+            video_grid.row_spacing = 6;
+            video_grid.hexpand = true;
+            video_grid.halign = Gtk.Align.FILL;
+
+            var monitor = new Gtk.Image.from_icon_name ("computer-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            monitor.tooltip_text = _ ("Record from monitor");
+
+            monitors_combo = new Gtk.ComboBoxText ();
+
+            for (var i = 0; i < screen.get_n_monitors (); i++) {
+                monitors_combo.append (i.to_string (), _ ("Monitor %d").printf (i + 1));
+            }
+
+            monitors_combo.active = 0;
+            settings.monitor = 0;
+
+            if (screen.get_n_monitors () == 1) {
+                monitors_combo.sensitive = false;
+            }
+
+            monitors_combo.changed.connect (() => {
+                settings.monitor = int.parse (monitors_combo.active_id);
+
+                this.screen.get_monitor_geometry (settings.monitor, out this.monitor_rec);
+                var _scale = screen.get_monitor_scale_factor (settings.monitor);
+
+                settings.sx = this.monitor_rec.x * _scale;
+                settings.sy = this.monitor_rec.y * _scale;
+                settings.ex = settings.sx + this.monitor_rec.width * _scale - 1;
+                settings.ey = settings.sy + this.monitor_rec.height * _scale - 1;
+            });
+
+            width = new Gtk.SpinButton.with_range (50, screen.get_width () * scale, 1);
+            width.hexpand = true;
+            width.max_length = 4;
+            width.sensitive = false;
+            width.value = settings.ex - settings.sx;
+            width.value_changed.connect (() => {
+                selectionarea.resize ((int)width.value, (int)height.value);
+            });
+
+            height = new Gtk.SpinButton.with_range (50, screen.get_height () * scale, 1);
+            height.hexpand = true;
+            height.max_length = 4;
+            height.sensitive = false;
+            height.value = settings.ey - settings.sy;
+            height.value_changed.connect (() => {
+                selectionarea.resize ((int)width.value, (int)height.value);
+            });
+
+            var height_img = new Gtk.Image.from_icon_name("object-flip-vertical-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            height_img.tooltip_text = _ ("Height");
+
+            var width_img = new Gtk.Image.from_icon_name("object-flip-horizontal-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            width_img.tooltip_text = _ ("Width");
+
+            video_grid.attach (monitor, 0, 0, 2, 1);
+            video_grid.attach (monitors_combo, 2, 0, 2, 1);;
+            video_grid.attach (width_img, 0, 1);
+            video_grid.attach (width, 1, 1);
+            video_grid.attach (height_img, 2, 1);
+            video_grid.attach (height, 3, 1);
+
+            general.attach_next_to (video_grid, null, Gtk.PositionType.BOTTOM);
+        }
+
+        private void build_keyboard_area () {
+            var keyboard_grid = new Gtk.Grid ();
+
+            var use_keyview = new Gtk.Switch ();
+            use_keyview.halign = Gtk.Align.START;
             use_keyview.state = settings.keyview;
-            use_keyview.state_set.connect (
-                (state) => {
-                    settings.keyview = state;
-                    return false;
-                });
+            use_keyview.state_set.connect ((state) => {
+                settings.keyview = state;
+                return false;
+            });
 
+            var keyboard_img = new Gtk.Image.from_icon_name ("input-keyboard-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            keyboard_img.tooltip_text = _ ("Pressed keys on screen");
+
+            keyboard_grid.attach (keyboard_img, 0, 0);
+            keyboard_grid.attach (use_keyview, 1, 0);
+
+            general.attach_next_to (keyboard_grid, null, Gtk.PositionType.BOTTOM);
+        }
+
+        private void build_mouse_area () {
+            var mouse_grid = new Gtk.Grid ();
+            mouse_grid.row_spacing = 6;
+
+            var use_clickview = new Gtk.Switch ();
+            use_clickview.halign = Gtk.Align.START;
             use_clickview.state = settings.clickview;
-            use_clickview.state_set.connect (
-                (state) => {
-                    settings.clickview = state;
-                    return false;
-                });
+            use_clickview.state_set.connect ((state) => {
+                settings.clickview = state;
+                return false;
+            });
 
+            var use_circle = new Gtk.Switch ();
+            use_circle.halign = Gtk.Align.START;
             use_circle.state = settings.mouse_circle;
-            use_circle.state_set.connect (
-                (state) => {
-                    settings.mouse_circle = state;
-                    return false;
-                });
+            use_circle.state_set.connect ((state) => {
+                settings.mouse_circle = state;
+                return false;
+            });
 
+            var circle_color = new Gtk.ColorButton ();
             circle_color.use_alpha = true;
+            circle_color.color_set.connect (() => {
+                settings.mouse_circle_color = circle_color.rgba.to_string ();
+            });
 
             Gdk.RGBA circle = { 0, 0, 0, 0};
             circle.parse (settings.mouse_circle_color);
             circle_color.rgba = circle;
 
-            circle_color.color_set.connect (
-                () => {
-                    settings.mouse_circle_color = circle_color.rgba.to_string ();
-                });
+            var circle_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 4);
+            circle_box.pack_start (use_circle, false);
+            circle_box.pack_start (circle_color);
 
-            this.destroy.connect (
-                () => {
-                    if (recording) {
-                        stop_recording ();
-                    }
-                    if (selectionarea != null) {
-                        selectionarea.destroy ();
-                    }
-                });
+            var mouse_click = new Gtk.Image.from_icon_name ("input-keyboard-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            mouse_click.tooltip_text = _ ("Mouse clicks on screen");
+
+            var mouse_circle = new Gtk.Image.from_icon_name ("input-keyboard-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            mouse_circle.tooltip_text = _ ("Circle around the cursor");
+
+            mouse_grid.attach (mouse_click, 0, 0);
+            mouse_grid.attach (use_clickview, 1, 0);
+            mouse_grid.attach (mouse_circle, 0, 1);
+            mouse_grid.attach (circle_box, 1, 1);
+
+            general.attach_next_to (mouse_grid, null, Gtk.PositionType.BOTTOM);
+        }
+
+        private void build_delay_area () {
+            var delay_grid = new Gtk.Grid ();
+
+            var delay_spin = new Gtk.SpinButton.with_range (1, 10, 1);
+            delay_spin.max_length = 4;
+            delay_spin.halign = Gtk.Align.START;
+            delay_spin.value = settings.delay;
+            delay_spin.value_changed.connect (() => {
+                settings.delay = (int)delay_spin.value;
+            });
+
+            var delay_img = new Gtk.Image.from_icon_name ("tools-timer-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            delay_img.tooltip_text = _ ("Delay in seconds");
+
+            delay_grid.attach (delay_img,  0, 0);
+            delay_grid.attach (delay_spin, 1, 0);
+
+            general.attach_next_to (delay_grid, null, Gtk.PositionType.BOTTOM);
         }
 
         private bool bus_message_cb (Gst.Bus bus, Gst.Message msg) {
@@ -509,17 +548,11 @@ namespace Screencast {
 
         private void show_recording_view () {
             recording_controls.show ();
-            tabs.hide ();
-            stack_switcher.hide ();
-            this.get_action_area ().hide ();
             rec_finish.grab_focus ();
         }
 
         private void show_default_view () {
             recording_controls.hide ();
-            tabs.show ();
-            stack_switcher.show ();
-            this.get_action_area ().show ();
         }
 
         private void set_indicator_icon (string icon) {
@@ -659,7 +692,7 @@ namespace Screencast {
             int endx = settings.sx + this.monitor_rec.width * scale - 1;
             int endy = settings.sy + this.monitor_rec.height * scale - 1;
 
-            if (recordingarea_combo.active_id != "full") {
+            if (selectionarea != null) {
                 startx = settings.sx;
                 starty = settings.sy;
                 endx = settings.ex;

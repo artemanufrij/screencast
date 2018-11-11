@@ -34,7 +34,7 @@ namespace Screencast.Widgets {
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             box.margin = 40;
-            box.margin_left = box.margin_right = 60;
+            box.margin_start = box.margin_end = 60;
 
             var title = new Gtk.Label ("<span size='20000' color='#fbfbfb'>" + _("Recording starts in") + "…" + "</span>");
             title.use_markup = true;

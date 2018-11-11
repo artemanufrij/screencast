@@ -28,8 +28,8 @@
 namespace Screencast.Interfaces {
     [DBus (name = "org.gnome.SettingsDaemon.MediaKeys")]
     public interface GnomeMediaKeys : GLib.Object {
-        public abstract void GrabMediaPlayerKeys (string application, uint32 time) throws IOError;
-        public abstract void ReleaseMediaPlayerKeys (string application) throws IOError;
+        public abstract void GrabMediaPlayerKeys (string application, uint32 time) throws Error;
+        public abstract void ReleaseMediaPlayerKeys (string application) throws Error;
         public signal void MediaPlayerKeyPressed (string application, string key);
     }
 
@@ -41,7 +41,7 @@ namespace Screencast.Interfaces {
             assert (media_keys == null);
             try {
                 media_keys = Bus.get_proxy_sync (BusType.SESSION, "org.gnome.SettingsDaemon", "/org/gnome/SettingsDaemon/MediaKeys");
-            } catch (IOError e) {
+            } catch (Error e) {
                 warning ("Mediakeys error: %s", e.message);
             }
 
@@ -50,7 +50,7 @@ namespace Screencast.Interfaces {
                 try {
                     media_keys.GrabMediaPlayerKeys (ScreencastApp.instance.application_id, (uint32)0);
                 }
-                catch (IOError err) {
+                catch (Error err) {
                     warning ("Could not grab media player keys: %s", err.message);
                 }
             }

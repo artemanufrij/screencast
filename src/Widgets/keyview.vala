@@ -222,7 +222,6 @@ namespace Screencast.Widgets {
             this.set_keep_above (true);
             this.deletable = false;
             this.resizable = false;
-            this.set_has_resize_grip (false);
             this.skip_pager_hint = true;
             this.skip_taskbar_hint = true;
             this.accept_focus = false;
