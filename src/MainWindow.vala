@@ -102,6 +102,7 @@ namespace Screencast {
             general.row_spacing = 24;
             general.hexpand = true;
             general.halign = Gtk.Align.FILL;
+            general.column_homogeneous = true;
 
             var primary = screen.get_primary_monitor ();
             scale = screen.get_monitor_scale_factor (primary);
@@ -204,8 +205,9 @@ namespace Screencast {
 
         private void build_sound_area () {
             var sound_grid = new Gtk.Grid ();
-            sound_grid.halign = Gtk.Align.CENTER;
+            sound_grid.halign = Gtk.Align.START;
             sound_grid.column_spacing = 12;
+            sound_grid.row_spacing = 12;
 
             var use_comp_sound = new Gtk.Switch ();
             use_comp_sound.halign = Gtk.Align.START;
@@ -230,17 +232,23 @@ namespace Screencast {
             mic_sound_img.tooltip_text = _ ("Record from microphone");
 
             var comp_grid = new Gtk.Grid ();
+            comp_grid.column_spacing = 6;
             comp_grid.add (comp_sound_img);
             comp_grid.add (use_comp_sound);
 
             var mic_grid = new Gtk.Grid ();
+            mic_grid.column_spacing = 6;
             mic_grid.add (mic_sound_img);
             mic_grid.add (use_mic_sound);
 
-            sound_grid.attach (comp_grid, 0, 0);
-            sound_grid.attach (mic_grid, 1, 0);
+            var title = new Gtk.Label (_("Sound"));
+            title.halign = Gtk.Align.START;
 
-            general.attach_next_to (sound_grid, null, Gtk.PositionType.BOTTOM);
+            sound_grid.attach (title, 0, 0);
+            sound_grid.attach (comp_grid, 0, 1);
+            sound_grid.attach (mic_grid, 0, 2);
+
+            general.attach (sound_grid, 0, 1);
         }
 
         private void build_video_area () {
@@ -313,12 +321,12 @@ namespace Screencast {
             video_stack.add_named (monitor_grid, "all");
             video_stack.add_named (area_grid, "area");
 
-            general.attach_next_to (video_stack, null, Gtk.PositionType.BOTTOM);
+            general.attach (video_stack, 0, 0, 2, 1);
         }
 
         private void build_input_area () {
             var input_grid = new Gtk.Grid ();
-            input_grid.column_spacing = 12;
+            input_grid.row_spacing = 12;
 
             var use_keyview = new Gtk.Switch ();
             use_keyview.state = settings.keyview;
@@ -358,29 +366,36 @@ namespace Screencast {
             var keyboard_img = new Gtk.Image.from_icon_name ("input-keyboard-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
             keyboard_img.tooltip_text = _ ("Show pressed keys on screen");
 
-            var mouse_click_img = new Gtk.Image.from_icon_name ("input-mouse-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            var mouse_click_img = new Gtk.Image.from_icon_name ("cursor-click-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
             mouse_click_img.tooltip_text = _ ("Mouse clicks on screen");
 
-            var mouse_circle_img = new Gtk.Image.from_icon_name ("input-keyboard-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            var mouse_circle_img = new Gtk.Image.from_icon_name ("cursor-highlight-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
             mouse_circle_img.tooltip_text = _ ("Circle around the cursor");
 
             var grid_keyview = new Gtk.Grid ();
+            grid_keyview.column_spacing = 6;
             grid_keyview.add (keyboard_img);
             grid_keyview.add (use_keyview);
 
             var grid_click = new Gtk.Grid ();
+            grid_click.column_spacing = 6;
             grid_click.add (mouse_click_img);
             grid_click.add (use_clickview);
 
             var grid_circle = new Gtk.Grid ();
+            grid_circle.column_spacing = 6;
             grid_circle.add (mouse_circle_img);
             grid_circle.add (circle_box);
 
-            input_grid.attach (grid_keyview, 0, 0);
-            input_grid.attach (grid_click, 1, 0);
-            input_grid.attach (grid_circle, 2, 0);
+            var title = new Gtk.Label (_("Input"));
+            title.halign = Gtk.Align.START;
 
-            general.attach_next_to (input_grid, null, Gtk.PositionType.BOTTOM);
+            input_grid.attach (title, 0, 0);
+            input_grid.attach (grid_keyview, 0, 1);
+            input_grid.attach (grid_click, 0, 2);
+            input_grid.attach (grid_circle, 0, 3);
+
+            general.attach (input_grid, 1, 1);
         }
 
         private void build_delay_area () {
@@ -402,7 +417,7 @@ namespace Screencast {
             delay_grid.attach (delay_img,  0, 0);
             delay_grid.attach (delay_spin, 1, 0);
 
-            general.attach_next_to (delay_grid, null, Gtk.PositionType.BOTTOM);
+            general.attach (delay_grid, 0, 2, 2, 1);
         }
 
         private void build_recording_controls () {
