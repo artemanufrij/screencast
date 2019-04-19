@@ -1,0 +1,162 @@
+# Chuvash translations for extra package.
+# Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-19 20:06+0200\n"
+"PO-Revision-Date: 2019-04-19 19:42+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: cv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/com.github.artemanufrij.screencast.desktop.in:4
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:7
+msgid "Screencast"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.desktop.in:5
+msgid "Record your screen"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.desktop.in:6
+msgid "Screen Recorder"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.desktop.in:8
+msgid "com.github.artemanufrij.screencast"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.desktop.in:16
+msgid "Record/Pause"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.desktop.in:18
+msgid "media-record-symbolic"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.desktop.in:21
+msgid "Finish"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.desktop.in:23
+msgid "document-save-symbolic"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:8
+msgid "A simple screen recorder"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:10
+msgid ""
+"Screencast makes it simple to record your screen for making something like "
+"video tutorials"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:12
+msgid "Record the whole screen"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:13
+msgid "Select an area of the screen to record"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:14
+msgid "Display pressed keys"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:15
+msgid "Record audio along with the screen recording"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:16
+msgid "Encodes to webm"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:18
+msgid "Screencast is a fork of Eidete."
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:28
+msgid "Artem Anufrij"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:45
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:57
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:71
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:89
+msgid "Translation:"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:47
+msgid "Japanese (by Ryo Nakano)"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:53
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:66
+msgid "Improved:"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:55
+msgid "Don't hide control window from dock panel"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:59
+msgid "Serbian (by Pavle Radosavljević)"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:60
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:75
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:91
+msgid "Lithuanian (by welaq)"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:68
+msgid "Desktop Action Menu"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:69
+msgid ".desktop, appdata descriptions (by aljelly)"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:73
+msgid "German"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:74
+msgid "Spanish (by Franklin Ruiz)"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:81
+msgid "New:"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:83
+msgid "Custom delay in seconds"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:84
+msgid "Desktop Actions: Record/Pause, Finish"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:85
+msgid "Start recording instand from Plank"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:86
+msgid "Indicator Menu"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:87
+msgid "Media Key Listener"
+msgstr ""
+
+#: data/com.github.artemanufrij.screencast.appdata.xml.in:92
+msgid "Spanish (by Juan Velandia)"
+msgstr ""
