@@ -2,16 +2,16 @@ Source: com.github.artemanufrij.screencast
 Section: x11
 Priority: optional
 Maintainer: Artem Anufrij <artem.anufrij@live.de>
-Build-Depends: cmake (>= 2.8),
-               cmake-elementary,
-               debhelper (>= 9),
+Build-Depends: debhelper (>= 9),
+               gettext,
                libgranite-dev,
                libgstreamer1.0-dev,
                libgstreamer-plugins-bad1.0-dev,
                libwnck-3-dev,
                libappindicator3-dev,
+               meson,
                valac (>= 0.26)
-Standards-Version: 3.9.3
+Standards-Version: 4.1.1
 
 Package: com.github.artemanufrij.screencast
 Architecture: any
