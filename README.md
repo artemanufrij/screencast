@@ -37,17 +37,14 @@ Clone repository and change directory
 git clone https://github.com/artemanufrij/screencast.git
 cd screencast
 ```
-
-Create **build** folder, compile and start application
+Configure the build environment and build the application
 ```
-mkdir build
+meson build --prefix=/usr
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-make
 ```
 
 Install and start Screencast on your system
 ```
-sudo make install
+sudo ninja install
 com.github.artemanufrij.screencast
 ```
