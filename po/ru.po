@@ -1,224 +1,177 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Russian translations for com.github.artemanufrij.screencast package.
+# Copyright (C) 2019 THE com.github.artemanufrij.screencast'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.artemanufrij.screencast package.
+# Automatically generated, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: com.github.artemanufrij.screencast\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-28 17:37+0300\n"
-"PO-Revision-Date: 2017-10-28 17:48+0300\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2019-04-19 20:06+0200\n"
+"PO-Revision-Date: 2019-04-19 19:42+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
-"Last-Translator: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//Application.vala:59
-msgid "Screencasts"
-msgstr "Запись экранов"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/keyview.vala:61
-msgid "Left"
-msgstr "Левая"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/keyview.vala:64
-msgid "Middle"
-msgstr "Средняя"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/keyview.vala:67
-msgid "Right"
-msgstr "Правая"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/countdown.vala:38
+#: src/Widgets/Countdown.vala:39
 msgid "Recording starts in"
 msgstr "Запись начнётся через"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//Widgets/countdown.vala:45
+#: src/Widgets/Countdown.vala:46
 msgid "Focus Screencast to stop recording"
 msgstr "Подговтесь к записи"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//desktop_launcher.vala:22
-msgid "Record screencasts"
-msgstr "Запись экрана"
+#: src/Widgets/KeyView.vala:62
+msgid "Left"
+msgstr "Левая"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//desktop_launcher.vala:23
-msgid "Screencaster"
-msgstr "Захват экрана"
+#: src/Widgets/KeyView.vala:65
+msgid "Middle"
+msgstr "Средняя"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:97
+#: src/Widgets/KeyView.vala:68
+msgid "Right"
+msgstr "Правая"
+
+#: src/Application.vala:82
+msgid "Toggle recording"
+msgstr ""
+
+#: src/Application.vala:83
+msgid "Finish recording"
+msgstr ""
+
+#: src/MainWindow.vala:97
 #, c-format
 msgid "Monitor %d"
 msgstr "Монитор %d"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:96
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:671
-msgid "Screencast"
-msgstr "Запись экрана"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:114
-msgid "Monitor"
-msgstr "Монитор"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:137
+#: src/MainWindow.vala:121
 msgid "Fullscreen"
 msgstr "Весь экран"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:138
+#: src/MainWindow.vala:122
 msgid "Custom"
 msgstr "Вручную"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:151
-msgid "Default"
-msgstr "По умолчанию"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:161
+#: src/MainWindow.vala:137
 msgid "Sound"
 msgstr "Звук"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:164
+#: src/MainWindow.vala:140
 msgid "Video"
 msgstr "Видео"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:167
+#: src/MainWindow.vala:143
 msgid "Keyboard"
 msgstr "Клавиатура"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:170
+#: src/MainWindow.vala:146
 msgid "Mouse"
 msgstr "Мышь"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:149
+#: src/MainWindow.vala:149
 msgid "Delay"
 msgstr "Задержка"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:153
+#: src/MainWindow.vala:153
 msgid "Record computer sounds:"
 msgstr "Запись компьютерных звуков:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:155
+#: src/MainWindow.vala:155
 msgid "Record from microphone:"
 msgstr "Запись с микрофона:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:158
+#: src/MainWindow.vala:158
 msgid "Record from monitor:"
 msgstr "Запись с монитора:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:160
+#: src/MainWindow.vala:160
 msgid "Recording area:"
 msgstr "Область записи:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:174
-msgid "Record Computer Sounds:"
-msgstr "Записывать звуки компьютера:"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:176
-msgid "Record from Microphone:"
-msgstr "Запись с микрофона:"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:179
-msgid "Record from Monitor:"
-msgstr "Запись с монитора:"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:181
-msgid "Recording Area:"
-msgstr "Область записи:"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:183
+#: src/MainWindow.vala:162
 msgid "Width:"
 msgstr "Ширина:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:185
+#: src/MainWindow.vala:164
 msgid "Height:"
 msgstr "Высота:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:208
+#: src/MainWindow.vala:196
 msgid "Pressed keys on screen:"
 msgstr "Нажатия клавиш на экране:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:204
-msgid "Delay in seconds:"
-msgstr "Задержка в секундах:"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:211
+#: src/MainWindow.vala:199
 msgid "Mouse clicks on screen:"
 msgstr "Клики мышью на экране:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:213
+#: src/MainWindow.vala:201
 msgid "Circle around the cursor:"
 msgstr "Окружности вокруг курсора:"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:219
+#: src/MainWindow.vala:204
+msgid "Delay in seconds:"
+msgstr "Задержка в секундах:"
+
+#: src/MainWindow.vala:207
 msgid "Behavior"
 msgstr "Поведение"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:220
+#: src/MainWindow.vala:208
 msgid "Appearance"
 msgstr "Отображение"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:234
-msgid "Start Recording"
-msgstr "Начать запись"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:239
-msgid "Close"
-msgstr "Закрыть"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:451
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:687
-msgid "Recording paused"
-msgstr "Запись приостановлена"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:454
-msgid "You can continue or finish the recording now"
-msgstr "Вы можете продолжить или завершить запись"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:463
-msgid "Continue"
-msgstr "Продолжить"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:464
-msgid "Continue recording"
-msgstr "Продолжить запись"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:466
-msgid "Finish"
-msgstr "Завершить"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:467
-msgid "Stop the recording and save the file"
-msgstr "Остановить запись и сохранить файл"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:470
+#: src/MainWindow.vala:229 src/MainWindow.vala:485
 msgid "Cancel"
 msgstr "Отменить"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:471
+#: src/MainWindow.vala:230 src/MainWindow.vala:486
 msgid "Cancel the recording without saving the file"
 msgstr "Отменить запись без сохранения файла"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:689
-msgid "Pause recording"
-msgstr "Приостановить запись"
+#: src/MainWindow.vala:234 src/MainWindow.vala:539
+msgid "Continue"
+msgstr "Продолжить"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:708
+#: src/MainWindow.vala:235
+msgid "Continue recording"
+msgstr "Продолжить запись"
+
+#: src/MainWindow.vala:239 src/MainWindow.vala:475
+msgid "Finish"
+msgstr "Завершить"
+
+#: src/MainWindow.vala:240 src/MainWindow.vala:476
+msgid "Stop the recording and save the file"
+msgstr "Остановить запись и сохранить файл"
+
+#: src/MainWindow.vala:254 src/MainWindow.vala:468
+msgid "Start Recording"
+msgstr "Начать запись"
+
+#: src/MainWindow.vala:259
+msgid "Close"
+msgstr "Закрыть"
+
+#: src/MainWindow.vala:436
+msgid "Save Screencast"
+msgstr ""
+
+#: src/MainWindow.vala:436
 msgid "Save"
 msgstr "Сохранить"
 
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:708
-msgid "OK"
-msgstr "ОК"
-
-#: /home/artem/Projekte/elementary/screencast/po/../src//MainWindow.vala:711
+#: src/MainWindow.vala:439
 #, c-format
 msgid "Screencast from %s"
 msgstr "Запись экрана от %s"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:582
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:719
+#: src/MainWindow.vala:580 src/MainWindow.vala:717
 msgid "Pause"
 msgstr "Приостановить"

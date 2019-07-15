@@ -79,8 +79,8 @@ namespace Screencast {
             bool finish = false;
 
             GLib.OptionEntry [] options = new OptionEntry [3];
-            options [0] = { "toggle", 0, 0, OptionArg.NONE, ref toggle, "Toggle recording", null };
-            options [1] = { "finish", 0, 0, OptionArg.NONE, ref finish, "Finish recording", null };
+            options [0] = { "toggle", 0, 0, OptionArg.NONE, ref toggle, (_("Toggle recording")), null };
+            options [1] = { "finish", 0, 0, OptionArg.NONE, ref finish, (_("Finish recording")), null };
             options [2] = { null };
 
             var opt_context = new OptionContext ("actions");

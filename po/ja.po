@@ -1,183 +1,176 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Japanese translations for com.github.artemanufrij.screencast package.
+# Copyright (C) 2019 THE com.github.artemanufrij.screencast'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.artemanufrij.screencast package.
+# Ryo Nakano <ryonakaknock@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: com.github.artemanufrij.screencast\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 20:34+0100\n"
-"PO-Revision-Date: 2018-05-25 21:37+0900\n"
+"POT-Creation-Date: 2019-04-19 20:06+0200\n"
+"PO-Revision-Date: 2019-04-19 19:42+0200\n"
+"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
+"Language-Team: none\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: \n"
-"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:39
+#: src/Widgets/Countdown.vala:39
 msgid "Recording starts in"
 msgstr "録画開始まで"
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:46
+#: src/Widgets/Countdown.vala:46
 msgid "Focus Screencast to stop recording"
 msgstr "録画を停止するには Screencast をアクティブにしてください"
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:62
+#: src/Widgets/KeyView.vala:62
 msgid "Left"
 msgstr "左"
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:65
+#: src/Widgets/KeyView.vala:65
 msgid "Middle"
 msgstr "中"
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:68
+#: src/Widgets/KeyView.vala:68
 msgid "Right"
 msgstr "右"
 
-#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:22
-msgid "Record screencasts"
-msgstr "スクリーンキャストを録画"
+#: src/Application.vala:82
+msgid "Toggle recording"
+msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:23
-msgid "Screencaster"
-msgstr "スクリーンキャスター"
+#: src/Application.vala:83
+msgid "Finish recording"
+msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:97
+#: src/MainWindow.vala:97
 #, c-format
 msgid "Monitor %d"
 msgstr "モニター %d"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:121
+#: src/MainWindow.vala:121
 msgid "Fullscreen"
 msgstr "フルスクリーン"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:122
+#: src/MainWindow.vala:122
 msgid "Custom"
 msgstr "カスタム"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:137
+#: src/MainWindow.vala:137
 msgid "Sound"
 msgstr "サウンド"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:140
+#: src/MainWindow.vala:140
 msgid "Video"
 msgstr "ビデオ"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:143
+#: src/MainWindow.vala:143
 msgid "Keyboard"
 msgstr "キーボード"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:146
+#: src/MainWindow.vala:146
 msgid "Mouse"
 msgstr "マウス"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:149
+#: src/MainWindow.vala:149
 msgid "Delay"
 msgstr "遅延"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:153
+#: src/MainWindow.vala:153
 msgid "Record computer sounds:"
 msgstr "コンピューターのサウンドを録音:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:155
+#: src/MainWindow.vala:155
 msgid "Record from microphone:"
 msgstr "マイクから録音:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:158
+#: src/MainWindow.vala:158
 msgid "Record from monitor:"
 msgstr "録画するモニター:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:160
+#: src/MainWindow.vala:160
 msgid "Recording area:"
 msgstr "録画する範囲:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:162
+#: src/MainWindow.vala:162
 msgid "Width:"
 msgstr "幅:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:164
+#: src/MainWindow.vala:164
 msgid "Height:"
 msgstr "高さ:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:196
+#: src/MainWindow.vala:196
 msgid "Pressed keys on screen:"
 msgstr "押されたキーを表示:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:199
+#: src/MainWindow.vala:199
 msgid "Mouse clicks on screen:"
 msgstr "マウスのクリックを表示:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:201
+#: src/MainWindow.vala:201
 msgid "Circle around the cursor:"
 msgstr "カーソルの周囲に円を表示:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:204
+#: src/MainWindow.vala:204
 msgid "Delay in seconds:"
 msgstr "遅延する秒数:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:207
+#: src/MainWindow.vala:207
 msgid "Behavior"
 msgstr "動作"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:208
+#: src/MainWindow.vala:208
 msgid "Appearance"
 msgstr "外観"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:229
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:485
+#: src/MainWindow.vala:229 src/MainWindow.vala:485
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:230
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:486
+#: src/MainWindow.vala:230 src/MainWindow.vala:486
 msgid "Cancel the recording without saving the file"
 msgstr "ファイルを保存せずに録画をキャンセルします"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:234
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:539
+#: src/MainWindow.vala:234 src/MainWindow.vala:539
 msgid "Continue"
 msgstr "続行"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:235
+#: src/MainWindow.vala:235
 msgid "Continue recording"
 msgstr "録画を続行します"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:239
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:475
+#: src/MainWindow.vala:239 src/MainWindow.vala:475
 msgid "Finish"
 msgstr "完了"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:240
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:476
+#: src/MainWindow.vala:240 src/MainWindow.vala:476
 msgid "Stop the recording and save the file"
 msgstr "録画を停止しファイルを保存します"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:254
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:468
+#: src/MainWindow.vala:254 src/MainWindow.vala:468
 msgid "Start Recording"
 msgstr "録画を開始"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:259
+#: src/MainWindow.vala:259
 msgid "Close"
 msgstr "閉じる"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
+#: src/MainWindow.vala:436
 msgid "Save Screencast"
 msgstr "スクリーンキャストを保存"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
+#: src/MainWindow.vala:436
 msgid "Save"
 msgstr "保存"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:439
+#: src/MainWindow.vala:439
 #, c-format
 msgid "Screencast from %s"
 msgstr "スクリーンキャスト %s"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:582
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:719
+#: src/MainWindow.vala:580 src/MainWindow.vala:717
 msgid "Pause"
 msgstr "一時停止"

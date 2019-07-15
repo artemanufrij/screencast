@@ -1,227 +1,176 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Artem Anufrij <artem.anufrij@live.de>, 2017.
+# German translations for com.github.artemanufrij.screencast package.
+# Copyright (C) 2019 THE com.github.artemanufrij.screencast'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.artemanufrij.screencast package.
+# Artem Anufrij <artem.anufrij@live.de>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: com.github.artemanufrij.screencast\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 20:34+0100\n"
-"PO-Revision-Date: 2018-08-20 12:50+0200\n"
+"POT-Creation-Date: 2019-04-19 20:06+0200\n"
+"PO-Revision-Date: 2019-04-19 19:42+0200\n"
 "Last-Translator: Artem Anufrij <artem.anufrij@live.de>\n"
 "Language-Team: Deutsch <artem.anufrij@live.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:39
+#: src/Widgets/Countdown.vala:39
 msgid "Recording starts in"
 msgstr "Aufzeichnung startet in"
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:46
+#: src/Widgets/Countdown.vala:46
 msgid "Focus Screencast to stop recording"
 msgstr "Fokusiere die Anwendung, um die Aufnahme zu stoppen"
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:62
+#: src/Widgets/KeyView.vala:62
 msgid "Left"
 msgstr "Links"
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:65
+#: src/Widgets/KeyView.vala:65
 msgid "Middle"
 msgstr "Mitte"
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:68
+#: src/Widgets/KeyView.vala:68
 msgid "Right"
 msgstr "Rechts"
 
-#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:22
-msgid "Record screencasts"
-msgstr "Zeichne den Bildschirm auf"
+#: src/Application.vala:82
+msgid "Toggle recording"
+msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:23
-msgid "Screencaster"
-msgstr "Bildschirmaufzeichner"
+#: src/Application.vala:83
+msgid "Finish recording"
+msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:97
+#: src/MainWindow.vala:97
 #, c-format
 msgid "Monitor %d"
 msgstr "Monitor %d"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:121
+#: src/MainWindow.vala:121
 msgid "Fullscreen"
 msgstr "Vollbild"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:122
+#: src/MainWindow.vala:122
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:137
+#: src/MainWindow.vala:137
 msgid "Sound"
 msgstr "Klang"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:140
+#: src/MainWindow.vala:140
 msgid "Video"
 msgstr "Video"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:143
+#: src/MainWindow.vala:143
 msgid "Keyboard"
 msgstr "Tastatur"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:146
+#: src/MainWindow.vala:146
 msgid "Mouse"
 msgstr "Maus"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:149
+#: src/MainWindow.vala:149
 msgid "Delay"
 msgstr "Verzögerung"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:153
+#: src/MainWindow.vala:153
 msgid "Record computer sounds:"
 msgstr "Computerklänge aufzeichnen:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:155
+#: src/MainWindow.vala:155
 msgid "Record from microphone:"
 msgstr "Mikrofon aufzeichnen:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:158
+#: src/MainWindow.vala:158
 msgid "Record from monitor:"
 msgstr "Aufzeichnung des Monitors:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:160
+#: src/MainWindow.vala:160
 msgid "Recording area:"
 msgstr "Aufzeichnungsbereich:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:162
+#: src/MainWindow.vala:162
 msgid "Width:"
 msgstr "Breite:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:164
+#: src/MainWindow.vala:164
 msgid "Height:"
 msgstr "Höhe:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:196
+#: src/MainWindow.vala:196
 msgid "Pressed keys on screen:"
 msgstr "Gedrückte Tasten anzeigen:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:199
+#: src/MainWindow.vala:199
 msgid "Mouse clicks on screen:"
 msgstr "Mausklicks anzeigen:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:201
+#: src/MainWindow.vala:201
 msgid "Circle around the cursor:"
 msgstr "Kreis um den Mauszeiger:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:204
+#: src/MainWindow.vala:204
 msgid "Delay in seconds:"
 msgstr "Verzögerung in Sekunden:"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:207
+#: src/MainWindow.vala:207
 msgid "Behavior"
 msgstr "Verhalten"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:208
+#: src/MainWindow.vala:208
 msgid "Appearance"
 msgstr "Darstellung"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:229
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:485
+#: src/MainWindow.vala:229 src/MainWindow.vala:485
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:230
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:486
+#: src/MainWindow.vala:230 src/MainWindow.vala:486
 msgid "Cancel the recording without saving the file"
 msgstr "Aufzeichnung abbrechen ohne zu speichern"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:234
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:539
+#: src/MainWindow.vala:234 src/MainWindow.vala:539
 msgid "Continue"
 msgstr "Fortsetzen"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:235
+#: src/MainWindow.vala:235
 msgid "Continue recording"
 msgstr "Aufzeichnung fortsetzen"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:239
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:475
+#: src/MainWindow.vala:239 src/MainWindow.vala:475
 msgid "Finish"
 msgstr "Abschließen"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:240
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:476
+#: src/MainWindow.vala:240 src/MainWindow.vala:476
 msgid "Stop the recording and save the file"
 msgstr "Aufzeichnung stoppen und Datei speichern"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:254
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:468
+#: src/MainWindow.vala:254 src/MainWindow.vala:468
 msgid "Start Recording"
 msgstr "Aufnahme starten"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:259
+#: src/MainWindow.vala:259
 msgid "Close"
 msgstr "Schließen"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
+#: src/MainWindow.vala:436
 msgid "Save Screencast"
 msgstr "Bildschirmaufnahme speichern"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
+#: src/MainWindow.vala:436
 msgid "Save"
 msgstr "Speichern"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:439
+#: src/MainWindow.vala:439
 #, c-format
 msgid "Screencast from %s"
 msgstr "Bildschirmaufzeichnung von %s"
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:582
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:719
+#: src/MainWindow.vala:580 src/MainWindow.vala:717
 msgid "Pause"
 msgstr "Pause"
-
-#~ msgid "Record Computer Sounds:"
-#~ msgstr "Komputerklänge aufzeichnen:"
-
-#~ msgid "Record from Microphone:"
-#~ msgstr "Mikrofon aufzeichnen:"
-
-#~ msgid "Record from Monitor:"
-#~ msgstr "Aufzeichnung des Monitors:"
-
-#~ msgid "Recording Area:"
-#~ msgstr "Aufzeichnungsbereich:"
-
-#~ msgid "Screencasts"
-#~ msgstr "Bildschirmaufzeichnungen"
-
-#~ msgid "Screencast"
-#~ msgstr "Bildschirmaufnahme"
-
-#~ msgid "Monitor"
-#~ msgstr "Monitor"
-
-#~ msgid "Default"
-#~ msgstr "Standard"
-
-#~ msgid "Recording paused"
-#~ msgstr "Aufnahme angehalten"
-
-#~ msgid "You can continue or finish the recording now"
-#~ msgstr "Du kannst die Aufnahme fortsetzen oder abschließen"
-
-#~ msgid "Pause recording"
-#~ msgstr "Aufzeichnung anhalten"
-
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgid "Pause Recording"
-#~ msgstr "Aufnahme anhalten"
-
-#~ msgid "Finish Recording"
-#~ msgstr "Aufnahme abschließen"

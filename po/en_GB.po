@@ -1,0 +1,176 @@
+# English translations for com.github.artemanufrij.screencast package.
+# Copyright (C) 2019 THE com.github.artemanufrij.screencast'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.artemanufrij.screencast package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.artemanufrij.screencast\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-19 20:06+0200\n"
+"PO-Revision-Date: 2019-04-19 19:42+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/Widgets/Countdown.vala:39
+msgid "Recording starts in"
+msgstr "Recording starts in"
+
+#: src/Widgets/Countdown.vala:46
+msgid "Focus Screencast to stop recording"
+msgstr "Focus Screencast to stop recording"
+
+#: src/Widgets/KeyView.vala:62
+msgid "Left"
+msgstr "Left"
+
+#: src/Widgets/KeyView.vala:65
+msgid "Middle"
+msgstr "Middle"
+
+#: src/Widgets/KeyView.vala:68
+msgid "Right"
+msgstr "Right"
+
+#: src/Application.vala:82
+msgid "Toggle recording"
+msgstr "Toggle recording"
+
+#: src/Application.vala:83
+msgid "Finish recording"
+msgstr "Finish recording"
+
+#: src/MainWindow.vala:97
+#, c-format
+msgid "Monitor %d"
+msgstr "Monitor %d"
+
+#: src/MainWindow.vala:121
+msgid "Fullscreen"
+msgstr "Fullscreen"
+
+#: src/MainWindow.vala:122
+msgid "Custom"
+msgstr "Custom"
+
+#: src/MainWindow.vala:137
+msgid "Sound"
+msgstr "Sound"
+
+#: src/MainWindow.vala:140
+msgid "Video"
+msgstr "Video"
+
+#: src/MainWindow.vala:143
+msgid "Keyboard"
+msgstr "Keyboard"
+
+#: src/MainWindow.vala:146
+msgid "Mouse"
+msgstr "Mouse"
+
+#: src/MainWindow.vala:149
+msgid "Delay"
+msgstr "Delay"
+
+#: src/MainWindow.vala:153
+msgid "Record computer sounds:"
+msgstr "Record computer sounds:"
+
+#: src/MainWindow.vala:155
+msgid "Record from microphone:"
+msgstr "Record from microphone:"
+
+#: src/MainWindow.vala:158
+msgid "Record from monitor:"
+msgstr "Record from monitor:"
+
+#: src/MainWindow.vala:160
+msgid "Recording area:"
+msgstr "Recording area:"
+
+#: src/MainWindow.vala:162
+msgid "Width:"
+msgstr "Width:"
+
+#: src/MainWindow.vala:164
+msgid "Height:"
+msgstr "Height:"
+
+#: src/MainWindow.vala:196
+msgid "Pressed keys on screen:"
+msgstr "Pressed keys on screen:"
+
+#: src/MainWindow.vala:199
+msgid "Mouse clicks on screen:"
+msgstr "Mouse clicks on screen:"
+
+#: src/MainWindow.vala:201
+msgid "Circle around the cursor:"
+msgstr "Circle around the cursor:"
+
+#: src/MainWindow.vala:204
+msgid "Delay in seconds:"
+msgstr "Delay in seconds:"
+
+#: src/MainWindow.vala:207
+msgid "Behavior"
+msgstr "Behavior"
+
+#: src/MainWindow.vala:208
+msgid "Appearance"
+msgstr "Appearance"
+
+#: src/MainWindow.vala:229 src/MainWindow.vala:485
+msgid "Cancel"
+msgstr "Cancel"
+
+#: src/MainWindow.vala:230 src/MainWindow.vala:486
+msgid "Cancel the recording without saving the file"
+msgstr "Cancel the recording without saving the file"
+
+#: src/MainWindow.vala:234 src/MainWindow.vala:539
+msgid "Continue"
+msgstr "Continue"
+
+#: src/MainWindow.vala:235
+msgid "Continue recording"
+msgstr "Continue recording"
+
+#: src/MainWindow.vala:239 src/MainWindow.vala:475
+msgid "Finish"
+msgstr "Finish"
+
+#: src/MainWindow.vala:240 src/MainWindow.vala:476
+msgid "Stop the recording and save the file"
+msgstr "Stop the recording and save the file"
+
+#: src/MainWindow.vala:254 src/MainWindow.vala:468
+msgid "Start Recording"
+msgstr "Start Recording"
+
+#: src/MainWindow.vala:259
+msgid "Close"
+msgstr "Close"
+
+#: src/MainWindow.vala:436
+msgid "Save Screencast"
+msgstr "Save Screencast"
+
+#: src/MainWindow.vala:436
+msgid "Save"
+msgstr "Save"
+
+#: src/MainWindow.vala:439
+#, c-format
+msgid "Screencast from %s"
+msgstr "Screencast from %s"
+
+#: src/MainWindow.vala:580 src/MainWindow.vala:717
+msgid "Pause"
+msgstr "Pause"

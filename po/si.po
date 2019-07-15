@@ -1,0 +1,175 @@
+# Sinhala translations for com.github.artemanufrij.screencast package.
+# Copyright (C) 2019 THE com.github.artemanufrij.screencast'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.artemanufrij.screencast package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.artemanufrij.screencast\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-19 20:06+0200\n"
+"PO-Revision-Date: 2019-04-19 19:42+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: si\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Widgets/Countdown.vala:39
+msgid "Recording starts in"
+msgstr ""
+
+#: src/Widgets/Countdown.vala:46
+msgid "Focus Screencast to stop recording"
+msgstr ""
+
+#: src/Widgets/KeyView.vala:62
+msgid "Left"
+msgstr ""
+
+#: src/Widgets/KeyView.vala:65
+msgid "Middle"
+msgstr ""
+
+#: src/Widgets/KeyView.vala:68
+msgid "Right"
+msgstr ""
+
+#: src/Application.vala:82
+msgid "Toggle recording"
+msgstr ""
+
+#: src/Application.vala:83
+msgid "Finish recording"
+msgstr ""
+
+#: src/MainWindow.vala:97
+#, c-format
+msgid "Monitor %d"
+msgstr ""
+
+#: src/MainWindow.vala:121
+msgid "Fullscreen"
+msgstr ""
+
+#: src/MainWindow.vala:122
+msgid "Custom"
+msgstr ""
+
+#: src/MainWindow.vala:137
+msgid "Sound"
+msgstr ""
+
+#: src/MainWindow.vala:140
+msgid "Video"
+msgstr ""
+
+#: src/MainWindow.vala:143
+msgid "Keyboard"
+msgstr ""
+
+#: src/MainWindow.vala:146
+msgid "Mouse"
+msgstr ""
+
+#: src/MainWindow.vala:149
+msgid "Delay"
+msgstr ""
+
+#: src/MainWindow.vala:153
+msgid "Record computer sounds:"
+msgstr ""
+
+#: src/MainWindow.vala:155
+msgid "Record from microphone:"
+msgstr ""
+
+#: src/MainWindow.vala:158
+msgid "Record from monitor:"
+msgstr ""
+
+#: src/MainWindow.vala:160
+msgid "Recording area:"
+msgstr ""
+
+#: src/MainWindow.vala:162
+msgid "Width:"
+msgstr ""
+
+#: src/MainWindow.vala:164
+msgid "Height:"
+msgstr ""
+
+#: src/MainWindow.vala:196
+msgid "Pressed keys on screen:"
+msgstr ""
+
+#: src/MainWindow.vala:199
+msgid "Mouse clicks on screen:"
+msgstr ""
+
+#: src/MainWindow.vala:201
+msgid "Circle around the cursor:"
+msgstr ""
+
+#: src/MainWindow.vala:204
+msgid "Delay in seconds:"
+msgstr ""
+
+#: src/MainWindow.vala:207
+msgid "Behavior"
+msgstr ""
+
+#: src/MainWindow.vala:208
+msgid "Appearance"
+msgstr ""
+
+#: src/MainWindow.vala:229 src/MainWindow.vala:485
+msgid "Cancel"
+msgstr ""
+
+#: src/MainWindow.vala:230 src/MainWindow.vala:486
+msgid "Cancel the recording without saving the file"
+msgstr ""
+
+#: src/MainWindow.vala:234 src/MainWindow.vala:539
+msgid "Continue"
+msgstr ""
+
+#: src/MainWindow.vala:235
+msgid "Continue recording"
+msgstr ""
+
+#: src/MainWindow.vala:239 src/MainWindow.vala:475
+msgid "Finish"
+msgstr ""
+
+#: src/MainWindow.vala:240 src/MainWindow.vala:476
+msgid "Stop the recording and save the file"
+msgstr ""
+
+#: src/MainWindow.vala:254 src/MainWindow.vala:468
+msgid "Start Recording"
+msgstr ""
+
+#: src/MainWindow.vala:259
+msgid "Close"
+msgstr ""
+
+#: src/MainWindow.vala:436
+msgid "Save Screencast"
+msgstr ""
+
+#: src/MainWindow.vala:436
+msgid "Save"
+msgstr ""
+
+#: src/MainWindow.vala:439
+#, c-format
+msgid "Screencast from %s"
+msgstr ""
+
+#: src/MainWindow.vala:580 src/MainWindow.vala:717
+msgid "Pause"
+msgstr ""

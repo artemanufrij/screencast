@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the com.github.artemanufrij.screencast package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: com.github.artemanufrij.screencast\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 20:34+0100\n"
+"POT-Creation-Date: 2019-04-19 20:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,167 +17,160 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:39
+#: src/Widgets/Countdown.vala:39
 msgid "Recording starts in"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/countdown.vala:46
+#: src/Widgets/Countdown.vala:46
 msgid "Focus Screencast to stop recording"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:62
+#: src/Widgets/KeyView.vala:62
 msgid "Left"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:65
+#: src/Widgets/KeyView.vala:65
 msgid "Middle"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//Widgets/keyview.vala:68
+#: src/Widgets/KeyView.vala:68
 msgid "Right"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:22
-msgid "Record screencasts"
+#: src/Application.vala:82
+msgid "Toggle recording"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//desktop_launcher.vala:23
-msgid "Screencaster"
+#: src/Application.vala:83
+msgid "Finish recording"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:97
+#: src/MainWindow.vala:97
 #, c-format
 msgid "Monitor %d"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:121
+#: src/MainWindow.vala:121
 msgid "Fullscreen"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:122
+#: src/MainWindow.vala:122
 msgid "Custom"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:137
+#: src/MainWindow.vala:137
 msgid "Sound"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:140
+#: src/MainWindow.vala:140
 msgid "Video"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:143
+#: src/MainWindow.vala:143
 msgid "Keyboard"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:146
+#: src/MainWindow.vala:146
 msgid "Mouse"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:149
+#: src/MainWindow.vala:149
 msgid "Delay"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:153
+#: src/MainWindow.vala:153
 msgid "Record computer sounds:"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:155
+#: src/MainWindow.vala:155
 msgid "Record from microphone:"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:158
+#: src/MainWindow.vala:158
 msgid "Record from monitor:"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:160
+#: src/MainWindow.vala:160
 msgid "Recording area:"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:162
+#: src/MainWindow.vala:162
 msgid "Width:"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:164
+#: src/MainWindow.vala:164
 msgid "Height:"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:196
+#: src/MainWindow.vala:196
 msgid "Pressed keys on screen:"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:199
+#: src/MainWindow.vala:199
 msgid "Mouse clicks on screen:"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:201
+#: src/MainWindow.vala:201
 msgid "Circle around the cursor:"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:204
+#: src/MainWindow.vala:204
 msgid "Delay in seconds:"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:207
+#: src/MainWindow.vala:207
 msgid "Behavior"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:208
+#: src/MainWindow.vala:208
 msgid "Appearance"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:229
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:485
+#: src/MainWindow.vala:229 src/MainWindow.vala:485
 msgid "Cancel"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:230
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:486
+#: src/MainWindow.vala:230 src/MainWindow.vala:486
 msgid "Cancel the recording without saving the file"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:234
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:539
+#: src/MainWindow.vala:234 src/MainWindow.vala:539
 msgid "Continue"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:235
+#: src/MainWindow.vala:235
 msgid "Continue recording"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:239
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:475
+#: src/MainWindow.vala:239 src/MainWindow.vala:475
 msgid "Finish"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:240
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:476
+#: src/MainWindow.vala:240 src/MainWindow.vala:476
 msgid "Stop the recording and save the file"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:254
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:468
+#: src/MainWindow.vala:254 src/MainWindow.vala:468
 msgid "Start Recording"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:259
+#: src/MainWindow.vala:259
 msgid "Close"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
+#: src/MainWindow.vala:436
 msgid "Save Screencast"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:436
+#: src/MainWindow.vala:436
 msgid "Save"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:439
+#: src/MainWindow.vala:439
 #, c-format
 msgid "Screencast from %s"
 msgstr ""
 
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:582
-#: /home/artem/Projekte/screencast/po/../src//MainWindow.vala:719
+#: src/MainWindow.vala:580 src/MainWindow.vala:717
 msgid "Pause"
 msgstr ""
