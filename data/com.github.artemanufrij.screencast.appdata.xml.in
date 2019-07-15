@@ -39,6 +39,19 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="1.0.0" date="2019-07-15">
+            <description>
+                Moved to meson (by Nathan Bonnemains)
+                <p>Translation:</p>
+                <ul>
+                    <li>German (by Maik Marschner)</li>
+                    <li>Russian (by Stas)</li>
+                    <li>French (by eurruby)</li>
+                    <li>Portuguese (by Fernando Júnior, Deyvison Rocha)</li>
+                    <li>Dutch (by Heimen Stoffels)</li>
+                </ul>
+            </description>
+        </release>
         <release version="0.3.0" date="2018-07-24">
             <description>
                 Prepare for JUNO
