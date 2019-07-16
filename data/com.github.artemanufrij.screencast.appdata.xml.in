@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2017 Artem Anufrij <artem.anufrij@live.de> -->
 <component type="desktop">
-    <id>com.github.artemanufrij.screencast.desktop</id>
+    <id>com.github.artemanufrij.screencast</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0+</project_license>
     <name>Screencast</name>
@@ -46,7 +46,7 @@
                 <ul>
                     <li>German (by Maik Marschner)</li>
                     <li>Russian (by Stas)</li>
-                    <li>French (by eurruby)</li>
+                    <li>French (by eurruby, Nathan Bonnemains)</li>
                     <li>Portuguese (by Fernando Júnior, Deyvison Rocha)</li>
                     <li>Dutch (by Heimen Stoffels)</li>
                 </ul>
