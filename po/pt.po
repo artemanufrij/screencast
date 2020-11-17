@@ -1,176 +1,177 @@
 # Portuguese translations for com.github.artemanufrij.screencast package.
 # Copyright (C) 2019 THE com.github.artemanufrij.screencast'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.artemanufrij.screencast package.
-# Automatically generated, 2019.
+# André Barata <andretiagob@protonmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.artemanufrij.screencast\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-19 20:06+0200\n"
-"PO-Revision-Date: 2019-04-19 19:42+0200\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2020-09-03 13:01+0100\n"
+"Last-Translator: André Barata <andretiagob@protonmail.com>\n"
 "Language-Team: none\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: src/Widgets/Countdown.vala:39
 msgid "Recording starts in"
-msgstr ""
+msgstr "Gravação começa em"
 
 #: src/Widgets/Countdown.vala:46
 msgid "Focus Screencast to stop recording"
-msgstr ""
+msgstr "Coloque o Screencast em foco para parar a gravação"
 
 #: src/Widgets/KeyView.vala:62
 msgid "Left"
-msgstr ""
+msgstr "Esquerda"
 
 #: src/Widgets/KeyView.vala:65
 msgid "Middle"
-msgstr ""
+msgstr "Centro"
 
 #: src/Widgets/KeyView.vala:68
 msgid "Right"
-msgstr ""
+msgstr "Direita"
 
 #: src/Application.vala:82
 msgid "Toggle recording"
-msgstr ""
+msgstr "Alternar gravação"
 
 #: src/Application.vala:83
 msgid "Finish recording"
-msgstr ""
+msgstr "Terminar gravação"
 
 #: src/MainWindow.vala:97
 #, c-format
 msgid "Monitor %d"
-msgstr ""
+msgstr "Monitor %d"
 
 #: src/MainWindow.vala:121
 msgid "Fullscreen"
-msgstr ""
+msgstr "Ecrã Inteiro"
 
 #: src/MainWindow.vala:122
 msgid "Custom"
-msgstr ""
+msgstr "Personalizado"
 
 #: src/MainWindow.vala:137
 msgid "Sound"
-msgstr ""
+msgstr "Som"
 
 #: src/MainWindow.vala:140
 msgid "Video"
-msgstr ""
+msgstr "Vídeo"
 
 #: src/MainWindow.vala:143
 msgid "Keyboard"
-msgstr ""
+msgstr "Teclado"
 
 #: src/MainWindow.vala:146
 msgid "Mouse"
-msgstr ""
+msgstr "Rato"
 
 #: src/MainWindow.vala:149
 msgid "Delay"
-msgstr ""
+msgstr "Atraso"
 
 #: src/MainWindow.vala:153
 msgid "Record computer sounds:"
-msgstr ""
+msgstr "Gravar sons do computador:"
 
 #: src/MainWindow.vala:155
 msgid "Record from microphone:"
-msgstr ""
+msgstr "Gravar do microfone:"
 
 #: src/MainWindow.vala:158
 msgid "Record from monitor:"
-msgstr ""
+msgstr "Gravar do monitor:"
 
 #: src/MainWindow.vala:160
 msgid "Recording area:"
-msgstr ""
+msgstr "Área de gravação:"
 
 #: src/MainWindow.vala:162
 msgid "Width:"
-msgstr ""
+msgstr "Largura:"
 
 #: src/MainWindow.vala:164
 msgid "Height:"
-msgstr ""
+msgstr "Altura:"
 
 #: src/MainWindow.vala:196
 msgid "Pressed keys on screen:"
-msgstr ""
+msgstr "Teclas pressionadas no ecrã:"
 
 #: src/MainWindow.vala:199
 msgid "Mouse clicks on screen:"
-msgstr ""
+msgstr "Cliques do rato no ecrã:"
 
 #: src/MainWindow.vala:201
 msgid "Circle around the cursor:"
-msgstr ""
+msgstr "Circulo em volta do cursor:"
 
 #: src/MainWindow.vala:204
 msgid "Delay in seconds:"
-msgstr ""
+msgstr "Atraso em segundos:"
 
 #: src/MainWindow.vala:207
 msgid "Behavior"
-msgstr ""
+msgstr "Comportamento"
 
 #: src/MainWindow.vala:208
 msgid "Appearance"
-msgstr ""
+msgstr "Aparência"
 
 #: src/MainWindow.vala:229 src/MainWindow.vala:485
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: src/MainWindow.vala:230 src/MainWindow.vala:486
 msgid "Cancel the recording without saving the file"
-msgstr ""
+msgstr "Cancelar a gravação sem guardar o ficheiro"
 
 #: src/MainWindow.vala:234 src/MainWindow.vala:539
 msgid "Continue"
-msgstr ""
+msgstr "Continuar"
 
 #: src/MainWindow.vala:235
 msgid "Continue recording"
-msgstr ""
+msgstr "Continuar gravação"
 
 #: src/MainWindow.vala:239 src/MainWindow.vala:475
 msgid "Finish"
-msgstr ""
+msgstr "Terminar"
 
 #: src/MainWindow.vala:240 src/MainWindow.vala:476
 msgid "Stop the recording and save the file"
-msgstr ""
+msgstr "Parar a gravação e guardar o ficheiro"
 
 #: src/MainWindow.vala:254 src/MainWindow.vala:468
 msgid "Start Recording"
-msgstr ""
+msgstr "Iniciar a Gravação"
 
 #: src/MainWindow.vala:259
 msgid "Close"
-msgstr ""
+msgstr "Fechar"
 
 #: src/MainWindow.vala:436
 msgid "Save Screencast"
-msgstr ""
+msgstr "Guardar Gravação de Ecrã"
 
 #: src/MainWindow.vala:436
 msgid "Save"
-msgstr ""
+msgstr "Guardar"
 
 #: src/MainWindow.vala:439
 #, c-format
 msgid "Screencast from %s"
-msgstr ""
+msgstr "Gravação de ecrã de %s"
 
 #: src/MainWindow.vala:580 src/MainWindow.vala:717
 msgid "Pause"
-msgstr ""
+msgstr "Pausar"
